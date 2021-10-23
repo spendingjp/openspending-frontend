@@ -10,7 +10,7 @@
           プロジェクトは、公共データのオープン化を進める有志に支えられています。
         </p>
 
-        <ul class="footer-links span6 pull-left">
+        <ul class="footer-links span4 pull-left">
           <li>
             <a href="http://wheredoesmymoneygo.org">Where Does My Money Go?</a>
           </li>
@@ -19,7 +19,7 @@
           <li><a href="http://okfnlabs.org">OKFN Labs</a></li>
           <!--li><a href="http://yourtopia.net">YourTopia</a></li-->
         </ul>
-        <ul class="footer-links span6 pull-left">
+        <ul class="footer-links span4 pull-left">
           <li><a href="team.html">Core team</a></li>
           <li><a href="sources.html">Data sources</a> used on this site</li>
           <!--li><a href="http://openspending.org/help/contact.html">Get in touch</a> and contribute</li-->
