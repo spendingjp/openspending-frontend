@@ -20,6 +20,7 @@ const config: NuxtConfig = {
         href: '/bootstrap2/css/bootstrap.min.css',
       },
     ],
+    script: [{ src: '/lib/modernizr-2.5.3.min.js', async: true }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
