@@ -1,16 +1,22 @@
 import { NuxtConfig } from '@nuxt/types'
 
+const websiteTitle = '税金はどこへ行った？'
+
 const config: NuxtConfig = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'openspending-frontend',
+    titleTemplate: `%s - ${websiteTitle}`,
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'あなたの税金がどこで使われているかをお示しします',
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
