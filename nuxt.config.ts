@@ -17,7 +17,7 @@ const config: NuxtConfig = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: '/css/bootstrap.min.css',
+        href: '/bootstrap2/css/bootstrap.min.css',
       },
     ],
   },
