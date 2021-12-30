@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- TODO: insert Header component here -->
-     <Header />
+    <Header />
 
     <div class="container">
       <!-- main -->
@@ -9,14 +8,13 @@
       <!-- /main -->
     </div>
 
-    <!-- TODO: insert Footer component here -->
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-export default Vue.extend()
+export default Vue.extend({})
 </script>
 
 <style></style>
