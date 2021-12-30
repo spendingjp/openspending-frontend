@@ -23,10 +23,13 @@ const config: NuxtConfig = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: '/bootstrap2/css/bootstrap.min.css',
+        href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
       },
     ],
-    script: [{ src: '/lib/modernizr-2.5.3.min.js', async: true }],
+    script: [
+      { src: '/lib/modernizr-2.5.3.min.js', async: true },
+      { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'}
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

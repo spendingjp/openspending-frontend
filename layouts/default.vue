@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- TODO: insert Header component here -->
     <Header />
 
     <div class="container">
