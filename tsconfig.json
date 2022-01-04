@@ -26,8 +26,10 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/node"
-    ]
+      "@types/node",
+      "@types/jest",
+    ],
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules",

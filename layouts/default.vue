@@ -2,11 +2,7 @@
   <div>
     <Header />
 
-    <div class="container">
-      <!-- main -->
-      <Nuxt />
-      <!-- /main -->
-    </div>
+    <Nuxt />
 
     <Footer />
   </div>
@@ -17,4 +13,5 @@ import Vue from 'vue'
 export default Vue.extend({})
 </script>
 
-<style></style>
+<style>
+</style>

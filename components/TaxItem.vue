@@ -1,8 +1,10 @@
 <template>
   <div class="box">
-    <p class="name">{{name}}</p>
-    <slot></slot>
     <p class="tax">{{ tax }}</p>
+    <div class="icon">
+      <slot></slot>
+    </div>
+    <span class="name">{{name}}</span>
   </div>
 </template>
 
@@ -36,11 +38,21 @@ export default Vue.extend({
 
 /* 種別名 */
 .name {
-  font-size: 1.2em;
+  font-size: 0.8em;
+  padding-left: 5px;
 }
 
 /* 税額 */
 .tax {
-  font-size: 1.3em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #29B6F6;
+}
+
+.icon {
+  position: relative;
+  top: -50px;
+  left: 0px;
+  z-index: -1;
 }
 </style>

@@ -21,22 +21,22 @@ const config: NuxtConfig = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
-      },
     ],
     script: [
-      { src: '/lib/modernizr-2.5.3.min.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'}
     ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '~/assets/css/main.scss'
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~/plugins/Bootstrap.ts',
+    '@/plugins/axios-accessor.ts',
+    '@/plugins/repositories/Repository.ts'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -45,19 +45,31 @@ const config: NuxtConfig = {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    'nuxt-typed-vuex',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    // scssをグローバルでimport
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:3001/'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // 全Vueコンポーネントで読み込むscssファイル
+  styleResources: {
+    scss: [
+      '~assets/css/_var.scss'
+    ]
+  },
 }
 
 export default config

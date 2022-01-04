@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div>
+    <nav class="navbar navbar-expand-lg header navbar-dark">
       <div class="container-md">
-        <nuxt-link class="navbar-brand" to="/"
+        <nuxt-link class="navbar-brand fs-sm-1" to="/"
           >WHERE DOES MY MONEY GO?</nuxt-link
         >
         <button
@@ -72,10 +72,18 @@
       </div>
     </nav>
 
-    <div class="container-md">
-      <p class="small">
-        あなたが{{region}}に納めた税金がどこで使われているかをお示しします
-      </p>
+    <div class="container-fluid sub-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-5 d-none d-sm-inline">
+          <small>税金はどこへ行った？</small>
+        </div>
+        <div class="col-sm-7 col-12 text-end">
+          <small>あなたが <span class="text-primary">つくば市</span> に納めた税金がどこで使われているかをお示しします</small>
+        </div>
+        
+      </div>
+      </div>
     </div>
   </div>
 </template>
@@ -91,11 +99,54 @@
     }
 	})
 </script>
-<style>
-header {
-	color: #000;
-  text-align: center;
-	padding: 10px;
-	background-color: #fff;
+<style lang='scss' scoped>
+.header {
+	background-color: $info;
 }
+
+a.navbar-brand {
+  color: #BF9D73;
+  font-weight: bold;
+  font-size: 5vmin;
+  @media (min-width: 640px) {
+    font-size: 18px * 1.25;
+  }
+
+  &:hover {
+    color: #fefefe;
+  }
+}
+
+.sub-title {
+  background-color:#0F1640;
+  color: #0F1640;
+  font-weight: bold;
+  padding: 3px 0;
+  border-bottom: #0F1640 solid 3px;
+
+  & div {
+    color: #fefefe;
+  }
+}
+
+#navbarSupportedContent a {
+  color:#F2F2F2;
+  font-weight: bold;
+}
+
+#navbarSupportedContent a.active {
+  color:#F2F2F2;
+  font-weight: bold;
+  border-bottom: #BF9D73 solid 2px;
+  padding-bottom: 2px;
+}
+
+#navbarSupportedContent a.active:hover {
+  border: none;
+}
+
+#navbarSupportedContent a:hover {
+  color:#BF9D73;
+}
+
 </style>
