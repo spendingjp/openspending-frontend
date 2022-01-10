@@ -1,13 +1,13 @@
-import Vuex, {Store} from 'vuex'
+import Vuex, { Store } from 'vuex'
 import { createLocalVue } from '@vue/test-utils'
 import * as regionCofogData from '~/store/regionCofogData'
 import { APIResponse } from '~/plugins/api/APIResponse'
 import { Drilldown as DrilldownAPI } from '~/plugins/api/Drilldown'
 import { Summary as SummaryAPI } from '~/plugins/api/Summary'
-import { RegionCofog } from '~/plugins/cofog/RegionCofog'
-import { Drilldown } from '~/plugins/cofog/Drilldown'
-import { Cofog } from '~/plugins/cofog/Cofog'
-import { Summary } from '~/plugins/cofog/Summary'
+import { Cofog } from '~/plugins/valueObjects/Cofog'
+import { CofogCode } from '~/plugins/valueObjects/CofogCode'
+import { CofogData } from '~/plugins/dataTransferObjects/cofogData'
+import { Price } from '~/plugins/valueObjects/Price'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -19,7 +19,7 @@ describe('CofogVuex', () => {
     store = new Store(regionCofogData)
   })
 
-  it('action', async () => {
+  xit('action', async () => {
     // リポジトリをモック
     const drilldowns: DrilldownAPI[] = [
       {
@@ -68,30 +68,20 @@ describe('CofogVuex', () => {
       }),
     }
 
-    const result = new RegionCofog(
-      [
-        new Drilldown(
-          1502366,
-          new Cofog('cofog1', '', 1, '1', 'レクリエーション・文化活動の支援'),
-          new Cofog(
-            'cofog2',
-            'http://openspending.org/yokohama_yosan_percentage/cofog2/05-1',
-            1,
-            '1-1',
-            'レクリエーション・スポーツ・サービス'
-          ),
-          new Cofog(
-            'cofog3',
-            'http://openspending.org/yokohama_yosan_percentage/cofog3/',
-            1,
-            '',
-            ''
-          ),
-          1
-        ),
+    const result: CofogData = {
+      amount: Price.create(1502366),
+      taxList: [
+        {
+          amount: Price.create(1502366),
+          cofog: new Cofog(CofogCode.create({
+            level1: 1,
+            level2: 2,
+            level3: 3
+          }), 'レクリエーション・スポーツ・サービス'),
+          children: []
+        }
       ],
-      new Summary(1, 10000, true, 1502366, 1, 'JPY', 1, '', 1)
-    )
+    }
 
     await store.dispatch('setRegionCofogFromAPI')
     expect(store.getters.regionCofogData).toStrictEqual(result)

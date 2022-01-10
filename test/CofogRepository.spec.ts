@@ -23,11 +23,11 @@ describe('CofogRepository', () => {
     )
 
     // 期待値：APIレスポンスをオブジェクトに変換成功
-    const drilldowns:Drilldown[] = [
+    const drilldowns: Drilldown[] = [
       {
         num_entries: 1,
         amount: 1502366,
-        cofog1 :{
+        cofog1: {
           "taxonomy": "cofog1",
           "html_url": "",
           "_id": 1,
@@ -61,10 +61,10 @@ describe('CofogRepository', () => {
       cache_key: '',
       page: 1,
     }
-    const result: APIResponse = {drilldown: drilldowns, summary}
+    const result: APIResponse = { drilldown: drilldowns, summary }
 
     // 処理実行
-    const repo = new CofogRepository(wrapper.vm.$axios)
+    const repo = new CofogRepository(wrapper.vm)
     expect(await repo.Get()).toEqual(result)
   })
 
@@ -73,12 +73,12 @@ describe('CofogRepository', () => {
     const wrapper = mockAxiosGet(
       () =>
         new Promise((resolve) => {
-          resolve({drilldown: '',summary: {}})    // drilldownが配列でない、summaryが空なのでエラー
+          resolve({ drilldown: '', summary: {} })    // drilldownが配列でない、summaryが空なのでエラー
         })
     )
 
     // 処理実行
-    const repo = new CofogRepository(wrapper.vm.$axios)
+    const repo = new CofogRepository(wrapper.vm.$nuxt)
     await expect(repo.Get()).rejects.toThrow(Error)
   })
 })
@@ -92,7 +92,7 @@ function mockAxiosGet(func: Function) {
   return mount(TestComponent, {
     localVue,
     mocks: {
-      // $reposiotories: (_: string) => ({
+      // $repositoories: (_: string) => ({
       //   get: () => 'test',
       // }),
       $axios: {

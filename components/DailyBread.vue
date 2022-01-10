@@ -72,12 +72,12 @@
       >
         <div class="row">
           <p
-            class="money mb-0 col-7 order-1 text-end"
+            class="money mb-0 col-8 order-1 text-end"
             :style="'color:' + selectedStyle.color"
           >
             {{ yearlyIncome | displayMoney }}
           </p>
-          <p class="small col-5 order-0 mb-0 align-self-center text-end">
+          <p class="small col-4 order-0 mb-0 align-self-center text-end">
             年収
           </p>
         </div>
@@ -133,151 +133,63 @@
             </tax-item>
           </div> -->
           <div class="accordion" id="accordionExample">
-            <div class="accordion-item accordion-box">
-              <h2 class="accordion-header " id="headingOne">
+            <div
+              v-for="(taxCategory, index) in taxData.taxList"
+              :key="index"
+              class="accordion-item accordion-box"
+            >
+              <h2 class="accordion-header" :id="'heading' + index">
                 <button
-                  class="accordion-button "
+                  :class="[
+                    index === 0
+                      ? 'accordion-button'
+                      : 'accordion-button collapsed',
+                  ]"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
+                  :data-bs-target="'#collapse' + index"
+                  aria-expanded="false"
+                  :aria-controls="'collapse' + index"
                 >
+                  <dance-ballroom
+                    fill-color="#ddd"
+                    :size="80"
+                    class="accordion-icon"
+                  />
+                  <p class="accordion-title">
+                    {{ taxCategory.name }}
+                  </p>
 
-                      <dance-ballroom
-                        fill-color="#ddd"
-                        :size="80"
-                        class="accordion-icon"
-                      />
-                      <p class="accordion-title"
-                        >レクリエーション・文化活動の支援</p
-                      >
-
-                    <div class="fw-bold fs-3">
-                      {{ recreationTax | displayMoney }}
-                    </div>
+                  <div class="fw-bold fs-3">
+                    {{ taxCategory.amount | displayMoney }}
+                  </div>
                 </button>
               </h2>
               <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
+                :id="'collapse' + index"
+                :class="[
+                  index === 0
+                    ? 'accordion-collapse collapse show'
+                    : 'accordion-collapse collapse',
+                ]"
+                :aria-labelledby="'heading' + index"
                 data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body p-0">
                   <table class="table table-striped">
                     <tbody>
-                      <tr>
-                        <td><dance-ballroom :size="30" /></td>
-                        <td>レクリエーション・スポーツ・サービス</td>
-                        <td>{{ recreationTax | displayMoney }}</td>
-                      </tr>
-                      <tr>
-                        <td><dance-ballroom :size="30" /></td>
-                        <td>レクリエーション・スポーツ・サービス</td>
-                        <td>{{ recreationTax | displayMoney }}</td>
-                      </tr>
-                      <tr>
-                        <td><dance-ballroom :size="30" /></td>
-                        <td>レクリエーション・スポーツ・サービス</td>
-                        <td>{{ recreationTax | displayMoney }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <div class="accordion-box">
-              <h2 class="accordion-header" id="headingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-
-                      <hospital-box
-                        fill-color="#ddd"
-                        :size="80"
-                        class="accordion-icon"
-                      />
-                      <span class="accordion-title"
-                        >安全</span
+                      <tr
+                        v-for="(taxSubCategory, j) in taxCategory.children"
+                        :key="j"
                       >
-
-                    <div class="fw-bold fs-3">
-                      {{ recreationTax | displayMoney }}
-                    </div>
-
-                </button>
-              </h2>
-              </div>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body p-0">
-                  <table class="table table-striped">
-                    <tbody>
-                      <tr>
                         <td><dance-ballroom :size="30" /></td>
-                        <td>レクリエーション・スポーツ・サービス</td>
-                        <td>{{ recreationTax | displayMoney }}</td>
-                      </tr>
-                      <tr>
-                        <td><dance-ballroom :size="30" /></td>
-                        <td>レクリエーション・スポーツ・サービス</td>
-                        <td>{{ recreationTax | displayMoney }}</td>
-                      </tr>
-                      <tr>
-                        <td><dance-ballroom :size="30" /></td>
-                        <td>レクリエーション・スポーツ・サービス</td>
-                        <td>{{ recreationTax | displayMoney }}</td>
+                        <td>{{ taxSubCategory.name }}</td>
+                        <td>
+                          {{ taxSubCategory.amount | displayMoney }}
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                      <div class="text-wrap" style="width: 50vw;">
-                        ああああああああああああああああああああああああああああああああああああああ
-                      </div>
-                      <p>
-                        bbb
-                      </p>
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
                 </div>
               </div>
             </div>
@@ -296,6 +208,12 @@ import DanceBallroom from 'vue-material-design-icons/DanceBallroom.vue'
 import HospitalBox from 'vue-material-design-icons/HospitalBox.vue'
 import TaxItem from './TaxItem.vue'
 import Slider from './slider.vue'
+import { TaxApplicationService } from '~/plugins/applicationServices/TaxApplicationService'
+import { Person } from '~/plugins/entities/Person'
+import { Price } from '~/plugins/valueObjects/Price'
+import { HOME_TYPE } from '~/plugins/valueObjects/HomeType'
+import { DailyBread } from '~/plugins/dataTransferObjects/dailyBreadData'
+import { TaxService } from '~/plugins/domainServices/TaxService'
 
 export type DataType = {
   /**
@@ -329,6 +247,8 @@ export type DataType = {
 
   selectedStyle: object
   unSelectedStyle: object
+
+  taxData: DailyBread
 }
 
 export default Vue.extend({
@@ -342,14 +262,15 @@ export default Vue.extend({
   },
   filters: {
     /**
-     * 金額を見やすく表示（接頭辞に円マーク、3桁区切りで表示）
+     * 金額を見やすく表示
+     * （接頭辞に円マーク、3桁区切りで表示、小数点以下2桁まで）
      */
-    displayMoney: (value: Number) => {
-      let seisu = String(value)
+    displayMoney: (value: number) => {
+      let seisu = String(parseFloat(value.toFixed(2)))
       let syosu = ''
-      if (String(value).indexOf('.') > 0) {
-        syosu = '.' + String(value).split('.')[1]
-        seisu = String(value).replace(syosu, '')
+      if (seisu.indexOf('.') > 0) {
+        syosu = '.' + seisu.split('.')[1]
+        seisu = seisu.replace(syosu, '')
       }
       let i = 0
       seisu = seisu
@@ -364,7 +285,7 @@ export default Vue.extend({
         .reverse()
         .join('')
 
-      return '\\' + seisu + syosu
+      return '￥ ' + seisu + syosu
     },
   },
   props: {
@@ -380,7 +301,7 @@ export default Vue.extend({
   data(): DataType {
     return {
       selectedType: 'single',
-      yearlyIncome: 1000000,
+      yearlyIncome: 4000000,
       yearlyTax: 10000,
       recreationTax: 1110.11,
       safetyTax: 20.13,
@@ -394,23 +315,72 @@ export default Vue.extend({
       unSelectedStyle: {
         color: '#B0BEC5',
       },
+      taxData: {
+        amount: 1000000,
+        taxList: [
+          // {
+          //   amount: 10000,
+          //   name: 'カテゴリ1',
+          //   cofogCode: '1.1.1',
+          //   children: [
+          //     {
+          //       amount: 10.11,
+          //       name: 'サブカテゴリ1',
+          //       cofogCode: '1.1.1',
+          //     },
+          //     {
+          //       amount: 56.1,
+          //       name: 'サブカテゴリ2',
+          //       cofogCode: '1.1.1',
+          //     },
+          //     {
+          //       amount: 22.4,
+          //       name: 'サブカテゴリ3',
+          //       cofogCode: '1.1.1',
+          //     },
+          //   ],
+          // },
+          // {
+          //   amount: 30.2,
+          //   name: 'カテゴリ2',
+          //   cofogCode: '1.1.1',
+          //   children: [
+          //     {
+          //       amount: 90.09,
+          //       name: 'サブカテゴリ1',
+          //       cofogCode: '1.1.1',
+          //     },
+          //     {
+          //       amount: 34.2,
+          //       name: 'サブカテゴリ2',
+          //       cofogCode: '1.1.1',
+          //     },
+          //     {
+          //       amount: 23.6,
+          //       name: 'サブカテゴリ3',
+          //       cofogCode: '1.1.1',
+          //     },
+          //   ],
+          // },
+        ],
+      },
     }
   },
-  
+
   watch: {
     sliderValue(newValue: number, _) {
-      // TODO:税額更新
       this.yearlyIncome = newValue
-      this.yearlyTax = this.yearlyIncome * 0.06
+      this.updateTax()
     },
   },
-  async mounted() {
+  created() {
     // console.log(this.$repositories('cofog').get())
     // const service = new CofogService(this.$nuxt)
     // service.GetData()
-
     // console.log(this.$accessor.regionCofogData.regionCofogData)
     // console.log(this.$repositories('cofog').Get())
+    // console.log(this.$nuxt.$store)
+    this.updateTax()
   },
   methods: {
     /**
@@ -422,16 +392,32 @@ export default Vue.extend({
         throw new Error('世帯種別が異常:' + type)
       }
       this.selectedType = type
+      this.updateTax()
+    },
+    updateTax() {
+      const appService = new TaxApplicationService(this.$nuxt)
+      const person = new Person({
+        salary: Price.create(this.yearlyIncome),
+        homeType:
+          this.selectedType === 'single' ? HOME_TYPE.SINGLE : HOME_TYPE.FAMILY,
+      })
+      const tax = appService.GetDailyBreadData(person)
+      this.yearlyTax = tax.amount
+      this.taxData.taxList.splice(0)
+      this.taxData.taxList.push(...tax.taxList)
+
+      // console.log(this.taxData)
     },
   },
 })
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 h3 {
   border-bottom: solid 3px #359af2;
   position: relative;
   color: #2e3c8c;
+  font-weight: bold;
 }
 
 h3:after {
@@ -442,7 +428,6 @@ h3:after {
   bottom: -3px;
   width: 30%;
 }
-
 
 /* -------------------------------------------------------
  *  世帯種別選択

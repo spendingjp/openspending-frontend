@@ -1,4 +1,4 @@
-import { Cofog } from './Cofog'
+import { Cofog } from '../valueObjects/CofogCode'
 
 export class Drilldown {
   /**
@@ -15,7 +15,7 @@ export class Drilldown {
     private cofog2: Cofog,
     private cofog3: Cofog,
     private numEntries: number
-  ) {}
+  ) { }
 
   getAmount() {
     return this.amount
@@ -37,7 +37,7 @@ export class Drilldown {
     return this.numEntries
   }
 
-  toJSON () {
+  toJSON() {
     return { ...this } // here I make a POJO's copy of the class instance
   }
 }

@@ -1,5 +1,4 @@
 import { APIResponse } from "../api/APIResponse"
-import { Cofog } from "./Cofog"
 import { Drilldown } from "./Drilldown"
 import { Summary } from "./Summary"
 

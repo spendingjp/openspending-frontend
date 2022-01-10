@@ -1,57 +1,21 @@
-import { NuxtAxiosInstance } from '@nuxtjs/axios'
+import { NuxtAppOptions } from '@nuxt/types/app'
 import { APIResponse } from '@/plugins/api/APIResponse'
-import { Drilldown } from '../api/Drilldown'
-import { Summary } from '../api/Summary'
 
 export class CofogRepository {
-  private readonly axios: NuxtAxiosInstance
-  constructor($axios: NuxtAxiosInstance) {
-    this.axios = $axios
+  // private readonly axios: NuxtAxiosInstance
+  // constructor($axios: NuxtAxiosInstance) {
+  //   this.axios = $axios
+  // }
+
+  private app: NuxtAppOptions
+  constructor(app: NuxtAppOptions) {
+    this.app = app
   }
 
   public async Get() {
     // console.log("[リポジトリ]API実行")
     const uri = '/api' // nuxt.config.tsで設定したbaseUrlに続くURLを指定可能
-    const apiResponse = await this.axios.$get<APIResponse>(uri)
-    // const drilldowns:Drilldown[] = [
-    //   {
-    //     num_entries: 1,
-    //     amount: 1502366,
-    //     cofog1 :{
-    //       "taxonomy": "cofog1",
-    //       "html_url": "",
-    //       "_id": 1,
-    //       "name": "1",
-    //       "label": "レクリエーション・文化活動の支援"
-    //     },
-    //     cofog2: {
-    //       "taxonomy": "cofog2",
-    //       "html_url": "http://openspending.org/yokohama_yosan_percentage/cofog2/05-1",
-    //       "_id": 1,
-    //       "name": "1-1",
-    //       "label": "レクリエーション・スポーツ・サービス"
-    //     },
-    //     cofog3: {
-    //       "taxonomy": "cofog3",
-    //       "html_url": "http://openspending.org/yokohama_yosan_percentage/cofog3/",
-    //       "_id": 1,
-    //       "name": "",
-    //       "label": ""
-    //     },
-    //   },
-    // ]
-    // const summary: Summary = {
-    //   num_drilldowns: 1,
-    //   pagesize: 10000,
-    //   cached: true,
-    //   amount: 1502366,
-    //   pages: 1,
-    //   currency: { amount: 'JPY' },
-    //   num_entries: 1,
-    //   cache_key: '',
-    //   page: 1,
-    // }
-    // const apiResponse: APIResponse = {drilldown: drilldowns, summary}
+    const apiResponse = await this.app.$axios.$get<APIResponse>(uri)
     if (this.isValidAPIResponse(apiResponse)) {
       return apiResponse
     } else {
@@ -92,7 +56,7 @@ export class CofogRepository {
           || item.cofog3._id === undefined
           || item.cofog3.name === undefined
           || item.cofog3.label === undefined) {
-            // drilldownの要素に想定通りでないものがある
+          // drilldownの要素に想定通りでないものがある
           return true
         }
         return false
@@ -123,7 +87,7 @@ export class CofogRepository {
       || json.summary.num_entries === undefined
       || json.summary.cache_key === undefined
       || json.summary.page === undefined) {
-        // summaryの各要素が想定通りでない
+      // summaryの各要素が想定通りでない
       return false
     }
     return true
