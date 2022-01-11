@@ -7,19 +7,25 @@
       </div>
     </div>
     <div id="select-house-type-box" class="row">
-      <div class="col-6 text-end">
+      <div class="col text-center">
+        <house-type-selection
+          selected-type="SINGLE"
+          @selectd-value="selectHouseType"
+        />
+      </div>
+      <!-- <div class="col-6 text-end">
         <button
           type="button"
           :class="
-            (selectedType == 'single' ? 'checked' : 'unchecked') +
+            (selectedType == 'SINGLE' ? 'checked' : 'unchecked') +
             ' btn btn-block'
           "
           data-bs-toggle="button"
-          @click="selectHouseType('single')"
+          @click="selectHouseType('SINGLE')"
         >
           <human-handsdown
             :fill-color="
-              selectedType == 'single'
+              selectedType == 'SINGLE'
                 ? selectedStyle.color
                 : unSelectedStyle.color
             "
@@ -28,7 +34,7 @@
           />
           <p
             class="mb-0"
-            :style="selectedType == 'single' ? selectedStyle : unSelectedStyle"
+            :style="selectedType == 'SINGLE' ? selectedStyle : unSelectedStyle"
           >
             単身世帯
           </p>
@@ -37,13 +43,13 @@
       <div class="col">
         <button
           type="button"
-          :class="(selectedType == 'family' ? 'checked' : 'unchecked') + ' btn'"
+          :class="(selectedType == 'FAMILY' ? 'checked' : 'unchecked') + ' btn'"
           data-bs-toggle="button"
-          @click="selectHouseType('family')"
+          @click="selectHouseType('FAMILY')"
         >
           <human-male-female-child
             :fill-color="
-              selectedType == 'family'
+              selectedType == 'FAMILY'
                 ? selectedStyle.color
                 : unSelectedStyle.color
             "
@@ -52,12 +58,12 @@
           />
           <p
             class="mb-0"
-            :style="selectedType == 'family' ? selectedStyle : unSelectedStyle"
+            :style="selectedType == 'FAMILY' ? selectedStyle : unSelectedStyle"
           >
             扶養あり
           </p>
         </button>
-      </div>
+      </div> -->
     </div>
     <!-- 年収選択 -->
     <div class="row mt-4">
@@ -66,6 +72,7 @@
       </div>
     </div>
     <div class="row mt-4">
+      <!-- <SalarySelector :initial-salary="4000000" /> -->
       <div
         id="display-yearly-income"
         class="col-12 col-lg-3 order-lg-0 order-1"
@@ -205,21 +212,20 @@ import Vue from 'vue'
 import HumanHandsdown from 'vue-material-design-icons/HumanHandsdown.vue'
 import HumanMaleFemaleChild from 'vue-material-design-icons/HumanMaleFemaleChild.vue'
 import DanceBallroom from 'vue-material-design-icons/DanceBallroom.vue'
-import HospitalBox from 'vue-material-design-icons/HospitalBox.vue'
-import TaxItem from './TaxItem.vue'
-import Slider from './slider.vue'
+import SalarySelector from '@/components/molecules/SalarySelector.vue'
+import Slider from '@/components/atoms/slider.vue'
+import HouseTypeSelection from '@/components/molecules/HouseTypeSelection.vue'
 import { TaxApplicationService } from '~/plugins/applicationServices/TaxApplicationService'
 import { Person } from '~/plugins/entities/Person'
 import { Price } from '~/plugins/valueObjects/Price'
 import { HOME_TYPE } from '~/plugins/valueObjects/HomeType'
 import { DailyBread } from '~/plugins/dataTransferObjects/dailyBreadData'
-import { TaxService } from '~/plugins/domainServices/TaxService'
 
 export type DataType = {
   /**
    * 単身世帯 or 扶養あり
    */
-  selectedType: 'single' | 'family'
+  selectedType: 'SINGLE' | 'FAMILY'
   /**
    * 年収
    */
@@ -253,12 +259,10 @@ export type DataType = {
 
 export default Vue.extend({
   components: {
-    HumanHandsdown,
-    HumanMaleFemaleChild,
+    SalarySelector,
     DanceBallroom,
-    HospitalBox,
-    TaxItem,
     Slider,
+    HouseTypeSelection,
   },
   filters: {
     /**
@@ -300,7 +304,7 @@ export default Vue.extend({
 
   data(): DataType {
     return {
-      selectedType: 'single',
+      selectedType: 'SINGLE',
       yearlyIncome: 4000000,
       yearlyTax: 10000,
       recreationTax: 1110.11,
@@ -385,10 +389,10 @@ export default Vue.extend({
   methods: {
     /**
      * 世帯種別を選択する
-     * @param {String} 世帯種別(single / family)
+     * @param {String} 世帯種別(SINGLE / FAMILY)
      */
     selectHouseType(type: string) {
-      if (type !== 'single' && type !== 'family') {
+      if (type !== 'SINGLE' && type !== 'FAMILY') {
         throw new Error('世帯種別が異常:' + type)
       }
       this.selectedType = type
@@ -399,7 +403,7 @@ export default Vue.extend({
       const person = new Person({
         salary: Price.create(this.yearlyIncome),
         homeType:
-          this.selectedType === 'single' ? HOME_TYPE.SINGLE : HOME_TYPE.FAMILY,
+          this.selectedType === 'SINGLE' ? HOME_TYPE.SINGLE : HOME_TYPE.FAMILY,
       })
       const tax = appService.GetDailyBreadData(person)
       this.yearlyTax = tax.amount
