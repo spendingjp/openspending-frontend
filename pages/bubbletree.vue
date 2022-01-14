@@ -1,10 +1,15 @@
 <template>
-  <div id="test-title">test</div>
+  <div class="contaneir">
+    <div class="row">
+      <div id="test-title">test</div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { gsap } from 'gsap'
+import '@mszu/pixi-ssr-shim' // pixi.jsのself is not definedエラー対策
+import * as PIXI from 'pixi.js'
 
 export default Vue.extend({
   head() {
@@ -13,7 +18,18 @@ export default Vue.extend({
     }
   },
   mounted() {
-    gsap.to('#test-title', { x: 500, duration: 3 })
+    const target = document.getElementById('test-title')
+    const app = new PIXI.Application({})
+
+    if (target !== null) {
+      target.appendChild(app.view)
+      app.renderer.resize(target.clientWidth, target.clientHeight)
+    }
+
+    const obj = new PIXI.Graphics()
+    obj.beginFill(0xff0000)
+    obj.drawRect(0, 0, 200, 100)
+    app.stage.addChild(obj)
   },
 })
 </script>

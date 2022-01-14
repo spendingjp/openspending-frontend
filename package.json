@@ -12,10 +12,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@mszu/pixi-ssr-shim": "^1.0.1",
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.15.1",
     "gsap": "^3.9.1",
-    "nuxt": "^2.15.8"
+    "nuxt": "^2.15.8",
+    "pixi.js": "^6.2.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
