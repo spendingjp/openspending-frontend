@@ -636,8 +636,12 @@ export default Vue.extend({
     //           .style('visibility', 'visible')
     //       })
 
-    var dataset = {
+    const dataset = {
       apples: [53245, 28479, 19697, 24037, 40245],
+    }
+
+    const dataset2 = {
+      apples: [13245, 58479, 29697, 74037, 20245],
     }
 
     const svg = d3.select('#sample')
@@ -706,34 +710,43 @@ export default Vue.extend({
         //   .attr('font-size', '1.3em')
       })
 
+    const g2 = svg
+      .append('g')
+      .attr(
+        'transform',
+        'translate(' + viewBoxWidth / 2 + ',' + viewBoxHeight / 2 + ')'
+      )
+
     let isVisible = true
     g.selectAll('path').on('click', (data, i, element) => {
       if (isVisible) {
         console.log('OK')
         g.transition().duration(500).attr('opacity', 0)
-        d3.arc()
-          .innerRadius(radius / 2 - 20)
-          .outerRadius(radius / 2)
+        const arc2 = d3
+          .arc()
+          .innerRadius(radius - 20)
+          .outerRadius(radius)
           .cornerRadius(10) // 先端丸め
           .padAngle(Math.PI * 0.008) // 隙間
 
-        const g2 = svg
-          .append('g')
-          .attr(
-            'transform',
-            'translate(' + viewBoxWidth / 2 + ',' + viewBoxHeight / 2 + ')'
-          )
-
         g2.selectAll('path')
-          .data(pie(dataset.apples))
+          .data(pie(dataset2.apples))
           .enter()
           .append('path')
           .attr('fill', 'red')
+          .attr('d', arc2)
+
+        g2.selectAll('path').on('click', (data, i, element) => {
+          console.log('赤グラフクリック')
+          g2.transition().duration(500).attr('opacity', 0)
+          g.transition().duration(500).attr('opacity', 1)
+        })
       } else {
         g.transition().duration(500).attr('opacity', 1)
       }
       isVisible = !isVisible
     })
+
     g.selectAll('path').on('mouseover', (data, i, element) => {
       console.log('hover')
     })
