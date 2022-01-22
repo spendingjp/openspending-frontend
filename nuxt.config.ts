@@ -28,7 +28,7 @@ const config: NuxtConfig = {
     ],
     script: [
       { src: '/lib/modernizr-2.5.3.min.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'}
+      { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' }
     ],
   },
 
@@ -57,7 +57,9 @@ const config: NuxtConfig = {
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    standalone: true
+  },
 }
 
 export default config
