@@ -1,8 +1,8 @@
 <template>
-  <div class="contaneir">
-    <div class="row">
+  <div class="container">
+    <div class="row justify-content-center">
       <div class="col-12 col-md-6">
-        <svg id="sample" viewBox="0 0 600 600" />
+        <svg id="sample" viewBox="0 0 500 500" />
       </div>
     </div>
   </div>
@@ -10,17 +10,42 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import '@mszu/pixi-ssr-shim'
-import * as d3 from 'd3' // pixi.jsのself is not definedエラー対策
-import * as PIXI from 'pixi.js'
-import { LINE_CAP } from 'pixi.js'
-import func from '~/vue-temp/vue-editor-bridge'
-// import * as temperature from '/temprature.csv'
+import * as d3 from 'd3'
 
 export default Vue.extend({
+  data() {
+    return {
+      viewBoxWidth: 0,
+      viewBoxHeight: 0,
+      circlePackData: {
+        name: 'A',
+        children: [
+          { name: 'B', value: 55 },
+          {
+            name: 'C',
+            children: [
+              { name: 'D', value: 30 },
+              { name: 'E', value: 15 },
+              { name: 'F', value: 10 },
+            ],
+          },
+          { name: 'G', value: 15 },
+          {
+            name: 'H',
+            children: [
+              { name: 'I', value: 20 },
+              { name: 'J', value: 10 },
+            ],
+          },
+          { name: 'K', value: 10 },
+        ],
+      },
+      isZoomed: false,
+    }
+  },
   head() {
     return {
-      title: '使途予算別',
+      title: '使途別予算額',
     }
   },
   mounted() {
@@ -636,17 +661,15 @@ export default Vue.extend({
     //           .style('visibility', 'visible')
     //       })
 
-    const dataset = {
-      apples: [53245, 28479, 19697, 24037, 40245],
-    }
+    // const dataset = {
+    //   apples: [53245, 28479, 19697, 24037, 40245],
+    // }
 
-    const dataset2 = {
-      apples: [13245, 58479, 29697, 74037, 20245],
-    }
+    // const dataset2 = {
+    //   apples: [13245, 58479, 29697, 74037, 20245],
+    // }
 
     const svg = d3.select('#sample')
-
-    // width = d3.select('#test-title').node().offsetWidth
 
     const viewBox = svg.attr('viewBox')
     const regexViewBox = /\d+ \d+ (\d+) (\d+)/
@@ -660,96 +683,122 @@ export default Vue.extend({
     const [, viewBoxWidth, viewBoxHeight] = matchedViewBox.map(
       (item) => Number.parseInt(item, 10) // 基数に10を指定。誤変換防止？
     )
+    this.viewBoxWidth = viewBoxWidth
+    this.viewBoxHeight = viewBoxHeight
 
-    const g = svg
-      .append('g')
-      .attr(
-        'transform',
-        'translate(' + viewBoxWidth / 2 + ',' + viewBoxHeight / 2 + ')'
-      )
+    // const totalDoughnutChart = svg
+    //   .append('g')
+    //   .attr(
+    //     'transform',
+    //     'translate(' + viewBoxWidth / 2 + ',' + viewBoxHeight / 2 + ')'
+    //   )
 
-    const radius = Math.min(viewBoxWidth, viewBoxHeight) / 2.5
+    // const radius = Math.min(viewBoxWidth, viewBoxHeight) / 2.5
 
-    const pie = d3.pie().sort(null)
+    // const pie = d3.pie().sort(null)
 
-    const arc = d3
-      .arc()
-      .innerRadius(radius - 20)
-      .outerRadius(radius)
-      .cornerRadius(5) // 先端丸め
-      .padAngle(Math.PI * 0.008) // 隙間
+    // const arc = d3
+    //   .arc()
+    //   .innerRadius(radius - 50)
+    //   .outerRadius(radius)
+    //   .cornerRadius(5) // 先端丸め
+    //   .padAngle(Math.PI * 0.008) // 隙間
 
-    const color = (i: number) => {
-      const colors = ['#64B5F6', '#9575CD', '#7986CB', '#4DB6AC', '#FFB74D']
-      return colors[i % 5]
-    }
+    // const color = (i: number) => {
+    //   const colors = ['#64B5F6', '#9575CD', '#7986CB', '#4DB6AC', '#FFB74D']
+    //   return colors[i % 5]
+    // }
 
-    g.selectAll('path')
-      .data(pie(dataset.apples))
-      .enter()
-      .append('path')
-      .attr('fill', function (d, i) {
-        return color(i)
-      })
-      // .attr('fill', 'red')
-      .transition()
-      .duration(2000) // アニメーション時間[ms]
-      .attrTween('d', function (d) {
-        const i = d3.interpolate({ startAngle: 0, endAngle: 0 }, d)
-        return function (t) {
-          d.startAngle = i(t).startAngle
-          d.endAngle = i(t).endAngle
-          return arc(d)
-        }
-      })
-      .on('end', () => {
-        // g.append('text')
-        //   .text('安全・安心の確保')
-        //   .attr('x', 100)
-        //   .attr('width', 100)
-        //   .attr('font-size', '1.3em')
-      })
+    // totalDoughnutChart
+    //   .selectAll('path')
+    //   .data(pie(dataset.apples))
+    //   .enter()
+    //   .append('path')
+    //   .attr('fill', function (d, i) {
+    //     return color(i)
+    //   })
+    //   // .attr('fill', 'red')
+    //   .transition()
+    //   .duration(2000) // アニメーション時間[ms]
+    //   .attrTween('d', function (d: any) {
+    //     const i = d3.interpolate({ startAngle: 0, endAngle: 0 }, d)
+    //     return function (t) {
+    //       d.startAngle = i(t).startAngle
+    //       d.endAngle = i(t).endAngle
+    //       return arc(d)
+    //     }
+    //   })
+    //   .on('end', () => {
+    //     // g.append('text')
+    //     //   .text('安全・安心の確保')
+    //     //   .attr('x', 100)
+    //     //   .attr('width', 100)
+    //     //   .attr('font-size', '1.3em')
+    //   })
 
-    const g2 = svg
-      .append('g')
-      .attr(
-        'transform',
-        'translate(' + viewBoxWidth / 2 + ',' + viewBoxHeight / 2 + ')'
-      )
+    // totalDoughnutChart
+    //   .append('foreignObject')
+    //   .attr('width', 100)
+    //   .attr('height', 300)
+    //   // .attr('transform', 'translate(50,150)')
+    //   .append('xhtml:div')
+    //   .style('font-size', '1.5em')
+    //   .html('<p>885.3億</p>')
 
-    let isVisible = true
-    g.selectAll('path').on('click', (data, i, element) => {
-      if (isVisible) {
-        console.log('OK')
-        g.transition().duration(500).attr('opacity', 0)
-        const arc2 = d3
-          .arc()
-          .innerRadius(radius - 20)
-          .outerRadius(radius)
-          .cornerRadius(10) // 先端丸め
-          .padAngle(Math.PI * 0.008) // 隙間
+    // // totalDoughnutChart
+    // //   .append('foreignObject')
+    // //   .attr('width', 100)
+    // //   .attr('height', 300)
+    // //   .attr('x', 100)
+    // //   .attr('y', 100)
+    // //   .append('xhtml:div')
+    // //   .style('font-size', '1.5em')
+    // //   .style('color', '#FFFFFF')
+    // //   .html('<p>88億</p>')
 
-        g2.selectAll('path')
-          .data(pie(dataset2.apples))
-          .enter()
-          .append('path')
-          .attr('fill', 'red')
-          .attr('d', arc2)
+    // const childDoughnutChart = svg
+    //   .append('g')
+    //   .attr(
+    //     'transform',
+    //     'translate(' + viewBoxWidth / 2 + ',' + viewBoxHeight / 2 + ')'
+    //   )
 
-        g2.selectAll('path').on('click', (data, i, element) => {
-          console.log('赤グラフクリック')
-          g2.transition().duration(500).attr('opacity', 0)
-          g.transition().duration(500).attr('opacity', 1)
-        })
-      } else {
-        g.transition().duration(500).attr('opacity', 1)
-      }
-      isVisible = !isVisible
-    })
+    // const arc2: any = d3
+    //   .arc()
+    //   .innerRadius(radius - 30 - 20)
+    //   .outerRadius(radius - 30)
+    //   .cornerRadius(10) // 先端丸め
+    //   .padAngle(Math.PI * 0.008) // 隙間
 
-    g.selectAll('path').on('mouseover', (data, i, element) => {
-      console.log('hover')
-    })
+    // childDoughnutChart
+    //   .selectAll('path')
+
+    //   .data(pie(dataset2.apples))
+    //   .enter()
+    //   .append('path')
+    //   .attr('fill', function (_, i) {
+    //     return color(i)
+    //   })
+    //   .attr('d', arc2)
+    //   .attr('display', 'none') // 初期非表示
+
+    // // 子グラフクリック
+    // childDoughnutChart.selectAll('path').on('click', () => {
+    //   childDoughnutChart.selectAll('path').attr('display', 'none')
+    //   totalDoughnutChart.selectAll('path').attr('display', 'inline')
+    //   totalDoughnutChart.selectAll('foreignObject').attr('display', 'inline')
+    // })
+
+    // // 親グラフクリック
+    // totalDoughnutChart.selectAll('path').on('click', () => {
+    //   childDoughnutChart.selectAll('path').attr('display', 'inline')
+    //   totalDoughnutChart.selectAll('path').attr('display', 'none')
+    //   totalDoughnutChart.selectAll('foreignObject').attr('display', 'none')
+    // })
+
+    // totalDoughnutChart.selectAll('path').on('mouseover', () => {
+    //   console.log('hover')
+    // })
 
     // d3.select('.pie').transition().duration(1000).attr('width', 250)
     // d3.select('.pie')
@@ -759,8 +808,213 @@ export default Vue.extend({
     //     const i = d3.interpolate(0, 250)
     //     return (t) => i(t)
     //   })
+    // const dataset = [
+    //   [50, 200, 30],
+    //   [200, 50, 40],
+    //   [100, 50, 25],
+    //   [50, 100, 10],
+    //   [50, 100, 20],
+    //   [50, 100, 5],
+    // ]
+
+    // const circleXY = (i: number) => {
+    //   return {
+    //     x:
+    //       150 *
+    //         Math.cos(((Math.PI * 2) / dataset.length) * (i + 1) - Math.PI / 2) +
+    //       200,
+    //     y:
+    //       150 *
+    //         Math.sin(((Math.PI * 2) / dataset.length) * (i + 1) - Math.PI / 2) +
+    //       200,
+    //   }
+    // }
+
+    // svg
+    //   .append('g')
+    //   .attr(
+    //     'transform',
+    //     'translate(' + viewBoxWidth / 2 + ',' + viewBoxHeight / 2 + ')'
+    //   )
+
+    // svg
+    //   .selectAll('circle')
+    //   .data(dataset)
+    //   .enter()
+    //   .append('circle')
+    //   .attr('cx', (_, i) => {
+    //     return circleXY(i).x
+    //   })
+    //   .attr('cy', (_, i) => circleXY(i).y)
+    //   .attr('r', (d) => d[2])
+    //   .attr('fill', (_, i) => color(i))
+
+    // svg
+    //   .append('text')
+    //   .text('安全・安心の確保')
+    //   .attr('x', 200)
+    //   .attr('y', 100)
+    //   .attr('width', 100)
+    //   .attr('font-size', `${viewBoxWidth / 30}px`)
+
+    // =======================================================================================
+    // サークルパッキング
+    // =======================================================================================
+    // ------------------------------------------------------------------------
+    //  大分類の円
+    // ------------------------------------------------------------------------
+    const parent = this.circlePackData.children.map((item) => ({
+      name: item.name,
+      value: item.value !== undefined ? item.value : 20,
+    }))
+
+    const root = d3.hierarchy({ name: 'test', children: parent }) // 階層データに変換(children要素は必須)
+    root.sum((d) => d.value) // 子ノードの合計を計算
+
+    const pack = d3
+      .pack()
+      .size([this.viewBoxWidth, this.viewBoxHeight])
+      .padding(5)
+    pack(root)
+
+    const color = ['#F06292', '#7986CB', '#26A69A', '#ef9a9a', '#80CBC4']
+    const node = svg
+      .selectAll('.parents')
+      .data(root.descendants())
+      .enter()
+      .append('g')
+      .attr('transform', (d) => `translate(${d.x},${d.y})`)
+      .attr('class', 'parents')
+      .append('circle')
+      .attr('r', (d) => d.r)
+      .attr('fill', (d, i) => (d.children ? 'white' : color[i % 5]))
+      .attr('data-name', (d) => d.data.name)
+
+    svg.selectAll('circle').on('click', (event, i) => {
+      if (!this.isZoomed) {
+        this.level1CircleClickHandler(event)
+      }
+    })
+
+    // ------------------------------------------------------------------------
+    //  小分類⇒大分類
+    // ------------------------------------------------------------------------
+    svg.on('click', () => {
+      console.log('isZoomed', this.isZoomed)
+      if (this.isZoomed) {
+        console.log(this.viewBoxWidth / 2, this.viewBoxHeight / 2)
+        svg.selectAll('g.zoomed').remove()
+        const zoomed = ({ transform }) => {
+          node.attr('transform', transform)
+        }
+        const zoom = d3.zoom().scaleExtent([1, 40]).on('zoom', zoomed)
+        svg
+          .transition()
+          .duration(500)
+          .call(
+            zoom.transform,
+            d3.zoomIdentity
+              // .translate(this.viewBoxWidth / 2, this.viewBoxHeight / 2)
+              .scale(1)
+          )
+          .on('end', () => {
+            this.isZoomed = false
+          })
+        node.attr('display', 'inline').attr('opacity', '1')
+      }
+    })
+    // })
   },
-  methods: {},
+  methods: {
+    /**
+     * 大分類の円クリックハンドラ
+     */
+    level1CircleClickHandler(event: any) {
+      console.log(event)
+      const svg = d3.select('#sample')
+      const node = svg.selectAll('circle')
+
+      const zoomed = ({ transform }) => {
+        node.attr('transform', transform)
+      }
+      const zoom = d3.zoom().scaleExtent([1, 40]).on('zoom', zoomed)
+
+      svg
+        .transition()
+        .duration(500)
+        .call(
+          zoom.transform,
+          d3.zoomIdentity
+            .translate(0, 0)
+            // .translate(this.viewBoxWidth / 2, this.viewBoxHeight / 2)
+            .scale(5) // 拡大率（対象の円を画面いっぱいにする）
+            .translate(-10, -10)
+        )
+        .on('end', () => {
+          node.attr('opacity', '0')
+          this.showChildrenCircles(event)
+        })
+    },
+    /**
+     * 子分類の円を表示する
+     */
+    showChildrenCircles(event: any) {
+      // 子分類データを取得
+      const childData = this.circlePackData.children.find(
+        (item) => item.name === event.target.attributes['data-name'].value
+      )
+      const root = d3.hierarchy(childData)
+      const circlePackDataR = root
+        .sum((d) => (d !== undefined && d.value !== undefined ? d.value : 0))
+        .children?.map((node) => ({ r: node.value }))
+      // console.log(circlePackDataR)
+      // const root3 = svg
+      //   .append('g')
+      //   .attr('class', 'zoomed')
+      //   .attr(
+      //     'transform',
+      //     `translate(${viewBoxWidth / 2},${viewBoxHeight / 2})`
+      //   )
+      // if (circlePackDataR !== undefined) {
+      //   const packCircles = d3.packSiblings(circlePackDataR)
+      //   packCircles.map((d) => {
+      //     root3
+      //       .append('circle')
+      //       .attr('cx', d.x)
+      //       .attr('cy', d.y)
+      //       .attr('r', d.r)
+      //       .attr('fill', '#A1887F')
+      //   })
+      // }
+      // root.sum((d) => (d !== undefined ? d.value : 0))
+
+      // サークルパッキングで表示
+      const pack = d3
+        .pack()
+        .size([this.viewBoxWidth, this.viewBoxHeight])
+        .padding(3)
+      if (circlePackDataR !== undefined) {
+        pack(root)
+        const node = d3
+          .select('svg')
+          .selectAll('g.zoomed')
+          .data(root.descendants())
+          .enter()
+          .append('g')
+          .attr('transform', (d) => `translate(${d.x},${d.y})`)
+          .attr('class', 'zoomed')
+
+        const colors = ['#FFE082', '#C5E1A5', '#80CBC4']
+        node
+          .append('circle')
+          .attr('r', (d) => d.r)
+          .attr('fill', (d, i) =>
+            d.children ? 'rgba(129, 212, 250, 0.3)' : colors[i % 3]
+          )
+        this.isZoomed = true
+      }
+    },
+  },
 })
 </script>
 
