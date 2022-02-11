@@ -1,21 +1,23 @@
 import { NuxtAppOptions } from '@nuxt/types/app'
-import { APIResponse } from '@/plugins/api/APIResponse'
+import { COFOGAPIResponse } from '../api/COFOGAPIResponse'
 
+/**
+ * APIリポジトリ
+ */
 export class CofogRepository {
-  // private readonly axios: NuxtAxiosInstance
-  // constructor($axios: NuxtAxiosInstance) {
-  //   this.axios = $axios
-  // }
-
   private app: NuxtAppOptions
+
   constructor(app: NuxtAppOptions) {
     this.app = app
   }
 
-  public async Get() {
-    // console.log("[リポジトリ]API実行")
+  /**
+   * APIからデータを取得する
+   * @returns オブジェクト変換結果
+   */
+  public async Get(): Promise<COFOGAPIResponse> {
     const uri = '/api' // nuxt.config.tsで設定したbaseUrlに続くURLを指定可能
-    const apiResponse = await this.app.$axios.$get<APIResponse>(uri)
+    const apiResponse = await this.app.$axios.$get<COFOGAPIResponse>(uri)
     if (this.isValidAPIResponse(apiResponse)) {
       return apiResponse
     } else {
@@ -28,67 +30,65 @@ export class CofogRepository {
    * @param json APIレスポンス
    * @returns 想定通りならtrue, 異常ならfalse
    */
-  private isValidAPIResponse(json: any): json is APIResponse {
-    if (json.drilldown === undefined || json.summary === undefined) {
+  private isValidAPIResponse(json: any): json is COFOGAPIResponse {
+    // キーが存在するか
+    if (
+      json.year === undefined ||
+      json.government === undefined ||
+      json.budgets === undefined
+    ) {
       return false
     }
 
-    const drilldown = json.drilldown
-    if (Array.isArray(drilldown)) {
-      let isInvalidDrilldown = drilldown.some(item => {
-        if (item.num_entries === undefined
-          || item.amount === undefined
-          || item.cofog1 === undefined
-          || item.cofog1.taxonomy === undefined
-          || item.cofog1.html_url === undefined
-          || item.cofog1._id === undefined
-          || item.cofog1.name === undefined
-          || item.cofog1.label === undefined
-          || item.cofog2 === undefined
-          || item.cofog2.taxonomy === undefined
-          || item.cofog2.html_url === undefined
-          || item.cofog2._id === undefined
-          || item.cofog2.name === undefined
-          || item.cofog2.label === undefined
-          || item.cofog3 === undefined
-          || item.cofog3.taxonomy === undefined
-          || item.cofog3.html_url === undefined
-          || item.cofog3._id === undefined
-          || item.cofog3.name === undefined
-          || item.cofog3.label === undefined) {
-          // drilldownの要素に想定通りでないものがある
+    const budgets = json.budgets
+    if (Array.isArray(budgets)) {
+      let isInvalidBudgets = budgets.some((item) => {
+        if (
+          item.id === undefined ||
+          item.name === undefined ||
+          item.code === undefined ||
+          item.children === undefined
+        ) {
+          // budgetsの要素に想定通りでないものがある
           return true
         }
-        return false
+        return this.isValidBudget(item.children)
       })
 
-      if (drilldown.length === 0) {
-
+      if (budgets.length === 0) {
         // 要素数0の場合各要素のチェックスはスキップされるが、異常としてマーク
-        isInvalidDrilldown = true
+        isInvalidBudgets = true
       }
 
-      if (isInvalidDrilldown) {
-        // drildownの各要素が想定通りでない
-        return false;
+      if (isInvalidBudgets) {
+        // budgetsの各要素が想定通りでない
+        return false
       }
     } else {
-      // drildownが配列でない
+      // budgetsが配列でない
       return false
     }
 
-    if (json.summary.num_drilldowns === undefined
-      || json.summary.pagesize === undefined
-      || json.summary.cached === undefined
-      || json.summary.amount === undefined
-      || json.summary.pages === undefined
-      || json.summary.currency === undefined
-      || json.summary.currency.amount === undefined
-      || json.summary.num_entries === undefined
-      || json.summary.cache_key === undefined
-      || json.summary.page === undefined) {
-      // summaryの各要素が想定通りでない
+    return true
+  }
+
+  /**
+   * budgetsの各要素が想定通りかを判断する
+   * @param json budgets/children要素
+   * @returns 想定通りならtrue, 異常ならfalse
+   */
+  private isValidBudget(json: any): boolean {
+    if (
+      json.id === undefined ||
+      json.name === undefined ||
+      json.code === undefined ||
+      json.amount === undefined ||
+      json.children === undefined
+    ) {
       return false
+    }
+    if (Array.isArray(json.children)) {
+      return this.isValidBudget(json.children)
     }
     return true
   }

@@ -2,8 +2,13 @@ import { NuxtAppOptions } from '@nuxt/types/app'
 import { Cofog } from '../valueObjects/Cofog'
 import { CofogCode } from '../valueObjects/CofogCode'
 import { Price } from '../valueObjects/Price'
-import { CofogData, TaxChild, TaxItem } from '../dataTransferObjects/cofogData'
-import { APIResponse } from '../api/APIResponse'
+import {
+  CofogData,
+  TaxItemLevel3,
+  TaxItemLevel1,
+} from '../dataTransferObjects/cofogData'
+import { COFOGAPIResponse } from '../api/COFOGAPIResponse'
+import { Budget } from '../api/Budget'
 
 /**
  * COFOG APIサービス
@@ -21,59 +26,54 @@ export class COFOGAPIService {
    */
   public async GetData(): Promise<CofogData> {
     try {
-      const apiResponse: APIResponse = await this.app
+      const apiResponse: COFOGAPIResponse = await this.app
         .$repositories('cofog')
         .Get()
 
-      const level1Nums: number[] = []
-
-      const tempTaxList: TaxChild[] = apiResponse.drilldown.map((item) => {
-        if (!level1Nums.find(level => level === item.cofog1._id)) {
-          level1Nums.push(item.cofog1._id)
-        }
-
-        return {
-          amount: Price.create(item.amount),
-          cofog: new Cofog(
-            CofogCode.create({
-              level1: item.cofog1._id,
-              level2: item.cofog2._id,
-              level3: item.cofog3._id,
-            }),
-            item.cofog2.label
-          ),
-        }
-      })
-
-      const taxList: TaxItem[] = level1Nums.map(level => {
-        const sameLevelItems = tempTaxList.filter(item => item.cofog.Code.Level1 === level)
-        const amount = sameLevelItems.reduce((accumulator, currentValue) => {
-          return accumulator + currentValue.amount.value
-        }, 0)
-        let cofogLevel1Name = apiResponse.drilldown.find(item => item.cofog1._id === level)?.cofog1.label
-        if (cofogLevel1Name === undefined) {
-          cofogLevel1Name = ''
-        }
-
-        return {
-          cofog: new Cofog(
-            CofogCode.create({
-              level1: level,
-              level2: null,
-              level3: null
-            }), cofogLevel1Name),
-          children: sameLevelItems,
-          amount: Price.create(amount)
-        }
-      })
+      const taxList: TaxItemLevel1[] = apiResponse.budgets.map((item) => ({
+        ...this.ConvertBudget2TaxItem(item),
+        children:
+          item.children !== null
+            ? item.children.map((level2item) => ({
+                ...this.ConvertBudget2TaxItem(level2item),
+                children:
+                  level2item.children !== null
+                    ? level2item.children.map((level2item) =>
+                        this.ConvertBudget2TaxItem(level2item)
+                      )
+                    : [],
+              }))
+            : [],
+      }))
 
       return {
-        amount: Price.create(apiResponse.summary.amount),
+        amount: Price.create(apiResponse.totalAmount),
         taxList,
+        year: apiResponse.year,
+        governmentName: apiResponse.government.name,
       }
     } catch (e) {
-      console.error(e)
-      throw new Error('error')
+      throw new Error('APIレスポンスをオブジェクトに変換失敗')
+    }
+  }
+
+  /**
+   * 予算データを税金オブジェクトに変換する
+   * @param budget APIレスポンスの予算データ
+   * @returns 税金オブジェクト
+   */
+  private ConvertBudget2TaxItem(budget: Budget): TaxItemLevel3 {
+    const cofogLevelNums = budget.code.split('.')
+    return {
+      amount: Price.create(budget.amount),
+      cofog: new Cofog(
+        CofogCode.create({
+          level1: Number(cofogLevelNums[0]),
+          level2: cofogLevelNums.length >= 2 ? Number(cofogLevelNums[1]) : null,
+          level3: cofogLevelNums.length >= 3 ? Number(cofogLevelNums[2]) : null,
+        }),
+        budget.name
+      ),
     }
   }
 }

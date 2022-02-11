@@ -1,12 +1,11 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import { COFOGAPIService } from '~/plugins/applicationServices/COFOGAPIService'
-import { Drilldown as DrilldownAPI } from '~/plugins/api/Drilldown'
-import { Summary as SummaryAPI } from '~/plugins/api/Summary'
-import { APIResponse } from '~/plugins/api/APIResponse'
 import { CofogData } from '~/plugins/dataTransferObjects/cofogData'
 import { Price } from '~/plugins/valueObjects/Price'
 import { Cofog } from '~/plugins/valueObjects/Cofog'
 import { CofogCode } from '~/plugins/valueObjects/CofogCode'
+import { Budget } from '~/plugins/api/Budget'
+import { COFOGAPIResponse } from '~/plugins/api/COFOGAPIResponse'
 
 const localVue = createLocalVue()
 
@@ -15,6 +14,9 @@ const TestComponent = {
   template: '<div />',
 }
 
+/* ============================================================
+ *  APIレスポンスをオブジェクトに変換するテスト
+ * ============================================================ */
 describe('APIService', () => {
   it('正常(1レコード)', async () => {
     const wrapper = mount(TestComponent, {
@@ -27,25 +29,40 @@ describe('APIService', () => {
     })
 
     const result: CofogData = {
-      amount: Price.create(1502366),
+      amount: Price.create(89713000000.0),
+      year: 2021,
+      governmentName: 'つくば市',
       taxList: [
         {
           cofog: new Cofog(
             CofogCode.create({ level1: 1, level2: null, level3: null }),
-            'レクリエーション・文化活動の支援'
+            '公共サービス全般'
           ),
-          amount: Price.create(1502366),
+          amount: Price.create(27738407000.0),
           children: [
             {
-              amount: Price.create(1502366),
+              amount: Price.create(25879644000.0),
               cofog: new Cofog(
                 CofogCode.create({
                   level1: 1,
                   level2: 1,
-                  level3: 1,
+                  level3: null,
                 }),
-                'レクリエーション・スポーツ・サービス'
+                '行政・立法機関、財務・財政、渉外'
               ),
+              children: [
+                {
+                  amount: Price.create(18834640000.0),
+                  cofog: new Cofog(
+                    CofogCode.create({
+                      level1: 1,
+                      level2: 1,
+                      level3: 1,
+                    }),
+                    '行政・立法機関(CS)'
+                  ),
+                },
+              ],
             },
           ],
         },
@@ -67,56 +84,84 @@ describe('APIService', () => {
     })
 
     const result: CofogData = {
-      amount: Price.create(2766027),
+      amount: Price.create(89713000000.0),
+      year: 2021,
+      governmentName: 'つくば市',
       taxList: [
         {
           cofog: new Cofog(
             CofogCode.create({ level1: 1, level2: null, level3: null }),
-            'レクリエーション・文化活動の支援'
+            '公共サービス全般'
           ),
-          amount: Price.create(2238741),
+          amount: Price.create(27738407000.0),
           children: [
             {
-              amount: Price.create(1502366),
+              amount: Price.create(25879644000.0),
               cofog: new Cofog(
                 CofogCode.create({
                   level1: 1,
                   level2: 1,
-                  level3: 1,
+                  level3: null,
                 }),
-                'レクリエーション・スポーツ・サービス'
+                '行政・立法機関、財務・財政、渉外'
               ),
-            },
-            {
-              amount: Price.create(736375),
-              cofog: new Cofog(
-                CofogCode.create({
-                  level1: 1,
-                  level2: 2,
-                  level3: 1,
-                }),
-                'レクリエーション・文化関連政策'
-              ),
+              children: [
+                {
+                  amount: Price.create(18834640000.0),
+                  cofog: new Cofog(
+                    CofogCode.create({
+                      level1: 1,
+                      level2: 1,
+                      level3: 1,
+                    }),
+                    '行政・立法機関(CS)'
+                  ),
+                },
+                {
+                  amount: Price.create(7038735000.0),
+                  cofog: new Cofog(
+                    CofogCode.create({
+                      level1: 1,
+                      level2: 1,
+                      level3: 2,
+                    }),
+                    '財務・会計(CS)'
+                  ),
+                },
+              ],
             },
           ],
         },
         {
           cofog: new Cofog(
-            CofogCode.create({ level1: 2, level2: null, level3: null }),
-            '安全・安心の確保'
+            CofogCode.create({ level1: 5, level2: null, level3: null }),
+            '環境保護'
           ),
-          amount: Price.create(527286),
+          amount: Price.create(4908950000.0),
           children: [
             {
-              amount: Price.create(527286),
+              amount: Price.create(2393312000.0),
               cofog: new Cofog(
                 CofogCode.create({
-                  level1: 2,
+                  level1: 5,
                   level2: 1,
-                  level3: 1,
+                  level3: null,
                 }),
-                '危機管理'
+                '廃棄物処理'
               ),
+              children: [
+                {
+                  amount: Price.create(2393312000.0),
+                  cofog: new Cofog(
+                    CofogCode.create({
+                      level1: 5,
+                      level2: 1,
+                      level3: 0,
+                    }),
+                    '廃棄物管理(CS)'
+                  ),
+                },
+              ],
             },
           ],
         },
@@ -131,141 +176,127 @@ describe('APIService', () => {
 /* ------------------------------------------------------
  * テストデータ（レコード）
  * ------------------------------------------------------ */
-const drilldowns1Record: DrilldownAPI[] = [
+const budgets1Record: Budget[] = [
   {
-    num_entries: 1,
-    amount: 1502366,
-    cofog1: {
-      taxonomy: 'cofog1',
-      html_url: '',
-      _id: 1,
-      name: '1',
-      label: 'レクリエーション・文化活動の支援',
-    },
-    cofog2: {
-      taxonomy: 'cofog2',
-      html_url: 'http://openspending.org/yokohama_yosan_percentage/cofog2/05-1',
-      _id: 1,
-      name: '1-1',
-      label: 'レクリエーション・スポーツ・サービス',
-    },
-    cofog3: {
-      taxonomy: 'cofog3',
-      html_url: 'http://openspending.org/yokohama_yosan_percentage/cofog3/',
-      _id: 1,
-      name: '',
-      label: '',
-    },
+    id: 'bQ8xKBPRoVZLxauxQMJHtx',
+    name: '公共サービス全般',
+    code: '1',
+    amount: 27738407000.0,
+    children: [
+      {
+        id: 'PCgTVjG456QN6YYah7yppH',
+        name: '行政・立法機関、財務・財政、渉外',
+        code: '1.1',
+        amount: 25879644000.0,
+        children: [
+          {
+            id: 'knPerCJWEScxFachLNig4u',
+            name: '行政・立法機関(CS)',
+            code: '1.1.1',
+            amount: 18834640000.0,
+            children: null,
+          },
+        ],
+      },
+    ],
   },
 ]
-const summary1Record: SummaryAPI = {
-  num_drilldowns: 1,
-  pagesize: 10000,
-  cached: true,
-  amount: 1502366,
-  pages: 1,
-  currency: { amount: 'JPY' },
-  num_entries: 1,
-  cache_key: '',
-  page: 1,
-}
-const response: APIResponse = {
-  drilldown: drilldowns1Record,
-  summary: summary1Record,
+const response: COFOGAPIResponse = {
+  id: 'CfW8FPjJmb4aaNLRB2ZQP2',
+  name: 'つくば市COFOG2021',
+  subtitle: '',
+  slug: 'tsukuba-shi-cofog2021',
+  year: 2021,
+  createdAt: '2022-02-04T15:48:00.901211Z',
+  updatedAt: '2022-02-04T15:48:00.902603Z',
+  government: {
+    id: 'NUXQj6smbHytL3radZuMQe',
+    name: 'つくば市',
+    slug: 'tsukuba-shi',
+    latitude: 36.0825081,
+    longitude: 140.1107132,
+    createdAt: '2022-02-04T15:47:03.420321Z',
+    updatedAt: '2022-02-04T15:47:03.425683Z',
+  },
+  totalAmount: 89713000000.0,
+  budgets: budgets1Record,
 }
 
 /* ------------------------------------------------------
  * テストデータ（複数レコード）
  * ------------------------------------------------------ */
-const drilldownsRecords: DrilldownAPI[] = [
+const budgets: Budget[] = [
   {
-    num_entries: 1,
-    amount: 1502366,
-    cofog1: {
-      taxonomy: 'cofog1',
-      html_url: '',
-      _id: 1,
-      name: '1',
-      label: 'レクリエーション・文化活動の支援',
-    },
-    cofog2: {
-      taxonomy: 'cofog2',
-      html_url: 'http://openspending.org/yokohama_yosan_percentage/cofog2/05-1',
-      _id: 1,
-      name: '1-1',
-      label: 'レクリエーション・スポーツ・サービス',
-    },
-    cofog3: {
-      taxonomy: 'cofog3',
-      html_url: 'http://openspending.org/yokohama_yosan_percentage/cofog3/',
-      _id: 1,
-      name: '',
-      label: '',
-    },
+    id: 'bQ8xKBPRoVZLxauxQMJHtx',
+    name: '公共サービス全般',
+    code: '1',
+    amount: 27738407000.0,
+    children: [
+      {
+        id: 'PCgTVjG456QN6YYah7yppH',
+        name: '行政・立法機関、財務・財政、渉外',
+        code: '1.1',
+        amount: 25879644000.0,
+        children: [
+          {
+            id: 'knPerCJWEScxFachLNig4u',
+            name: '行政・立法機関(CS)',
+            code: '1.1.1',
+            amount: 18834640000.0,
+            children: null,
+          },
+          {
+            id: 'QhyXQqQLUerENLXYFmStEu',
+            name: '財務・会計(CS)',
+            code: '1.1.2',
+            amount: 7038735000.0,
+            children: null,
+          },
+        ],
+      },
+    ],
   },
   {
-    num_entries: 1,
-    amount: 736375,
-    cofog1: {
-      taxonomy: 'cofog1',
-      html_url: '',
-      _id: 1,
-      name: '1',
-      label: 'レクリエーション・文化活動の支援',
-    },
-    cofog2: {
-      taxonomy: 'cofog2',
-      html_url: 'http://openspending.org/yokohama_yosan_percentage/cofog2/05-1',
-      _id: 2,
-      name: '1-2',
-      label: 'レクリエーション・文化関連政策',
-    },
-    cofog3: {
-      taxonomy: 'cofog3',
-      html_url: 'http://openspending.org/yokohama_yosan_percentage/cofog3/',
-      _id: 1,
-      name: '',
-      label: '',
-    },
-  },
-  {
-    num_entries: 1,
-    amount: 527286,
-    cofog1: {
-      taxonomy: 'cofog1',
-      html_url: '',
-      _id: 2,
-      name: '2',
-      label: '安全・安心の確保',
-    },
-    cofog2: {
-      taxonomy: 'cofog2',
-      html_url: 'http://openspending.org/yokohama_yosan_percentage/cofog2/05-1',
-      _id: 1,
-      name: '2-1',
-      label: '危機管理',
-    },
-    cofog3: {
-      taxonomy: 'cofog3',
-      html_url: 'http://openspending.org/yokohama_yosan_percentage/cofog3/',
-      _id: 1,
-      name: '',
-      label: '',
-    },
+    id: 'G4YZbRUfF3TYZ4UkvQVELr',
+    name: '環境保護',
+    code: '5',
+    amount: 4908950000.0,
+    children: [
+      {
+        id: 'FPcqveUiNNYB64EBS2dhyz',
+        name: '廃棄物処理',
+        code: '5.1',
+        amount: 2393312000.0,
+        children: [
+          {
+            id: 'Tn4iPasSXbKdY7qjSrApKN',
+            name: '廃棄物管理(CS)',
+            code: '5.1.0',
+            amount: 2393312000.0,
+            children: null,
+          },
+        ],
+      },
+    ],
   },
 ]
-const summaryRecords: SummaryAPI = {
-  num_drilldowns: 2,
-  pagesize: 10000,
-  cached: true,
-  amount: 2766027,
-  pages: 1,
-  currency: { amount: 'JPY' },
-  num_entries: 2,
-  cache_key: '',
-  page: 1,
-}
-const responseMultiRecords: APIResponse = {
-  drilldown: drilldownsRecords,
-  summary: summaryRecords,
+const responseMultiRecords: COFOGAPIResponse = {
+  id: 'CfW8FPjJmb4aaNLRB2ZQP2',
+  name: 'つくば市COFOG2021',
+  subtitle: '',
+  slug: 'tsukuba-shi-cofog2021',
+  year: 2021,
+  createdAt: '2022-02-04T15:48:00.901211Z',
+  updatedAt: '2022-02-04T15:48:00.902603Z',
+  government: {
+    id: 'NUXQj6smbHytL3radZuMQe',
+    name: 'つくば市',
+    slug: 'tsukuba-shi',
+    latitude: 36.0825081,
+    longitude: 140.1107132,
+    createdAt: '2022-02-04T15:47:03.420321Z',
+    updatedAt: '2022-02-04T15:47:03.425683Z',
+  },
+  totalAmount: 89713000000.0,
+  budgets,
 }

@@ -1,5 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import { TaxApplicationService } from '~/plugins/applicationServices/TaxApplicationService'
+import { CofogData } from '~/plugins/dataTransferObjects/cofogData'
 import { DailyBread } from '~/plugins/dataTransferObjects/dailyBreadData'
 import { Person } from '~/plugins/entities/Person'
 import { Cofog } from '~/plugins/valueObjects/Cofog'
@@ -20,8 +21,10 @@ describe('DailyBreadService', () => {
       localVue,
       mocks: {
         $repositories: (_: string) => ({
-          Get: () => ({
+          Get: (): CofogData => ({
             amount: Price.create(10000),
+            year: 2021,
+            governmentName: 'つくば市',
             taxList: [
               {
                 amount: Price.create(8000),
@@ -44,6 +47,7 @@ describe('DailyBreadService', () => {
                       }),
                       'サブカテゴリ1-1'
                     ),
+                    children: [],
                   },
                 ],
               },
@@ -62,12 +66,12 @@ describe('DailyBreadService', () => {
       amount: (3000000 - 330000) * 0.06,
       taxList: [
         {
-          amount: ((3000000 - 330000) * 0.06 * 8000) / 10000,
+          amount: ((3000000 - 330000) * 0.06 * 8000) / 10000 / 365,
           name: 'カテゴリ1',
           cofogCode: '1.2.3',
           children: [
             {
-              amount: ((3000000 - 330000) * 0.06 * 2000) / 10000,
+              amount: ((3000000 - 330000) * 0.06 * 2000) / 10000 / 365,
               cofogCode: '1.1.2',
               name: 'サブカテゴリ1-1',
             },

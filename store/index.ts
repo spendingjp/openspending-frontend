@@ -5,7 +5,6 @@ import { Context } from "@nuxt/types";
 
 // *** 要修正 ***
 // データを追加
-// import * as age from '@/store/age'
 import * as regionCofogData from '~/store/regionCofogData'
 
 // ---------- ここは修正不要。そのまま残しておくこと！ ---------
@@ -42,7 +41,6 @@ export const accessorType = getAccessorType({
   modules: {
     // *** 要修正 ***
     // データを追加したら、ここにも追加
-    // age,
     regionCofogData,
   },
 })
