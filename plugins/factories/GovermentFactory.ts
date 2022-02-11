@@ -1,18 +1,18 @@
-import { NuxtAppOptions } from "@nuxt/types/app";
-import { CofogData } from "../dataTransferObjects/cofogData";
-import { Goverment } from "../entities/Goverment";
-import { Tax } from "../entities/Tax";
-import { Rate } from "../valueObjects/Rate";
-import { TaxRate } from "../valueObjects/TaxRate";
+import { NuxtAppOptions } from '@nuxt/types/app'
+import { CofogData } from '../dataTransferObjects/cofogData'
+import { Government } from '../entities/Goverment'
+import { Tax } from '../entities/Tax'
+import { Rate } from '../valueObjects/Rate'
+import { TaxRate } from '../valueObjects/TaxRate'
 
-export class GovermentFactory {
+export class GovernmentFactory {
   private app: NuxtAppOptions
 
   constructor(app: NuxtAppOptions) {
     this.app = app
   }
 
-  public Get(): Goverment {
+  public Get(): Government {
     // const cofogData: CofogData = this.app.store?.getters.regionCofogData
     // if (cofogData === undefined) {
     //   throw new Error('store にCOFOGデータ無し')
@@ -24,10 +24,8 @@ export class GovermentFactory {
     //   cofog: tax.cofog
     // })))
 
-    return new Goverment(
-      {
-        taxRate: TaxRate.create(0.06),
-      }
-    )
+    return new Government({
+      taxRate: TaxRate.create(0.06),
+    })
   }
 }

@@ -1,9 +1,13 @@
 import { NuxtAppOptions } from '@nuxt/types'
 import { CofogData } from '../dataTransferObjects/cofogData'
-import { DailyBread, DailyBreadChild, DailyBreadItem } from '../dataTransferObjects/dailyBreadData'
+import {
+  DailyBread,
+  DailyBreadChild,
+  DailyBreadItem,
+} from '../dataTransferObjects/dailyBreadData'
 import { TaxService } from '../domainServices/TaxService'
 import { Person } from '../entities/Person'
-import { GovermentFactory } from '../factories/GovermentFactory'
+import { GovernmentFactory } from '../factories/GovermentFactory'
 
 /**
  * 税金アプリケーションサービス
@@ -28,8 +32,8 @@ export class TaxApplicationService {
     }
 
     // 自治体を取得
-    const govFactory = new GovermentFactory(this.app)
-    const goverment = govFactory.Get()
+    const govFactory = new GovernmentFactory(this.app)
+    const government = govFactory.Get()
 
     const taxService = new TaxService(this.app)
 
@@ -37,21 +41,21 @@ export class TaxApplicationService {
     const taxList: DailyBreadItem[] = cofogData.taxList.map((tax) => {
       const amount = taxService.calcTax({
         person,
-        goverment,
-        cofogCode: tax.cofog.Code
+        government,
+        cofogCode: tax.cofog.Code,
       })
 
-      const children: DailyBreadChild[] = tax.children?.map(childTax => {
+      const children: DailyBreadChild[] = tax.children?.map((childTax) => {
         const childAmount = taxService.calcTax({
           person,
-          goverment,
-          cofogCode: childTax.cofog.Code
+          government,
+          cofogCode: childTax.cofog.Code,
         })
 
         return {
           amount: childAmount !== null ? childAmount.value : 0,
           name: childTax.cofog.Name,
-          cofogCode: childTax.cofog.Code.StrCode
+          cofogCode: childTax.cofog.Code.StrCode,
         }
       })
 
@@ -59,14 +63,14 @@ export class TaxApplicationService {
         amount: amount !== null ? amount.value : 0,
         name: tax.cofog.Name,
         cofogCode: tax.cofog.Code.StrCode,
-        children: children !== undefined ? children : []
+        children: children !== undefined ? children : [],
       }
     })
 
     return {
       amount: taxService.calcAmountTax({
         person,
-        goverment
+        government,
       }).value,
       taxList,
     }

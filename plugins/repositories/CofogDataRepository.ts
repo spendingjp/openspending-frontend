@@ -19,6 +19,8 @@ export class CofogDataRepository {
     const storeData = this.app.store?.getters['regionCofogData/regionCofogData']
     const data: CofogData = {
       amount: Price.create(storeData.amount._value),
+      year: storeData.year,
+      governmentName: storeData.governmentName,
       taxList: storeData.taxList.map((item: any) => {
         return {
           amount: Price.create(item.amount._value),
@@ -41,6 +43,17 @@ export class CofogDataRepository {
                 }),
                 child.cofog.name
               ),
+              children: child.children.map((level3Item: any) => ({
+                amount: Price.create(level3Item.amount),
+                cofog: new Cofog(
+                  CofogCode.create({
+                    level1: level3Item.cofog.code._value.level1,
+                    level2: level3Item.cofog.code._value.level2,
+                    level3: level3Item.cofog.code._value.level3,
+                  }),
+                  level3Item.cofog.name
+                ),
+              })),
             }
           }),
         }

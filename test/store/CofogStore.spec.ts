@@ -1,13 +1,11 @@
 import Vuex, { Store } from 'vuex'
 import { createLocalVue } from '@vue/test-utils'
 import * as regionCofogData from '~/store/regionCofogData'
-import { APIResponse } from '~/plugins/api/APIResponse'
-import { Drilldown as DrilldownAPI } from '~/plugins/api/Drilldown'
-import { Summary as SummaryAPI } from '~/plugins/api/Summary'
 import { Cofog } from '~/plugins/valueObjects/Cofog'
 import { CofogCode } from '~/plugins/valueObjects/CofogCode'
 import { CofogData } from '~/plugins/dataTransferObjects/cofogData'
 import { Price } from '~/plugins/valueObjects/Price'
+import { COFOGAPIResponse } from '~/plugins/api/COFOGAPIResponse'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -19,49 +17,8 @@ describe('CofogVuex', () => {
     store = new Store(regionCofogData)
   })
 
-  xit('action', async () => {
+  it('action', async () => {
     // リポジトリをモック
-    const drilldowns: DrilldownAPI[] = [
-      {
-        num_entries: 1,
-        amount: 1502366,
-        cofog1: {
-          taxonomy: 'cofog1',
-          html_url: '',
-          _id: 1,
-          name: '1',
-          label: 'レクリエーション・文化活動の支援',
-        },
-        cofog2: {
-          taxonomy: 'cofog2',
-          html_url:
-            'http://openspending.org/yokohama_yosan_percentage/cofog2/05-1',
-          _id: 1,
-          name: '1-1',
-          label: 'レクリエーション・スポーツ・サービス',
-        },
-        cofog3: {
-          taxonomy: 'cofog3',
-          html_url: 'http://openspending.org/yokohama_yosan_percentage/cofog3/',
-          _id: 1,
-          name: '',
-          label: '',
-        },
-      },
-    ]
-    const summary: SummaryAPI = {
-      num_drilldowns: 1,
-      pagesize: 10000,
-      cached: true,
-      amount: 1502366,
-      pages: 1,
-      currency: { amount: 'JPY' },
-      num_entries: 1,
-      cache_key: '',
-      page: 1,
-    }
-    const response: APIResponse = { drilldown: drilldowns, summary }
-
     store.app = {
       $repositories: () => ({
         Get: () => response,
@@ -69,17 +26,47 @@ describe('CofogVuex', () => {
     }
 
     const result: CofogData = {
-      amount: Price.create(1502366),
+      amount: Price.create(89713000000.0),
+      year: 2021,
+      governmentName: 'つくば市',
       taxList: [
         {
-          amount: Price.create(1502366),
-          cofog: new Cofog(CofogCode.create({
-            level1: 1,
-            level2: 2,
-            level3: 3
-          }), 'レクリエーション・スポーツ・サービス'),
-          children: []
-        }
+          amount: Price.create(27738407000.0),
+          cofog: new Cofog(
+            CofogCode.create({
+              level1: 1,
+              level2: null,
+              level3: null,
+            }),
+            '公共サービス全般'
+          ),
+          children: [
+            {
+              amount: Price.create(25879644000.0),
+              cofog: new Cofog(
+                CofogCode.create({
+                  level1: 1,
+                  level2: 1,
+                  level3: null,
+                }),
+                '行政・立法機関、財務・財政、渉外'
+              ),
+              children: [
+                {
+                  amount: Price.create(18834640000.0),
+                  cofog: new Cofog(
+                    CofogCode.create({
+                      level1: 1,
+                      level2: 1,
+                      level3: 1,
+                    }),
+                    '行政・立法機関(CS)'
+                  ),
+                },
+              ],
+            },
+          ],
+        },
       ],
     }
 
@@ -87,3 +74,48 @@ describe('CofogVuex', () => {
     expect(store.getters.regionCofogData).toStrictEqual(result)
   })
 })
+
+const response: COFOGAPIResponse = {
+  id: 'CfW8FPjJmb4aaNLRB2ZQP2',
+  name: 'つくば市COFOG2021',
+  subtitle: '',
+  slug: 'tsukuba-shi-cofog2021',
+  year: 2021,
+  createdAt: '2022-02-04T15:48:00.901211Z',
+  updatedAt: '2022-02-04T15:48:00.902603Z',
+  government: {
+    id: 'NUXQj6smbHytL3radZuMQe',
+    name: 'つくば市',
+    slug: 'tsukuba-shi',
+    latitude: 36.0825081,
+    longitude: 140.1107132,
+    createdAt: '2022-02-04T15:47:03.420321Z',
+    updatedAt: '2022-02-04T15:47:03.425683Z',
+  },
+  totalAmount: 89713000000.0,
+  budgets: [
+    {
+      id: 'bQ8xKBPRoVZLxauxQMJHtx',
+      name: '公共サービス全般',
+      code: '1',
+      amount: 27738407000.0,
+      children: [
+        {
+          id: 'PCgTVjG456QN6YYah7yppH',
+          name: '行政・立法機関、財務・財政、渉外',
+          code: '1.1',
+          amount: 25879644000.0,
+          children: [
+            {
+              id: 'knPerCJWEScxFachLNig4u',
+              name: '行政・立法機関(CS)',
+              code: '1.1.1',
+              amount: 18834640000.0,
+              children: null,
+            },
+          ],
+        },
+      ],
+    },
+  ],
+}

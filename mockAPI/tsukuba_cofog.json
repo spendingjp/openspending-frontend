@@ -1,0 +1,1418 @@
+{
+  "api": {
+    "id": "CfW8FPjJmb4aaNLRB2ZQP2",
+    "name": "つくば市COFOG2021",
+    "subtitle": "",
+    "slug": "tsukuba-shi-cofog2021",
+    "year": 2021,
+    "createdAt": "2022-02-04T15:48:00.901211Z",
+    "updatedAt": "2022-02-04T15:48:00.902603Z",
+    "government": {
+      "id": "NUXQj6smbHytL3radZuMQe",
+      "name": "つくば市",
+      "slug": "tsukuba-shi",
+      "latitude": 36.0825081,
+      "longitude": 140.1107132,
+      "createdAt": "2022-02-04T15:47:03.420321Z",
+      "updatedAt": "2022-02-04T15:47:03.425683Z"
+    },
+    "totalAmount": 89713000000.0,
+    "budgets": [
+      {
+        "id": "bQ8xKBPRoVZLxauxQMJHtx",
+        "name": "公共サービス全般",
+        "code": "1",
+        "amount": 27738407000.0,
+        "children": [
+          {
+            "id": "PCgTVjG456QN6YYah7yppH",
+            "name": "行政・立法機関、財務・財政、渉外",
+            "code": "1.1",
+            "amount": 25879644000.0,
+            "children": [
+              {
+                "id": "knPerCJWEScxFachLNig4u",
+                "name": "行政・立法機関(CS)",
+                "code": "1.1.1",
+                "amount": 18834640000.0,
+                "children": null
+              },
+              {
+                "id": "QhyXQqQLUerENLXYFmStEu",
+                "name": "財務・会計(CS)",
+                "code": "1.1.2",
+                "amount": 7038735000.0,
+                "children": null
+              },
+              {
+                "id": "P8ReRpWwzspCKnvyAeurbF",
+                "name": "対外関係(CS)",
+                "code": "1.1.3",
+                "amount": 6269000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "BNugKJHPkcweshFc9cqi2b",
+            "name": "対外経済援助",
+            "code": "1.2",
+            "amount": 0,
+            "children": [
+              {
+                "id": "2vfndZUxqqzdKXRFFgt7Na",
+                "name": "開発途上国および移行国に対する経済援助(CS)",
+                "code": "1.2.1",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "BFQaGFk3Vwm7GwBVry6xSh",
+                "name": "国際機関を通じた経済援助(CS)",
+                "code": "1.2.2",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "YHUBjbSde98H7SRVBDELkd",
+            "name": "一般サービス",
+            "code": "1.3",
+            "amount": 1462400000.0,
+            "children": [
+              {
+                "id": "Yn7NDSq55HXxJDVAwxw6ek",
+                "name": "一般的な人事サービス(CS)",
+                "code": "1.3.1",
+                "amount": 21150000.0,
+                "children": null
+              },
+              {
+                "id": "LtWSEfamVixPEMxeVdPgzo",
+                "name": "総合企画・統計サービス(CS)",
+                "code": "1.3.2",
+                "amount": 560126000.0,
+                "children": null
+              },
+              {
+                "id": "JxHkASW8A8mmmZvudqzCJi",
+                "name": "その他の一般サービス(CS)",
+                "code": "1.3.3",
+                "amount": 881124000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "4zNDhcz2am9w6no55HjbNC",
+            "name": "基礎研究",
+            "code": "1.4",
+            "amount": 0,
+            "children": [
+              {
+                "id": "bNB8GedSTV5B6ZyadHH2LQ",
+                "name": "基礎研究(CS)",
+                "code": "1.4.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "3f2WTcxZQe6tVU7pbrqV3z",
+            "name": "研究開発 一般公共サービス",
+            "code": "1.5",
+            "amount": 0,
+            "children": [
+              {
+                "id": "4RDowViVbngfzYyYAhjkyk",
+                "name": "研究開発 一般向けサービス(CS)",
+                "code": "1.5.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "a5CAyLkkJhSwBdHGToNmjf",
+            "name": "一般的な公共サービス n.e.c.",
+            "code": "1.6",
+            "amount": 183172000.0,
+            "children": [
+              {
+                "id": "BUXsZLNbtWBzYokTyVVN5J",
+                "name": "一般的な公共サービス(CS)",
+                "code": "1.6.0",
+                "amount": 183172000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "N4TQgsh2xtJ6Eotqi2PfqZ",
+            "name": "公的債務取引",
+            "code": "1.7",
+            "amount": 213191000.0,
+            "children": [
+              {
+                "id": "ESqN9QAbKQJe4FG4Liq3uW",
+                "name": "公的債務取引(CS)",
+                "code": "1.7.0",
+                "amount": 213191000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "VniFbNokSErRcNcAGttdHG",
+            "name": "異なるレベルの政府間における一般的性格の移転",
+            "code": "1.8",
+            "amount": 0,
+            "children": [
+              {
+                "id": "GhdGjYxCJ5Yc4VexrRpaHu",
+                "name": "異なるレベルの政府間での一般的性格の移転(CS)",
+                "code": "1.8.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "NL7cuwY58GcpEH3cWEJhNr",
+        "name": "社会的保護",
+        "code": "10",
+        "amount": 31569587000.0,
+        "children": [
+          {
+            "id": "2rBVaGwTXWvpZtyFiTmMy9",
+            "name": "疾病および障害",
+            "code": "10.1",
+            "amount": 4679629000.0,
+            "children": [
+              {
+                "id": "bmAtS8PASpmF5DbF9abZ8p",
+                "name": "病気(IS)",
+                "code": "10.1.1",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "KHunUqQg9ReWSssULVduE8",
+                "name": "障がい(IS)",
+                "code": "10.1.2",
+                "amount": 4679629000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "PBFEb6raW3cYG86afKz7gr",
+            "name": "老齢",
+            "code": "10.2",
+            "amount": 2265833000.0,
+            "children": [
+              {
+                "id": "GZ2hBUoD23eDJxDe4XnuMH",
+                "name": "老齢(IS)",
+                "code": "10.2.0",
+                "amount": 2265833000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "bgXq2Y2AuwY8Ntsr7wJs6e",
+            "name": "生存者",
+            "code": "10.3",
+            "amount": 0,
+            "children": [
+              {
+                "id": "bpUwxt2PexzoCaLXgKPLmM",
+                "name": "生存者(IS)",
+                "code": "10.3.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "fwkmN5aGxTmCpM7kLtcNns",
+            "name": "家族と子供",
+            "code": "10.4",
+            "amount": 17157793000.0,
+            "children": [
+              {
+                "id": "hZ6oD3xCXaTXr323YurwC5",
+                "name": "家族と子供(IS)",
+                "code": "10.4.0",
+                "amount": 17157793000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "ia5oUckMGAWFZgxTLnvEN7",
+            "name": "失業",
+            "code": "10.5",
+            "amount": 0,
+            "children": [
+              {
+                "id": "9jzSo6rn5GvXndMZ7BXyef",
+                "name": "失業(IS)",
+                "code": "10.5.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "EDkKpkTjrrPXBYfe3w4AVw",
+            "name": "住居",
+            "code": "10.6",
+            "amount": 0,
+            "children": [
+              {
+                "id": "7QUjz4eJqRze87ZeWzXTYf",
+                "name": "住宅(IS)",
+                "code": "10.6.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "FTCFb8QwhBz3mmGH3pCc5v",
+            "name": "社会的排除(N.E.C.)",
+            "code": "10.7",
+            "amount": 2199781000.0,
+            "children": [
+              {
+                "id": "LsU2THMfUzPGdth9BFqLpY",
+                "name": "社会的排除 n.e.c.(IS)",
+                "code": "10.7.0",
+                "amount": 2199781000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "JiCGxGpQWdxeGSZU5EJ5h4",
+            "name": "研究開発 社会的保護",
+            "code": "10.8",
+            "amount": 0,
+            "children": [
+              {
+                "id": "4TbiFfPnhCzjVXNwmiHoW5",
+                "name": "R&D 社会的保護(CS)",
+                "code": "10.8.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "QCAp7TXHep7B69ccXog8h2",
+            "name": "社会的保護 n.e.c.",
+            "code": "10.9",
+            "amount": 5266551000.0,
+            "children": [
+              {
+                "id": "6jDftX3RoZGYfDRMkkn6EY",
+                "name": "社会的保護 n.e.c.(CS)",
+                "code": "10.9.0",
+                "amount": 5266551000.0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "2ht79XTzT3b4Nz4R9oKGJm",
+        "name": "国防",
+        "code": "2",
+        "amount": 0,
+        "children": [
+          {
+            "id": "KDHogTtXqyae57AeVgcNM8",
+            "name": "軍事的防衛",
+            "code": "2.1",
+            "amount": 0,
+            "children": [
+              {
+                "id": "nSi9WB7KQxpPqNwoYzXpaQ",
+                "name": "軍事的防衛(CS)",
+                "code": "2.1.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "FtWARxCAQ55JbspfPucpoW",
+            "name": "民間防衛",
+            "code": "2.2",
+            "amount": 0,
+            "children": [
+              {
+                "id": "gjsiboFu2rwRURyxkzUmyk",
+                "name": "民間防衛(Civil defence)(CS)",
+                "code": "2.2.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "nXWc44Miqrb43S2WWa5Kne",
+            "name": "海外軍事援助",
+            "code": "2.3",
+            "amount": 0,
+            "children": [
+              {
+                "id": "NSbH4FBjyo3WkHeaBzbcPU",
+                "name": "海外軍事援助(CS)",
+                "code": "2.3.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "ChFLCCnyMmSUyhMFxXsFwy",
+            "name": "研究開発 防衛",
+            "code": "2.4",
+            "amount": 0,
+            "children": [
+              {
+                "id": "GownnN7zK4Hdvg2aWUDnjk",
+                "name": "研究開発 防衛(CS)",
+                "code": "2.4.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "oBMFoCCHe732UU8aK8yjmA",
+            "name": "一般的な防衛",
+            "code": "2.5",
+            "amount": 0,
+            "children": [
+              {
+                "id": "3L9ZxCgV3G3tr9hrfrfVVF",
+                "name": "国防一般(CS)",
+                "code": "2.5.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WCkkWdXMhzxNsBq4KFRSLZ",
+        "name": "公共の秩序と安全",
+        "code": "3",
+        "amount": 1168137000.0,
+        "children": [
+          {
+            "id": "kUG3TnQzTHdKRDTXqq8X3c",
+            "name": "警察サービス",
+            "code": "3.1",
+            "amount": 0,
+            "children": [
+              {
+                "id": "EKBEARb44ebWoZD6zHNeta",
+                "name": "警察サービス(CS)",
+                "code": "3.1.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "TFCtb9ekzUnBxbCnUZwufX",
+            "name": "防災サービス",
+            "code": "3.2",
+            "amount": 1037281000.0,
+            "children": [
+              {
+                "id": "Qv9xGuLytPMNPyeL57QNfG",
+                "name": "消防サービス(CS)",
+                "code": "3.2.0",
+                "amount": 1037281000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "cCdumu5FfmJAnmNUcLoFXq",
+            "name": "法廷",
+            "code": "3.3",
+            "amount": 0,
+            "children": [
+              {
+                "id": "EPkXbTkg5mTJwJhqGnRu78",
+                "name": "法廷(CS)",
+                "code": "3.3.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "kfgJfi6Pzh9V5vfZNcdQ5F",
+            "name": "刑務所",
+            "code": "3.4",
+            "amount": 0,
+            "children": [
+              {
+                "id": "j3xjsx9cD42pHzNER9LiQg",
+                "name": "刑務所(CS)",
+                "code": "3.4.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "6E854XXQSU5fdjMAivX2Qr",
+            "name": "研究開発 公序良俗に反する行為",
+            "code": "3.5",
+            "amount": 0,
+            "children": [
+              {
+                "id": "LFQkBfwnu8AnQ5EQx4HBuW",
+                "name": "研究開発 公序良俗と安全(CS)",
+                "code": "3.5.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "anupD9Db58yzHQ4d8x6FcW",
+            "name": "公序良俗N.E.C.",
+            "code": "3.6",
+            "amount": 130856000.0,
+            "children": [
+              {
+                "id": "ea6NsezPQ22WoE8F5MDkkf",
+                "name": "公序良俗に反する行為(CS)",
+                "code": "3.6.0",
+                "amount": 130856000.0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "VokG53ZN8pLxtyYAyFiriv",
+        "name": "経済問題",
+        "code": "4",
+        "amount": 7111314000.0,
+        "children": [
+          {
+            "id": "3GV47gHRXkhxAcFbTAfTBi",
+            "name": "一般的な経済・商業・労働問題",
+            "code": "4.1",
+            "amount": 1020439000.0,
+            "children": [
+              {
+                "id": "CVNUq2Y9ZPmmVNdfGfYxVH",
+                "name": "経済・商業・労働問題全般(CS)",
+                "code": "4.1.1",
+                "amount": 986098000.0,
+                "children": null
+              },
+              {
+                "id": "AMmSJpgRAdSUm4iiHhFGPd",
+                "name": "一般的な労働問題(CS)",
+                "code": "4.1.2",
+                "amount": 34341000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "UVcg3gNeeFV8MGeR5dH2zS",
+            "name": "農業、林業、漁業、狩猟",
+            "code": "4.2",
+            "amount": 956387000.0,
+            "children": [
+              {
+                "id": "4mziRdgFCrHqAoJ4EfvwhW",
+                "name": "農業(CS)",
+                "code": "4.2.1",
+                "amount": 908711000.0,
+                "children": null
+              },
+              {
+                "id": "Yfj4MhVNfVEAAfkganHLqh",
+                "name": "林業(CS)",
+                "code": "4.2.2",
+                "amount": 47676000.0,
+                "children": null
+              },
+              {
+                "id": "afUPuzvEb3CcovPBr3Fa3u",
+                "name": "漁業および狩猟(CS)",
+                "code": "4.2.3",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "LqJd7N9NS94867ygVbhH8Z",
+            "name": "燃料・エネルギー",
+            "code": "4.3",
+            "amount": 0,
+            "children": [
+              {
+                "id": "nuGiRu4bd6JLdQy4GfFk2S",
+                "name": "石炭およびその他の固体鉱物燃料(CS)",
+                "code": "4.3.1",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "iNqeEpRhAeGeUe4hRBcgQS",
+                "name": "石油および天然ガス(CS)",
+                "code": "4.3.2",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "7wAvW6Z35tN5DMn64aJY43",
+                "name": "核燃料(CS)",
+                "code": "4.3.3",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "bbobJhU8e4qQvoKBiCGxFm",
+                "name": "その他の燃料(CS)",
+                "code": "4.3.4",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "CfXhVGWqcfdJ68nWPXvDxU",
+                "name": "電気(CS)",
+                "code": "4.3.5",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "As9TgQf3yMvvNDuxWQbVMd",
+                "name": "非電気エネルギー(CS)",
+                "code": "4.3.6",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "jNCeVHeWvUvDmiNhJdixAn",
+            "name": "鉱業、製造業、建設業",
+            "code": "4.4",
+            "amount": 11520000.0,
+            "children": [
+              {
+                "id": "fcw2n6AijPUKGRoXfMAQEs",
+                "name": "鉱物燃料以外の鉱物資源の採掘(CS)",
+                "code": "4.4.1",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "XYfNPx2WhjM43um6B4m6mb",
+                "name": "製造(CS)",
+                "code": "4.4.2",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "4B3UH4HZTdssPoDZCWvrbP",
+                "name": "建設(CS)",
+                "code": "4.4.3",
+                "amount": 11520000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "DfdYiKvqmDkyy8FwxmqJtw",
+            "name": "輸送分野",
+            "code": "4.5",
+            "amount": 4380430000.0,
+            "children": [
+              {
+                "id": "nSj3irCz22xAcMQjE2WyHW",
+                "name": "道路輸送(CS)",
+                "code": "4.5.1",
+                "amount": 4129511000.0,
+                "children": null
+              },
+              {
+                "id": "SjHJ947kDkCxbEvo7DdLG3",
+                "name": "水輸送(CS)",
+                "code": "4.5.2",
+                "amount": 150491000.0,
+                "children": null
+              },
+              {
+                "id": "c7zQVZcpmDSdgRgCs28YmT",
+                "name": "鉄道輸送(CS)",
+                "code": "4.5.3",
+                "amount": 100428000.0,
+                "children": null
+              },
+              {
+                "id": "ANrJCfv85wPTgTePTYTYVs",
+                "name": "航空輸送(CS)",
+                "code": "4.5.4",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "Wexts3sh2R3QsZUJVBrubz",
+                "name": "パイプラインおよびその他の輸送(CS)",
+                "code": "4.5.5",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "ngwA63GoTtQ8MzC2fGj8Xr",
+            "name": "通信",
+            "code": "4.6",
+            "amount": 0,
+            "children": [
+              {
+                "id": "bksT5zmMi2RaN2jHSovKGX",
+                "name": "通信(CS)",
+                "code": "4.6.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "9p5SWG6JwrfCepTVU39jm4",
+            "name": "その他の産業",
+            "code": "4.7",
+            "amount": 642877000.0,
+            "children": [
+              {
+                "id": "jZGGtqmU9nmBHmSM5MoLto",
+                "name": "流通業、貯蔵・倉庫業(CS)",
+                "code": "4.7.1",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "WzSvtpcAYtCsHC3QENP8Ra",
+                "name": "ホテル、レストラン(CS)",
+                "code": "4.7.2",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "Vx3odyHAMPwbbTUjaTR5X7",
+                "name": "観光(CS)",
+                "code": "4.7.3",
+                "amount": 642877000.0,
+                "children": null
+              },
+              {
+                "id": "TXgBMaRnReumSVRE9dTfke",
+                "name": "多目的開発プロジェクト(CS)",
+                "code": "4.7.4",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "RGKDfgC2GqDwofeEdy9SGM",
+            "name": "R&D 経済関係",
+            "code": "4.8",
+            "amount": 0,
+            "children": [
+              {
+                "id": "R2t9TNYMhcQPdZREkUrdrN",
+                "name": "R&D 一般的な経済、商業、労働問題(CS)",
+                "code": "4.8.1",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "WhzkJUmjrDZa8TEsEv6pWj",
+                "name": "R&D 農業、林業、漁業および狩猟(CS)",
+                "code": "4.8.2",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "mP2fFTeDRcrKCynpyHiQHd",
+                "name": "R&D 燃料およびエネルギー(CS)",
+                "code": "4.8.3",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "2quCqiW5wxK2M8Yk6M6kdp",
+                "name": "R&D 鉱業、製造業、建設業(CS)",
+                "code": "4.8.4",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "dZnqmfQzXc5KrVNqxWK7cn",
+                "name": "R&D 運輸(CS)",
+                "code": "4.8.5",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "f4hpAerW5Epp8XN8XJ8gDG",
+                "name": "R&D 通信(CS)",
+                "code": "4.8.6",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "RgdPV243tAifW7XxM9Ld9d",
+                "name": "R&D その他の産業(CS)",
+                "code": "4.8.7",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "KxX9okYGMHyYXbSe6638ba",
+            "name": "他に類のない経済問題",
+            "code": "4.9",
+            "amount": 99661000.0,
+            "children": [
+              {
+                "id": "3uVEfYkY7SDBZZ2fMoxKb8",
+                "name": "他に分類されない経済問題(CS)",
+                "code": "4.9.0",
+                "amount": 99661000.0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "G4YZbRUfF3TYZ4UkvQVELr",
+        "name": "環境保護",
+        "code": "5",
+        "amount": 4908950000.0,
+        "children": [
+          {
+            "id": "FPcqveUiNNYB64EBS2dhyz",
+            "name": "廃棄物処理",
+            "code": "5.1",
+            "amount": 2393312000.0,
+            "children": [
+              {
+                "id": "Tn4iPasSXbKdY7qjSrApKN",
+                "name": "廃棄物管理(CS)",
+                "code": "5.1.0",
+                "amount": 2393312000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "5u7eXCFCg2QK4wEqwAatRi",
+            "name": "廃水管理",
+            "code": "5.2",
+            "amount": 2220868000.0,
+            "children": [
+              {
+                "id": "iSimwVjknMh2DizqGuSTk9",
+                "name": "廃棄物管理(CS)",
+                "code": "5.2.0",
+                "amount": 2220868000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "LNvfm9LWJoPUngWFNwYe8n",
+            "name": "汚染の軽減",
+            "code": "5.3",
+            "amount": 184884000.0,
+            "children": [
+              {
+                "id": "HWpuLJ2HxEhAspcruHtiYP",
+                "name": "汚染の軽減(CS)",
+                "code": "5.3.0",
+                "amount": 184884000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "C9GfaLJwE5KcHmLB3hKgty",
+            "name": "生物多様性と景観の保護",
+            "code": "5.4",
+            "amount": 9679000.0,
+            "children": [
+              {
+                "id": "Jyf4BHX8hUdcfdJTNqEVAi",
+                "name": "生物多様性と景観の保護(CS)",
+                "code": "5.4.0",
+                "amount": 9679000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "WnoTPBCuBiVdN6mnwMDiNU",
+            "name": "研究開発 環境保護",
+            "code": "5.5",
+            "amount": 0,
+            "children": [
+              {
+                "id": "FbRgMaPrThDddEDy3thUis",
+                "name": "R&D 環境保護(CS)",
+                "code": "5.5.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "PnhkKx8SWuune2DnXopMDj",
+            "name": "環境保護(N.E.C.)",
+            "code": "5.6",
+            "amount": 100207000.0,
+            "children": [
+              {
+                "id": "TsyB6mYpznbX2WongV4XVE",
+                "name": "他の環境保護(CS)",
+                "code": "5.6.0",
+                "amount": 100207000.0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "VpfBQat4dCLvGPKYNuPsig",
+        "name": "住宅とコミュニティ・アメニティ",
+        "code": "6",
+        "amount": 2781651000.0,
+        "children": [
+          {
+            "id": "UHmKMk9iDJ5HxJiSWb56u2",
+            "name": "住宅開発",
+            "code": "6.1",
+            "amount": 506624000.0,
+            "children": [
+              {
+                "id": "F9GfY9FsJ8R9GdsSRwFM7x",
+                "name": "住宅開発(CS)",
+                "code": "6.1.0",
+                "amount": 506624000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "hLCRw5MkvLnhSWghYVzKrr",
+            "name": "コミュニティ開発",
+            "code": "6.2",
+            "amount": 1806072000.0,
+            "children": [
+              {
+                "id": "32J2NE9pJqKmQD2LKTvnDP",
+                "name": "コミュニティ開発(CS)",
+                "code": "6.2.0",
+                "amount": 1806072000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "R4WgLtbVceEj4STTgioFWN",
+            "name": "水の供給",
+            "code": "6.3",
+            "amount": 468955000.0,
+            "children": [
+              {
+                "id": "TiKQkcwLroWummXVMs4bNw",
+                "name": "水の供給(CS)",
+                "code": "6.3.0",
+                "amount": 468955000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "bNdvnKJHqR6qkKuwQTGjjJ",
+            "name": "街路灯",
+            "code": "6.4",
+            "amount": 0,
+            "children": [
+              {
+                "id": "UhyDEiWXKH2ky22R79HBYi",
+                "name": "街路灯(CS)",
+                "code": "6.4.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "9QgpsGpRtXmt6eJzr27T2L",
+            "name": "R&D 住宅とコミュニティのアメニティ",
+            "code": "6.5",
+            "amount": 0,
+            "children": [
+              {
+                "id": "WoJNSuNkJH5g2EZg9MyRr9",
+                "name": "R&D 住宅とコミュニティのアメニティ(CS)",
+                "code": "6.5.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "ULa94U8FjZSrN287XDriJu",
+            "name": "他にない住宅とコミュニティの快適さ",
+            "code": "6.6",
+            "amount": 0,
+            "children": [
+              {
+                "id": "EN4uxF6366yEzmvQuakjsP",
+                "name": "他にない住宅とコミュニティの快適さ(CS)",
+                "code": "6.6.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "j4HZ27SDzzeKZcQ95HjrsY",
+        "name": "健康",
+        "code": "7",
+        "amount": 1910294000.0,
+        "children": [
+          {
+            "id": "FbShd4smNw8HdLpgRWdDPz",
+            "name": "医療製品・機器・設備",
+            "code": "7.1",
+            "amount": 0,
+            "children": [
+              {
+                "id": "2aDk5vXWSDYWYoM3MjgzFk",
+                "name": "医薬品(Individual Services)",
+                "code": "7.1.1",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "fx4J4QHqKqoXf7XuvDrU8D",
+                "name": "その他の医療製品(IS)",
+                "code": "7.1.2",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "nLWxEL4GpmK3j6uRPoySbc",
+                "name": "治療用機器・器具(IS)",
+                "code": "7.1.3",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "bjQ2kKSk9hAkiM4BdcRYiH",
+            "name": "外来サービス",
+            "code": "7.2",
+            "amount": 60459000.0,
+            "children": [
+              {
+                "id": "JNPG7HQLuvqANqQHuRVv7E",
+                "name": "一般医療サービス(IS)",
+                "code": "7.2.1",
+                "amount": 38655000.0,
+                "children": null
+              },
+              {
+                "id": "AD5SceaZhhtED3d4bAr5AH",
+                "name": "専門医療サービス(IS)",
+                "code": "7.2.2",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "SJURW564QDUJm7ddwWJ476",
+                "name": "歯科医療サービス(IS)",
+                "code": "7.2.3",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "dptmDf4B256XV3HgeeGghW",
+                "name": "救急医療サービス(IS)",
+                "code": "7.2.4",
+                "amount": 21804000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "kWrSNjvWhQHKABXnqQ7W5e",
+            "name": "病院サービス",
+            "code": "7.3",
+            "amount": 628634000.0,
+            "children": [
+              {
+                "id": "VvZq7xiQ82NmDjvT87EUwF",
+                "name": "一般病院サービス(IS)",
+                "code": "7.3.1",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "gBDR9F7kFjW7yZu2LvHnPy",
+                "name": "専門病院サービス(IS)",
+                "code": "7.3.2",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "4DoziUWTj7rAzv7pLV5Ga5",
+                "name": "医療およびマタニティセンターサービス(IS)",
+                "code": "7.3.3",
+                "amount": 304929000.0,
+                "children": null
+              },
+              {
+                "id": "mityx7VA6PcUaj2hi78UHh",
+                "name": "老人ホームサービス(IS)",
+                "code": "7.3.4",
+                "amount": 323705000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "aQndjMCfdoaTrGkyKoNH7h",
+            "name": "公衆衛生サービス",
+            "code": "7.4",
+            "amount": 1081285000.0,
+            "children": [
+              {
+                "id": "YaKjUNc6sjGWh7BLL4QhMh",
+                "name": "公衆衛生サービス(IS)",
+                "code": "7.4.0",
+                "amount": 1081285000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "V7AAEc8bM9zREw33WSbxiG",
+            "name": "R&Dヘルス",
+            "code": "7.5",
+            "amount": 0,
+            "children": [
+              {
+                "id": "KfivfRdHXebypqdjyJJaqQ",
+                "name": "R&D ヘルス(CS)",
+                "code": "7.5.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "HsJJMyGdgLi2g9hbM4KoLe",
+            "name": "既成概念の健康",
+            "code": "7.6",
+            "amount": 139916000.0,
+            "children": [
+              {
+                "id": "NPNXwGLe5vk2hRxvEUHhV9",
+                "name": "一般的な健康(CS)",
+                "code": "7.6.0",
+                "amount": 139916000.0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "BBkyhm3XNCmdaTHZnMf5VP",
+        "name": "レクリエーション、文化、宗教",
+        "code": "8",
+        "amount": 3318052000.0,
+        "children": [
+          {
+            "id": "PaqjwR2FHUTg8P7SnGQCwC",
+            "name": "レクリエーションおよびスポーツサービス",
+            "code": "8.1",
+            "amount": 1069183000.0,
+            "children": [
+              {
+                "id": "TuaXQMAUyo8fxigLQCy3Y8",
+                "name": "レクリエーションおよびスポーツサービス(IS)",
+                "code": "8.1.0",
+                "amount": 1069183000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "YWBjTwEctdiABfLtUhfxYx",
+            "name": "文化サービス",
+            "code": "8.2",
+            "amount": 1492128000.0,
+            "children": [
+              {
+                "id": "VxCPH64KFYgsa3RCiCKZyV",
+                "name": "文化サービス(IS)",
+                "code": "8.2.0",
+                "amount": 1492128000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "5Z5sgKUQQEsgqQEYgqCij7",
+            "name": "放送・出版サービス",
+            "code": "8.3",
+            "amount": 0,
+            "children": [
+              {
+                "id": "MFZkNxZ9ohTFwXtVGXquXZ",
+                "name": "放送・出版サービス(CS)",
+                "code": "8.3.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "kwsn7g9hKWXEddwbRbWcgw",
+            "name": "宗教およびその他のコミュニティサービス",
+            "code": "8.4",
+            "amount": 0,
+            "children": [
+              {
+                "id": "9USGariFSxEt6JWAvn3AL7",
+                "name": "宗教およびその他のコミュニティサービス(CS)",
+                "code": "8.4.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "Mr5oGhLTxmoFtNo6ijEFFL",
+            "name": "研究開発 レクリエーション、文化、宗教",
+            "code": "8.5",
+            "amount": 0,
+            "children": [
+              {
+                "id": "j4MBEqD28K9xNaHLPVjeeL",
+                "name": "研究開発 レクリエーション、文化および宗教(CS)",
+                "code": "8.5.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "caQx89osET892wzo2tB4e4",
+            "name": "レクリエーション、文化および宗教 n.e.c.",
+            "code": "8.6",
+            "amount": 756741000.0,
+            "children": [
+              {
+                "id": "RUztUss7g4vMADEvsoFgHo",
+                "name": "他にないレクリエーション、文化および宗教(CS)",
+                "code": "8.6.0",
+                "amount": 756741000.0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "TP9mZ682CGUmMV5mYaGi3w",
+        "name": "教育",
+        "code": "9",
+        "amount": 9206608000.0,
+        "children": [
+          {
+            "id": "XffaVn9ojMnaBjsfH2bvnh",
+            "name": "初等・予備教育",
+            "code": "9.1",
+            "amount": 4857480000.0,
+            "children": [
+              {
+                "id": "HHVWoWM5BUYozPNWWfMXuM",
+                "name": "初等教育(IS)",
+                "code": "9.1.1",
+                "amount": 524833000.0,
+                "children": null
+              },
+              {
+                "id": "HtexRMFQB632Bmfr8bvFGr",
+                "name": "初等教育(IS)",
+                "code": "9.1.2",
+                "amount": 4332647000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "aaaN7Pwxq5FHiWKuBQhcNn",
+            "name": "中等教育",
+            "code": "9.2",
+            "amount": 1088024000.0,
+            "children": [
+              {
+                "id": "Bsmw3dyjwwgRnLwc2k7Q4n",
+                "name": "中等教育(IS)",
+                "code": "9.2.1",
+                "amount": 1088024000.0,
+                "children": null
+              },
+              {
+                "id": "Ndj3SG6oFvkmEWyau5Qd4R",
+                "name": "高等教育(IS)",
+                "code": "9.2.2",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "87PDpHUTSzNrQZxnFfkkWQ",
+            "name": "中等後の非第三紀教育",
+            "code": "9.3",
+            "amount": 0,
+            "children": [
+              {
+                "id": "bRUnrCaKKARdQqg4vAKjSy",
+                "name": "中等後の非中等教育(IS)",
+                "code": "9.3.0",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "oBzJSUa5gZzKJ8jjBS9KNJ",
+            "name": "第三次教育",
+            "code": "9.4",
+            "amount": 0,
+            "children": [
+              {
+                "id": "BpMAGpne8Wok88pN6xfCLZ",
+                "name": "第三次教育の第一段階(IS)",
+                "code": "9.4.1",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "PWHLF8NfgFPQ6PR3gSoy7J",
+                "name": "第三次教育の第二段階(IS)",
+                "code": "9.4.2",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "R5tKHHN6f2yLQ8jB99xJrx",
+            "name": "レベル別に定義できない教育",
+            "code": "9.5",
+            "amount": 41366000.0,
+            "children": [
+              {
+                "id": "CRaAfEauwtRiZekn75UR5t",
+                "name": "レベル別に定義できない教育(IS)",
+                "code": "9.5.0",
+                "amount": 41366000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "aZmvo6cjuASpmzKPyta5Mg",
+            "name": "教育への補助的サービス",
+            "code": "9.6",
+            "amount": 2281090000.0,
+            "children": [
+              {
+                "id": "2ynehHMpLuXZHpVkkymkQi",
+                "name": "教育への補助的サービス(IS)",
+                "code": "9.6.0",
+                "amount": 2281090000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "THVpPXRZcmvAaV5xH7UGVJ",
+            "name": "研究開発教育",
+            "code": "9.7",
+            "amount": 40153000.0,
+            "children": [
+              {
+                "id": "f9zQUc5AHPmYLmkofMxF4k",
+                "name": "研究開発教育(CS)",
+                "code": "9.7.0",
+                "amount": 40153000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "3UKMwQS4PM9EidzE6pLuUx",
+            "name": "教育 n.e.c.",
+            "code": "9.8",
+            "amount": 898495000.0,
+            "children": [
+              {
+                "id": "d7HzPbaQuSbimjCtjpHCQa",
+                "name": "一般教育(CS)",
+                "code": "9.8.0",
+                "amount": 898495000.0,
+                "children": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
