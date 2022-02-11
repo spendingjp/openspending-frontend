@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "yarn-dev",
+      "type": "shell",
+      "isBackground": true,
+      "command": "yarn dev",
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "yarn run.*",
+          "endsPattern": ".*Waiting for file changes.*"
+        }
+      }
+    }
+  ]
+}

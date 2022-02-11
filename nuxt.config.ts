@@ -62,7 +62,9 @@ const config: NuxtConfig = {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    standalone: true
+  },
 
   // 全Vueコンポーネントで読み込むscssファイル
   styleResources: {
