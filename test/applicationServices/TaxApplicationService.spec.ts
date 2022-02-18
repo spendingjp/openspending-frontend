@@ -21,38 +21,7 @@ describe('DailyBreadService', () => {
       localVue,
       mocks: {
         $repositories: (_: string) => ({
-          Get: (): CofogData => ({
-            amount: Price.create(10000),
-            year: 2021,
-            governmentName: 'つくば市',
-            taxList: [
-              {
-                amount: Price.create(8000),
-                cofog: new Cofog(
-                  CofogCode.create({
-                    level1: 1,
-                    level2: 2,
-                    level3: 3,
-                  }),
-                  'カテゴリ1'
-                ),
-                children: [
-                  {
-                    amount: Price.create(2000),
-                    cofog: new Cofog(
-                      CofogCode.create({
-                        level1: 1,
-                        level2: 1,
-                        level3: 2,
-                      }),
-                      'サブカテゴリ1-1'
-                    ),
-                    children: [],
-                  },
-                ],
-              },
-            ],
-          }),
+          Get: (): CofogData => inputCofogData,
         }),
       },
     })
@@ -68,12 +37,26 @@ describe('DailyBreadService', () => {
         {
           amount: ((3000000 - 330000) * 0.06 * 8000) / 10000 / 365,
           name: 'カテゴリ1',
-          cofogCode: '1.2.3',
+          cofogCode: '1.0.0',
           children: [
             {
               amount: ((3000000 - 330000) * 0.06 * 2000) / 10000 / 365,
-              cofogCode: '1.1.2',
+              cofogCode: '1.1.0',
               name: 'サブカテゴリ1-1',
+              children: [
+                {
+                  amount: ((3000000 - 330000) * 0.06 * 1500) / 10000 / 365,
+                  cofogCode: '1.1.1',
+                  name: 'サブカテゴリ1-1-1',
+                  children: null,
+                },
+                {
+                  amount: ((3000000 - 330000) * 0.06 * 500) / 10000 / 365,
+                  cofogCode: '1.1.2',
+                  name: 'サブカテゴリ1-1-2',
+                  children: null,
+                },
+              ],
             },
           ],
         },
@@ -84,3 +67,63 @@ describe('DailyBreadService', () => {
     expect(service.GetDailyBreadData(person)).toEqual(result)
   })
 })
+
+/* =============================================================
+ *  テストデータ
+ * ============================================================= */
+// ---------------- 正常 ----------------
+const inputCofogData = {
+  amount: Price.create(10000),
+  year: 2021,
+  governmentName: 'つくば市',
+  taxList: [
+    {
+      amount: Price.create(8000),
+      cofog: new Cofog(
+        CofogCode.create({
+          level1: 1,
+          level2: null,
+          level3: null,
+        }),
+        'カテゴリ1'
+      ),
+      children: [
+        {
+          amount: Price.create(2000),
+          cofog: new Cofog(
+            CofogCode.create({
+              level1: 1,
+              level2: 1,
+              level3: null,
+            }),
+            'サブカテゴリ1-1'
+          ),
+          children: [
+            {
+              amount: Price.create(1500),
+              cofog: new Cofog(
+                CofogCode.create({
+                  level1: 1,
+                  level2: 1,
+                  level3: 1,
+                }),
+                'サブカテゴリ1-1-1'
+              ),
+            },
+            {
+              amount: Price.create(500),
+              cofog: new Cofog(
+                CofogCode.create({
+                  level1: 1,
+                  level2: 1,
+                  level3: 2,
+                }),
+                'サブカテゴリ1-1-2'
+              ),
+            },
+          ],
+        },
+      ],
+    },
+  ],
+}

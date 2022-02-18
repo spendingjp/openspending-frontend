@@ -87,20 +87,10 @@ export default Vue.extend({
       childrenData: item.children.map((child) => ({
         name: child.cofog.Name,
         value: child.amount.value,
-        childrenData: [
-          {
-            name: 'テスト1',
-            value: 1000000000,
-          },
-          {
-            name: 'テスト2',
-            value: 200000000,
-          },
-          {
-            name: 'テスト3',
-            value: 600000000,
-          },
-        ],
+        childrenData: child.children.map((level3Item) => ({
+          name: level3Item.cofog.Name,
+          value: level3Item.amount.value,
+        })),
       })),
     }))
   },
@@ -313,7 +303,7 @@ export default Vue.extend({
           if (d.data.value === undefined || d.parent === null) {
             return null
           }
-          const valueText = Math.round(d.data.value / 10000) / 10
+          const valueText = Math.round(d.data.value / 10000000) / 10
 
           const textDisplayLength = this.getWordWidth(valueText.toString()) + 30 // 金額 + '億'の幅
           if (textDisplayLength > d.r) {

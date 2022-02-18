@@ -44,7 +44,7 @@ export class CofogDataRepository {
                 child.cofog.name
               ),
               children: child.children.map((level3Item: any) => ({
-                amount: Price.create(level3Item.amount),
+                amount: Price.create(level3Item.amount._value),
                 cofog: new Cofog(
                   CofogCode.create({
                     level1: level3Item.cofog.code._value.level1,

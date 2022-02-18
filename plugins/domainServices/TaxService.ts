@@ -43,7 +43,12 @@ export class TaxService {
                 amount: level2Item.amount,
                 cofog: level2Item.cofog,
               },
-              ...level2Item.children,
+              ...level2Item.children
+                .map((level3Item) => ({
+                  amount: level3Item.amount,
+                  cofog: level3Item.cofog,
+                }))
+                .flat(),
             ])
             .flat(),
         ]
