@@ -19,23 +19,18 @@ const config: NuxtConfig = {
       },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ],
-    script: [
-    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/css/main.scss'
-  ],
+  css: ['~/assets/css/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/Bootstrap.ts',
     '@/plugins/axios-accessor.ts',
-    '@/plugins/repositories/Repository.ts'
+    '@/plugins/repositories/Repository.ts',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -58,19 +53,17 @@ const config: NuxtConfig = {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:3001/'
+    baseURL: 'http://localhost:3001/',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    standalone: true
+    standalone: true,
   },
 
   // 全Vueコンポーネントで読み込むscssファイル
   styleResources: {
-    scss: [
-      '~assets/css/_var.scss'
-    ]
+    scss: ['~assets/css/_var.scss'],
   },
 }
 

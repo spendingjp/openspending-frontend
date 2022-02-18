@@ -54,6 +54,7 @@ export default Vue.extend({
         throw new Error('世帯種別が異常:' + type)
       }
       this.$emit('selectd-value', type)
+      this.$accessor.dailyBreadData.setHouseType(type)
       this.selected = type
     },
   },

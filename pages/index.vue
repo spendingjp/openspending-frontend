@@ -1,5 +1,5 @@
 <template>
-  <daily-selection region="つくば市" />
+  <daily-selection />
 </template>
 
 <script lang="ts">

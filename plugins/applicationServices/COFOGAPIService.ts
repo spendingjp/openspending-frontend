@@ -38,8 +38,8 @@ export class COFOGAPIService {
                 ...this.ConvertBudget2TaxItem(level2item),
                 children:
                   level2item.children !== null
-                    ? level2item.children.map((level2item) =>
-                        this.ConvertBudget2TaxItem(level2item)
+                    ? level2item.children.map((level3item) =>
+                        this.ConvertBudget2TaxItem(level3item)
                       )
                     : [],
               }))

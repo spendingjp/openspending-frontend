@@ -1,11 +1,16 @@
 import { NuxtAppOptions } from '@nuxt/types'
-import { CofogData } from '../dataTransferObjects/cofogData'
+import {
+  CofogData,
+  TaxItemLevel1,
+  TaxItemLevel2,
+  TaxItemLevel3,
+} from '../dataTransferObjects/cofogData'
 import {
   DailyBread,
-  DailyBreadChild,
   DailyBreadItem,
 } from '../dataTransferObjects/dailyBreadData'
 import { TaxService } from '../domainServices/TaxService'
+import { Government } from '../entities/Goverment'
 import { Person } from '../entities/Person'
 import { GovernmentFactory } from '../factories/GovermentFactory'
 
@@ -38,34 +43,9 @@ export class TaxApplicationService {
     const taxService = new TaxService(this.app)
 
     // 一日当たりの使途を生成
-    const taxList: DailyBreadItem[] = cofogData.taxList.map((tax) => {
-      const amount = taxService.calcTax({
-        person,
-        government,
-        cofogCode: tax.cofog.Code,
-      })
-
-      const children: DailyBreadChild[] = tax.children?.map((childTax) => {
-        const childAmount = taxService.calcTax({
-          person,
-          government,
-          cofogCode: childTax.cofog.Code,
-        })
-
-        return {
-          amount: childAmount !== null ? childAmount.value : 0,
-          name: childTax.cofog.Name,
-          cofogCode: childTax.cofog.Code.StrCode,
-        }
-      })
-
-      return {
-        amount: amount !== null ? amount.value : 0,
-        name: tax.cofog.Name,
-        cofogCode: tax.cofog.Code.StrCode,
-        children: children !== undefined ? children : [],
-      }
-    })
+    const taxList: DailyBreadItem[] = cofogData.taxList.map((tax) =>
+      this.ConvertTax2BreadItem(tax, taxService, person, government)
+    )
 
     return {
       amount: taxService.calcAmountTax({
@@ -73,6 +53,31 @@ export class TaxApplicationService {
         government,
       }).value,
       taxList,
+    }
+  }
+
+  private ConvertTax2BreadItem(
+    item: TaxItemLevel1 | TaxItemLevel2 | TaxItemLevel3,
+    service: TaxService,
+    person: Person,
+    government: Government
+  ): DailyBreadItem {
+    const amount = service.calcTax({
+      person,
+      government,
+      cofogCode: item.cofog.Code,
+    })
+
+    return {
+      amount: amount !== null ? amount.value : 0,
+      name: item.cofog.Name,
+      cofogCode: item.cofog.Code.StrCode,
+      children:
+        'children' in item
+          ? item.children.map((child: TaxItemLevel2 | TaxItemLevel3) =>
+              this.ConvertTax2BreadItem(child, service, person, government)
+            )
+          : null,
     }
   }
 }

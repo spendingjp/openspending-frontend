@@ -1,12 +1,11 @@
 <template>
   <div>
     <input
-      :value="value"
+      v-model="inputedValue"
       :max="max"
       :min="min"
-      step="200000"
+      :step="step"
       type="range"
-      @input="$emit('input', Number($event.target.value))"
     />
   </div>
 </template>
@@ -30,11 +29,31 @@ export default Vue.extend({
       default: 100,
     },
     /**
+     * 設定間隔
+     */
+    step: {
+      type: Number,
+      default: 1,
+    },
+    /**
      * 選択値
      */
     value: {
       type: Number,
       default: 50,
+    },
+  },
+  data() {
+    return {}
+  },
+  computed: {
+    inputedValue: {
+      get() {
+        return this.value
+      },
+      set(val) {
+        this.$emit('input', Number(val))
+      },
     },
   },
 })
@@ -51,7 +70,6 @@ input[type='range'] {
   width: 100%;
   background: $info;
   border-radius: 10px;
-  /* border: solid 3px #2E3C8C; */
 }
 /* つまみ */
 input[type='range']::-webkit-slider-thumb {
@@ -59,7 +77,6 @@ input[type='range']::-webkit-slider-thumb {
   background: $primary;
   width: 24px;
   height: 24px;
-  /* background-image: url('/yen-slider.png'); */
   background-size: cover;
   border-radius: 50%; /* 円形に */
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); /* 影 */
