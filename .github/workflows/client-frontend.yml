@@ -23,7 +23,7 @@ jobs:
         run: "yarn audit || :"
 
       - name: lint
-        run: "yarn lint ||| :"
+        run: "yarn lint || :"
 
       - name: generate
         run: yarn generate
