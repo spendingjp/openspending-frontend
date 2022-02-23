@@ -17,8 +17,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: npm
-          cache-dependency-path: "yarn.lock"
-      - run: yarn install
+      - run: npm install
 
       - name: audit
         run: "yarn audit || :"
