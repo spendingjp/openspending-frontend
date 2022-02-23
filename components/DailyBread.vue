@@ -142,8 +142,10 @@
 <script lang="ts">
 import Vue from 'vue'
 import DanceBallroom from 'vue-material-design-icons/DanceBallroom.vue'
+import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import IncomeSelector from '~/components/molecules/IncomeSelector.vue'
 import HouseTypeSelection from '@/components/molecules/HouseTypeSelection.vue'
+import { DailyBreadItem } from '~/plugins/dataTransferObjects/dailyBreadData'
 
 export type DataType = {
   /**
@@ -162,7 +164,19 @@ export type DataType = {
    * スライダーで選択した値
    */
   sliderValue: Number
+  /**
+   * 自治体名
+   */
+  region: string
 }
+
+type PropType = {}
+
+type ComputedType = {
+  taxData: DailyBreadItem[]
+}
+
+type MethodType = {}
 
 export default Vue.extend({
   components: {
@@ -214,7 +228,7 @@ export default Vue.extend({
       },
     },
   },
-})
+} as ThisTypedComponentOptionsWithRecordProps<Vue, DataType, MethodType, ComputedType, PropType>)
 </script>
 
 <style scoped lang="scss">

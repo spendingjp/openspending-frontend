@@ -12,6 +12,22 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
+
+type PropType = {
+  min: Number
+  max: Number
+  step: Number
+  value: Number
+}
+
+type ComputedType = {
+  inputedValue: Number
+}
+
+type MethodType = {}
+type DataType = {}
+
 export default Vue.extend({
   props: {
     /**
@@ -56,7 +72,7 @@ export default Vue.extend({
       },
     },
   },
-})
+} as ThisTypedComponentOptionsWithRecordProps<Vue, DataType, MethodType, ComputedType, PropType>)
 </script>
 
 <style scoped lang='scss'>
