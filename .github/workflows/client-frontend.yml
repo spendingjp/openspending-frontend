@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: npm
-      - run: npm install
+      - run: yarn install
 
       - name: audit
         run: "yarn audit || :"
