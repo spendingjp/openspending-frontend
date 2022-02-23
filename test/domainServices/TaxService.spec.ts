@@ -26,6 +26,7 @@ describe('TaxService', () => {
             amount: Price.create(10000),
             year: 2021,
             governmentName: 'つくば市',
+            budgetName: 'つくば市YYYY年度予算',
             taxList: [
               {
                 amount: Price.create(8000),

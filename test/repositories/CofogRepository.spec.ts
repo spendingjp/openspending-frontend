@@ -44,6 +44,17 @@ describe('CofogRepository', () => {
         updatedAt: '2022-02-04T15:47:03.425683Z',
       },
       totalAmount: 89713000000.0,
+      sourceBudget: {
+        id: 'SDanT82RwYPnfPmyw2tD9j',
+        name: 'つくば市2021年度予算',
+        slug: 'tsukuba-shi-2021-nendo-yosan',
+        year: 2021,
+        subtitle: '',
+        classificationSystem: 'KkbyhYBrhD998uii4WgWTq',
+        government: 'oRgxRSueiNbNCmW3LkDN8E',
+        createdAt: '2022-02-13T05:02:17.856000Z',
+        updatedAt: '2022-02-13T05:02:17.859000Z',
+      },
     }
 
     // 処理実行
@@ -74,6 +85,17 @@ describe('CofogRepository', () => {
               updatedAt: '2022-02-04T15:47:03.425683Z',
             },
             budgets: [], // budgetsが空
+            sourceBudget: {
+              id: 'SDanT82RwYPnfPmyw2tD9j',
+              name: 'つくば市2021年度予算',
+              slug: 'tsukuba-shi-2021-nendo-yosan',
+              year: 2021,
+              subtitle: '',
+              classificationSystem: 'KkbyhYBrhD998uii4WgWTq',
+              government: 'oRgxRSueiNbNCmW3LkDN8E',
+              createdAt: '2022-02-13T05:02:17.856000Z',
+              updatedAt: '2022-02-13T05:02:17.859000Z',
+            },
           })
         })
     )

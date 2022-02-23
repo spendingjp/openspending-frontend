@@ -51,6 +51,7 @@ export class COFOGAPIService {
         taxList,
         year: apiResponse.year,
         governmentName: apiResponse.government.name,
+        budgetName: apiResponse.sourceBudget.name,
       }
     } catch (e) {
       throw new Error('APIレスポンスをオブジェクトに変換失敗')

@@ -37,4 +37,21 @@ export interface COFOGAPIResponse {
    * 予算
    */
   budgets: Budget[]
+  sourceBudget: {
+    id: string
+    /**
+     * 予算名
+     */
+    name: string
+    slug: string
+    /**
+     * 予算作成年度
+     */
+    year: number
+    subtitle: string
+    classificationSystem: string
+    government: string
+    createdAt: string
+    updatedAt: string
+  }
 }
