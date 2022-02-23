@@ -1,179 +1,201 @@
 {
   "tsukuba-shi-cofog2021": {
-    "id": "CfW8FPjJmb4aaNLRB2ZQP2",
+    "id": "DJDyNP3sTpeViRyuUNrqko",
     "name": "つくば市COFOG2021",
-    "subtitle": "",
+    "subtitle": null,
     "slug": "tsukuba-shi-cofog2021",
     "year": 2021,
-    "createdAt": "2022-02-04T15:48:00.901211Z",
-    "updatedAt": "2022-02-04T15:48:00.902603Z",
+    "createdAt": "2022-02-13T05:04:11.270000Z",
+    "updatedAt": "2022-02-13T05:04:11.272000Z",
+    "totalAmount": 89713000000.0,
     "government": {
-      "id": "NUXQj6smbHytL3radZuMQe",
+      "id": "oRgxRSueiNbNCmW3LkDN8E",
       "name": "つくば市",
       "slug": "tsukuba-shi",
       "latitude": 36.0825081,
       "longitude": 140.1107132,
-      "createdAt": "2022-02-04T15:47:03.420321Z",
-      "updatedAt": "2022-02-04T15:47:03.425683Z"
+      "createdAt": "2022-02-13T05:01:58.437000Z",
+      "updatedAt": "2022-02-13T05:01:58.439000Z"
     },
-    "totalAmount": 89713000000.0,
     "budgets": [
       {
-        "id": "bQ8xKBPRoVZLxauxQMJHtx",
+        "id": "bDymvz3hSgu9uDjfuRwLYn",
         "name": "公共サービス全般",
         "code": "1",
+        "iconId": "nY8jFuSYBPcTPHtvhvT2U8",
         "amount": 27738407000.0,
         "children": [
           {
-            "id": "PCgTVjG456QN6YYah7yppH",
+            "id": "AFfgWZY9NEjK3e9usfArcJ",
             "name": "行政・立法機関、財務・財政、渉外",
             "code": "1.1",
+            "iconId": "FXnowGYA872oWY4hFFQMVU",
             "amount": 25879644000.0,
             "children": [
               {
-                "id": "knPerCJWEScxFachLNig4u",
+                "id": "kr6HUJvKD2wgQ4cvgqSsP5",
                 "name": "行政・立法機関(CS)",
                 "code": "1.1.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 18834640000.0,
                 "children": null
               },
               {
-                "id": "QhyXQqQLUerENLXYFmStEu",
+                "id": "F2p73Tbgo9xg3sMKruL69L",
                 "name": "財務・会計(CS)",
                 "code": "1.1.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 7038735000.0,
                 "children": null
               },
               {
-                "id": "P8ReRpWwzspCKnvyAeurbF",
+                "id": "GizoXsVijFiqfF6kBcshfz",
                 "name": "対外関係(CS)",
                 "code": "1.1.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 6269000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "BNugKJHPkcweshFc9cqi2b",
+            "id": "AuhBypuFQEWV8QkdDegBQU",
             "name": "対外経済援助",
             "code": "1.2",
+            "iconId": "DR9WesksMtPP4Z5ThC2Lzo",
             "amount": 0,
             "children": [
               {
-                "id": "2vfndZUxqqzdKXRFFgt7Na",
+                "id": "kFYTVFrQZ7idTdEESQ5xkd",
                 "name": "開発途上国および移行国に対する経済援助(CS)",
                 "code": "1.2.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "BFQaGFk3Vwm7GwBVry6xSh",
+                "id": "AFyUpQqqq6QpbwBopxJsek",
                 "name": "国際機関を通じた経済援助(CS)",
                 "code": "1.2.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "YHUBjbSde98H7SRVBDELkd",
+            "id": "o5bchEzcNYiHcTH78FyKAW",
             "name": "一般サービス",
             "code": "1.3",
+            "iconId": "oPxvfjNUV7sKhfPZijAAQU",
             "amount": 1462400000.0,
             "children": [
               {
-                "id": "Yn7NDSq55HXxJDVAwxw6ek",
+                "id": "XAfUtu8ZXvatpUuYLY2hJo",
                 "name": "一般的な人事サービス(CS)",
                 "code": "1.3.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 21150000.0,
                 "children": null
               },
               {
-                "id": "LtWSEfamVixPEMxeVdPgzo",
+                "id": "USeLfope9YEn5dQXkoMoWe",
                 "name": "総合企画・統計サービス(CS)",
                 "code": "1.3.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 560126000.0,
                 "children": null
               },
               {
-                "id": "JxHkASW8A8mmmZvudqzCJi",
+                "id": "3zx9zjBPU7pJGzmCbMB46d",
                 "name": "その他の一般サービス(CS)",
                 "code": "1.3.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 881124000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "4zNDhcz2am9w6no55HjbNC",
+            "id": "LNs5EK8JFrXYAnp7d2iw3s",
             "name": "基礎研究",
             "code": "1.4",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "bNB8GedSTV5B6ZyadHH2LQ",
+                "id": "3gqwuVbEMd3bzmXizuc3YD",
                 "name": "基礎研究(CS)",
                 "code": "1.4.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "3f2WTcxZQe6tVU7pbrqV3z",
+            "id": "GjyXDFHTRHTwGjXrfHK3tj",
             "name": "研究開発 一般公共サービス",
             "code": "1.5",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "4RDowViVbngfzYyYAhjkyk",
+                "id": "KJnUNjPhGHYvAhKANb67cm",
                 "name": "研究開発 一般向けサービス(CS)",
                 "code": "1.5.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "a5CAyLkkJhSwBdHGToNmjf",
+            "id": "DWTT4Qii8aBLa8bvmG9JoF",
             "name": "一般的な公共サービス n.e.c.",
             "code": "1.6",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 183172000.0,
             "children": [
               {
-                "id": "BUXsZLNbtWBzYokTyVVN5J",
+                "id": "2QMu3otA532zpSHjq7L7jZ",
                 "name": "一般的な公共サービス(CS)",
                 "code": "1.6.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 183172000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "N4TQgsh2xtJ6Eotqi2PfqZ",
+            "id": "4mfbdmmQDgfQykyiUyesvF",
             "name": "公的債務取引",
             "code": "1.7",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 213191000.0,
             "children": [
               {
-                "id": "ESqN9QAbKQJe4FG4Liq3uW",
+                "id": "mxnSdsGNtGVdF6HG65oZdi",
                 "name": "公的債務取引(CS)",
                 "code": "1.7.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 213191000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "VniFbNokSErRcNcAGttdHG",
+            "id": "GbgdHm52F8oYRYzJfJXNTe",
             "name": "異なるレベルの政府間における一般的性格の移転",
             "code": "1.8",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "GhdGjYxCJ5Yc4VexrRpaHu",
+                "id": "nWcF7irEG9EUgtbEqUcjLd",
                 "name": "異なるレベルの政府間での一般的性格の移転(CS)",
                 "code": "1.8.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
@@ -182,231 +204,92 @@
         ]
       },
       {
-        "id": "NL7cuwY58GcpEH3cWEJhNr",
-        "name": "社会的保護",
-        "code": "10",
-        "amount": 31569587000.0,
-        "children": [
-          {
-            "id": "2rBVaGwTXWvpZtyFiTmMy9",
-            "name": "疾病および障害",
-            "code": "10.1",
-            "amount": 4679629000.0,
-            "children": [
-              {
-                "id": "bmAtS8PASpmF5DbF9abZ8p",
-                "name": "病気(IS)",
-                "code": "10.1.1",
-                "amount": 0,
-                "children": null
-              },
-              {
-                "id": "KHunUqQg9ReWSssULVduE8",
-                "name": "障がい(IS)",
-                "code": "10.1.2",
-                "amount": 4679629000.0,
-                "children": null
-              }
-            ]
-          },
-          {
-            "id": "PBFEb6raW3cYG86afKz7gr",
-            "name": "老齢",
-            "code": "10.2",
-            "amount": 2265833000.0,
-            "children": [
-              {
-                "id": "GZ2hBUoD23eDJxDe4XnuMH",
-                "name": "老齢(IS)",
-                "code": "10.2.0",
-                "amount": 2265833000.0,
-                "children": null
-              }
-            ]
-          },
-          {
-            "id": "bgXq2Y2AuwY8Ntsr7wJs6e",
-            "name": "生存者",
-            "code": "10.3",
-            "amount": 0,
-            "children": [
-              {
-                "id": "bpUwxt2PexzoCaLXgKPLmM",
-                "name": "生存者(IS)",
-                "code": "10.3.0",
-                "amount": 0,
-                "children": null
-              }
-            ]
-          },
-          {
-            "id": "fwkmN5aGxTmCpM7kLtcNns",
-            "name": "家族と子供",
-            "code": "10.4",
-            "amount": 17157793000.0,
-            "children": [
-              {
-                "id": "hZ6oD3xCXaTXr323YurwC5",
-                "name": "家族と子供(IS)",
-                "code": "10.4.0",
-                "amount": 17157793000.0,
-                "children": null
-              }
-            ]
-          },
-          {
-            "id": "ia5oUckMGAWFZgxTLnvEN7",
-            "name": "失業",
-            "code": "10.5",
-            "amount": 0,
-            "children": [
-              {
-                "id": "9jzSo6rn5GvXndMZ7BXyef",
-                "name": "失業(IS)",
-                "code": "10.5.0",
-                "amount": 0,
-                "children": null
-              }
-            ]
-          },
-          {
-            "id": "EDkKpkTjrrPXBYfe3w4AVw",
-            "name": "住居",
-            "code": "10.6",
-            "amount": 0,
-            "children": [
-              {
-                "id": "7QUjz4eJqRze87ZeWzXTYf",
-                "name": "住宅(IS)",
-                "code": "10.6.0",
-                "amount": 0,
-                "children": null
-              }
-            ]
-          },
-          {
-            "id": "FTCFb8QwhBz3mmGH3pCc5v",
-            "name": "社会的排除(N.E.C.)",
-            "code": "10.7",
-            "amount": 2199781000.0,
-            "children": [
-              {
-                "id": "LsU2THMfUzPGdth9BFqLpY",
-                "name": "社会的排除 n.e.c.(IS)",
-                "code": "10.7.0",
-                "amount": 2199781000.0,
-                "children": null
-              }
-            ]
-          },
-          {
-            "id": "JiCGxGpQWdxeGSZU5EJ5h4",
-            "name": "研究開発 社会的保護",
-            "code": "10.8",
-            "amount": 0,
-            "children": [
-              {
-                "id": "4TbiFfPnhCzjVXNwmiHoW5",
-                "name": "R&D 社会的保護(CS)",
-                "code": "10.8.0",
-                "amount": 0,
-                "children": null
-              }
-            ]
-          },
-          {
-            "id": "QCAp7TXHep7B69ccXog8h2",
-            "name": "社会的保護 n.e.c.",
-            "code": "10.9",
-            "amount": 5266551000.0,
-            "children": [
-              {
-                "id": "6jDftX3RoZGYfDRMkkn6EY",
-                "name": "社会的保護 n.e.c.(CS)",
-                "code": "10.9.0",
-                "amount": 5266551000.0,
-                "children": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "2ht79XTzT3b4Nz4R9oKGJm",
+        "id": "RLrzEDJyRzypT69RuecebM",
         "name": "国防",
         "code": "2",
+        "iconId": "SejmvBGHYuE39HrmZVvSHS",
         "amount": 0,
         "children": [
           {
-            "id": "KDHogTtXqyae57AeVgcNM8",
+            "id": "SF7rEuzpz3ymgpFsWWdk2T",
             "name": "軍事的防衛",
             "code": "2.1",
+            "iconId": "fwy843kNHhPE8n47QFJpBx",
             "amount": 0,
             "children": [
               {
-                "id": "nSi9WB7KQxpPqNwoYzXpaQ",
+                "id": "gsFwqjLkGnXjw6psNeQPM4",
                 "name": "軍事的防衛(CS)",
                 "code": "2.1.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "FtWARxCAQ55JbspfPucpoW",
+            "id": "W94F2dezMJuuowojo6KLh2",
             "name": "民間防衛",
             "code": "2.2",
+            "iconId": "E4bErPMyi6U6t3nayCZJYR",
             "amount": 0,
             "children": [
               {
-                "id": "gjsiboFu2rwRURyxkzUmyk",
+                "id": "fzPtmMrNNZdLLy7URS4bKU",
                 "name": "民間防衛(Civil defence)(CS)",
                 "code": "2.2.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "nXWc44Miqrb43S2WWa5Kne",
+            "id": "e2MJxUg9ZMKPuzQEqQtiu2",
             "name": "海外軍事援助",
             "code": "2.3",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "NSbH4FBjyo3WkHeaBzbcPU",
+                "id": "PPhtYZ9ggMm6yt4QgpfTvB",
                 "name": "海外軍事援助(CS)",
                 "code": "2.3.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "ChFLCCnyMmSUyhMFxXsFwy",
+            "id": "AXeg9fGtiYoQAozJb2JYiQ",
             "name": "研究開発 防衛",
             "code": "2.4",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "GownnN7zK4Hdvg2aWUDnjk",
+                "id": "aMYSJjUfszYajSMgZgnQtj",
                 "name": "研究開発 防衛(CS)",
                 "code": "2.4.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "oBMFoCCHe732UU8aK8yjmA",
+            "id": "CipaHisXQ2W5Sh9QHmxVyh",
             "name": "一般的な防衛",
             "code": "2.5",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "3L9ZxCgV3G3tr9hrfrfVVF",
+                "id": "6UB9vsqHkKAGpiuXVqF7QW",
                 "name": "国防一般(CS)",
                 "code": "2.5.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
@@ -415,96 +298,109 @@
         ]
       },
       {
-        "id": "WCkkWdXMhzxNsBq4KFRSLZ",
+        "id": "BaE6zMJ2g5QVEdpnTwXmiK",
         "name": "公共の秩序と安全",
         "code": "3",
+        "iconId": "QZzgg7htCe49x4RxTJfFVS",
         "amount": 1168137000.0,
         "children": [
           {
-            "id": "kUG3TnQzTHdKRDTXqq8X3c",
+            "id": "hTUAACL2LzTMzuiP5m4NAy",
             "name": "警察サービス",
             "code": "3.1",
+            "iconId": "JYkMnm9LgnDFFHuk7u7ZAV",
             "amount": 0,
             "children": [
               {
-                "id": "EKBEARb44ebWoZD6zHNeta",
+                "id": "nq4gsuURaeroWiEfLcAMZs",
                 "name": "警察サービス(CS)",
                 "code": "3.1.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "TFCtb9ekzUnBxbCnUZwufX",
+            "id": "2i7ivRGHvN3qgeRuDnGMgY",
             "name": "防災サービス",
             "code": "3.2",
+            "iconId": "GS99jKdviUAsmSagsHjoNF",
             "amount": 1037281000.0,
             "children": [
               {
-                "id": "Qv9xGuLytPMNPyeL57QNfG",
+                "id": "39HvaJKH7MBoSXCotozEUm",
                 "name": "消防サービス(CS)",
                 "code": "3.2.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 1037281000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "cCdumu5FfmJAnmNUcLoFXq",
+            "id": "Xn7BepH247puYzbnL7V4cp",
             "name": "法廷",
             "code": "3.3",
+            "iconId": "X9wbc6KxLy3EAbr38vedzF",
             "amount": 0,
             "children": [
               {
-                "id": "EPkXbTkg5mTJwJhqGnRu78",
+                "id": "KmZHRYk7HeLCkTwbg85orS",
                 "name": "法廷(CS)",
                 "code": "3.3.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "kfgJfi6Pzh9V5vfZNcdQ5F",
+            "id": "JfgNoBFTquHw5HwhZ7myEs",
             "name": "刑務所",
             "code": "3.4",
+            "iconId": "TJ8PiywWaYYw3iG4EWtTer",
             "amount": 0,
             "children": [
               {
-                "id": "j3xjsx9cD42pHzNER9LiQg",
+                "id": "mTt7wqrGSwM6TvG8VsKgxw",
                 "name": "刑務所(CS)",
                 "code": "3.4.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "6E854XXQSU5fdjMAivX2Qr",
+            "id": "SD7pYRrMzp7yUGEaBuBzcU",
             "name": "研究開発 公序良俗に反する行為",
             "code": "3.5",
+            "iconId": "UwJ4SA3Db8Vb8tC7SxjCvf",
             "amount": 0,
             "children": [
               {
-                "id": "LFQkBfwnu8AnQ5EQx4HBuW",
+                "id": "k9NhGC5Pirjjck5bjh7STs",
                 "name": "研究開発 公序良俗と安全(CS)",
                 "code": "3.5.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "anupD9Db58yzHQ4d8x6FcW",
+            "id": "kB9xqxoJgqYbQeheFCnmNB",
             "name": "公序良俗N.E.C.",
             "code": "3.6",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 130856000.0,
             "children": [
               {
-                "id": "ea6NsezPQ22WoE8F5MDkkf",
+                "id": "Rx8LNFaUSwR56GJTRC3ZQb",
                 "name": "公序良俗に反する行為(CS)",
                 "code": "3.6.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 130856000.0,
                 "children": null
               }
@@ -513,302 +409,344 @@
         ]
       },
       {
-        "id": "VokG53ZN8pLxtyYAyFiriv",
+        "id": "Uz795sqwf9X8vgnxvWTLo4",
         "name": "経済問題",
         "code": "4",
+        "iconId": "ZUxEFzhZJtNrqp3X5fuSSF",
         "amount": 7111314000.0,
         "children": [
           {
-            "id": "3GV47gHRXkhxAcFbTAfTBi",
+            "id": "cTm4oTdeKBx8xnDbDQCqqr",
             "name": "一般的な経済・商業・労働問題",
             "code": "4.1",
+            "iconId": "f7fRUeq2qXVMKF5Dr4tQZt",
             "amount": 1020439000.0,
             "children": [
               {
-                "id": "CVNUq2Y9ZPmmVNdfGfYxVH",
+                "id": "TRmMZ8gFDMixTSkKge2xWq",
                 "name": "経済・商業・労働問題全般(CS)",
                 "code": "4.1.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 986098000.0,
                 "children": null
               },
               {
-                "id": "AMmSJpgRAdSUm4iiHhFGPd",
+                "id": "2sECrKE3zU7MQMA7TS8wNA",
                 "name": "一般的な労働問題(CS)",
                 "code": "4.1.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 34341000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "UVcg3gNeeFV8MGeR5dH2zS",
+            "id": "BhmgjKYKkduW5BwTPvJFBA",
             "name": "農業、林業、漁業、狩猟",
             "code": "4.2",
+            "iconId": "KeTUXBtG2ov4j8RwYBD6zM",
             "amount": 956387000.0,
             "children": [
               {
-                "id": "4mziRdgFCrHqAoJ4EfvwhW",
+                "id": "2b83BBDsVC7MjFJpHynu2S",
                 "name": "農業(CS)",
                 "code": "4.2.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 908711000.0,
                 "children": null
               },
               {
-                "id": "Yfj4MhVNfVEAAfkganHLqh",
+                "id": "fR6rC7mSoRmg7MfKGF5qgB",
                 "name": "林業(CS)",
                 "code": "4.2.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 47676000.0,
                 "children": null
               },
               {
-                "id": "afUPuzvEb3CcovPBr3Fa3u",
+                "id": "82BKSstns3GQ2TYpyvMtZ5",
                 "name": "漁業および狩猟(CS)",
                 "code": "4.2.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "LqJd7N9NS94867ygVbhH8Z",
+            "id": "kF55mdztPaLfSs2uMy6ftj",
             "name": "燃料・エネルギー",
             "code": "4.3",
+            "iconId": "BGQGK2CYihohbgyE58XMAK",
             "amount": 0,
             "children": [
               {
-                "id": "nuGiRu4bd6JLdQy4GfFk2S",
+                "id": "Pu8CC7bYADte2FevMwBqLF",
                 "name": "石炭およびその他の固体鉱物燃料(CS)",
                 "code": "4.3.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "iNqeEpRhAeGeUe4hRBcgQS",
+                "id": "my6uek5bnM7ojWvwUZzAdr",
                 "name": "石油および天然ガス(CS)",
                 "code": "4.3.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "7wAvW6Z35tN5DMn64aJY43",
+                "id": "bQZYXikp3k3AmvEzRrNDbK",
                 "name": "核燃料(CS)",
                 "code": "4.3.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "bbobJhU8e4qQvoKBiCGxFm",
+                "id": "Wyw8ojdiNposGJh3w3yEhK",
                 "name": "その他の燃料(CS)",
                 "code": "4.3.4",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "CfXhVGWqcfdJ68nWPXvDxU",
+                "id": "9ZSM7RVdGFp7ygNU8ZzNfi",
                 "name": "電気(CS)",
                 "code": "4.3.5",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "As9TgQf3yMvvNDuxWQbVMd",
+                "id": "Kgjmu7XQsius78RGynJDUF",
                 "name": "非電気エネルギー(CS)",
                 "code": "4.3.6",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "jNCeVHeWvUvDmiNhJdixAn",
+            "id": "h87aVhApembY8AwwRgiB6K",
             "name": "鉱業、製造業、建設業",
             "code": "4.4",
+            "iconId": "RJJuVbUYAyZTUh6eJSoWaD",
             "amount": 11520000.0,
             "children": [
               {
-                "id": "fcw2n6AijPUKGRoXfMAQEs",
+                "id": "KHAdcgrd5xJfH5Gyfvcg2n",
                 "name": "鉱物燃料以外の鉱物資源の採掘(CS)",
                 "code": "4.4.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "XYfNPx2WhjM43um6B4m6mb",
+                "id": "PdXHe5Nj8MtfNrCSvKshDp",
                 "name": "製造(CS)",
                 "code": "4.4.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "4B3UH4HZTdssPoDZCWvrbP",
+                "id": "Ed2w4U88pRHBKUppMeTcEt",
                 "name": "建設(CS)",
                 "code": "4.4.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 11520000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "DfdYiKvqmDkyy8FwxmqJtw",
+            "id": "HpW2HnZVTrUzTFpTeW5pSX",
             "name": "輸送分野",
             "code": "4.5",
+            "iconId": "5c4WqnyC6EwHD8ofXp8jyV",
             "amount": 4380430000.0,
             "children": [
               {
-                "id": "nSj3irCz22xAcMQjE2WyHW",
+                "id": "hKRSRHkfePnEsL8ccKgHLq",
                 "name": "道路輸送(CS)",
                 "code": "4.5.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 4129511000.0,
                 "children": null
               },
               {
-                "id": "SjHJ947kDkCxbEvo7DdLG3",
+                "id": "EQNoZwhQUsjnjEWgzLugon",
                 "name": "水輸送(CS)",
                 "code": "4.5.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 150491000.0,
                 "children": null
               },
               {
-                "id": "c7zQVZcpmDSdgRgCs28YmT",
+                "id": "fSBsGdLHpDFxYpVoBSFGe3",
                 "name": "鉄道輸送(CS)",
                 "code": "4.5.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 100428000.0,
                 "children": null
               },
               {
-                "id": "ANrJCfv85wPTgTePTYTYVs",
+                "id": "VykV3gyLHbwZqsWax5G6Gi",
                 "name": "航空輸送(CS)",
                 "code": "4.5.4",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "Wexts3sh2R3QsZUJVBrubz",
+                "id": "neeg6bvFRkmWTL56z8jw7N",
                 "name": "パイプラインおよびその他の輸送(CS)",
                 "code": "4.5.5",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "ngwA63GoTtQ8MzC2fGj8Xr",
+            "id": "i8QWFj63fY7NZJ5JKDFUYP",
             "name": "通信",
             "code": "4.6",
+            "iconId": "HZEB4SuUctkJjwxQMPBg6z",
             "amount": 0,
             "children": [
               {
-                "id": "bksT5zmMi2RaN2jHSovKGX",
+                "id": "LaKKTd8sEfEs9pCSJSu7f9",
                 "name": "通信(CS)",
                 "code": "4.6.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "9p5SWG6JwrfCepTVU39jm4",
+            "id": "6LbaLdcKFNqW6PDJgGcYdg",
             "name": "その他の産業",
             "code": "4.7",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 642877000.0,
             "children": [
               {
-                "id": "jZGGtqmU9nmBHmSM5MoLto",
+                "id": "mQ9nbv4huhFa9SRrjMZiy6",
                 "name": "流通業、貯蔵・倉庫業(CS)",
                 "code": "4.7.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "WzSvtpcAYtCsHC3QENP8Ra",
+                "id": "MTUdjFyEpTvCmRHxvJ8Gk7",
                 "name": "ホテル、レストラン(CS)",
                 "code": "4.7.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "Vx3odyHAMPwbbTUjaTR5X7",
+                "id": "VZL9QnapsxbKXxebVe5BAr",
                 "name": "観光(CS)",
                 "code": "4.7.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 642877000.0,
                 "children": null
               },
               {
-                "id": "TXgBMaRnReumSVRE9dTfke",
+                "id": "HjdQWxTs937qTKcvQSVMdH",
                 "name": "多目的開発プロジェクト(CS)",
                 "code": "4.7.4",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "RGKDfgC2GqDwofeEdy9SGM",
+            "id": "jFN3mh4pKhPQBaNRjba3bD",
             "name": "R&D 経済関係",
             "code": "4.8",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "R2t9TNYMhcQPdZREkUrdrN",
+                "id": "oUWf9vHnaWYHGZdiRuw8Gr",
                 "name": "R&D 一般的な経済、商業、労働問題(CS)",
                 "code": "4.8.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "WhzkJUmjrDZa8TEsEv6pWj",
+                "id": "auygvo3gXz2HkxF4gL47Cc",
                 "name": "R&D 農業、林業、漁業および狩猟(CS)",
                 "code": "4.8.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "mP2fFTeDRcrKCynpyHiQHd",
+                "id": "dxibvyTxX7n4C2g8gXUHdU",
                 "name": "R&D 燃料およびエネルギー(CS)",
                 "code": "4.8.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "2quCqiW5wxK2M8Yk6M6kdp",
+                "id": "897upaNqrwoLSeWKvfizKQ",
                 "name": "R&D 鉱業、製造業、建設業(CS)",
                 "code": "4.8.4",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "dZnqmfQzXc5KrVNqxWK7cn",
+                "id": "AAYJar9FaZAsN6FUYSw6NQ",
                 "name": "R&D 運輸(CS)",
                 "code": "4.8.5",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "f4hpAerW5Epp8XN8XJ8gDG",
+                "id": "TFo26vH44eSFod8pHqwBuA",
                 "name": "R&D 通信(CS)",
                 "code": "4.8.6",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "RgdPV243tAifW7XxM9Ld9d",
+                "id": "28T2FWMuq22TzVZUGQrTcK",
                 "name": "R&D その他の産業(CS)",
                 "code": "4.8.7",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "KxX9okYGMHyYXbSe6638ba",
+            "id": "L2iX8xzrLmHbmV3LznnXQM",
             "name": "他に類のない経済問題",
             "code": "4.9",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 99661000.0,
             "children": [
               {
-                "id": "3uVEfYkY7SDBZZ2fMoxKb8",
+                "id": "GVJGQZRXWGgeaQUbqsP8ri",
                 "name": "他に分類されない経済問題(CS)",
                 "code": "4.9.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 99661000.0,
                 "children": null
               }
@@ -817,96 +755,109 @@
         ]
       },
       {
-        "id": "G4YZbRUfF3TYZ4UkvQVELr",
+        "id": "SZsFGB2f2hvogWikc2LAcD",
         "name": "環境保護",
         "code": "5",
+        "iconId": "MT7hHr6fwNevgujsYiFkNQ",
         "amount": 4908950000.0,
         "children": [
           {
-            "id": "FPcqveUiNNYB64EBS2dhyz",
+            "id": "QefuVqrxbaUd52dBRTRuRs",
             "name": "廃棄物処理",
             "code": "5.1",
+            "iconId": "CF7pnZWsUuyZmpU6NyspXh",
             "amount": 2393312000.0,
             "children": [
               {
-                "id": "Tn4iPasSXbKdY7qjSrApKN",
+                "id": "dXo9ero6Ct86XvfYgvxhF6",
                 "name": "廃棄物管理(CS)",
                 "code": "5.1.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 2393312000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "5u7eXCFCg2QK4wEqwAatRi",
+            "id": "MwXTmZ4JFAc7dSXZvGEWV7",
             "name": "廃水管理",
             "code": "5.2",
+            "iconId": "ap6EiUxqB7pHgWnvBkPzEt",
             "amount": 2220868000.0,
             "children": [
               {
-                "id": "iSimwVjknMh2DizqGuSTk9",
+                "id": "NPUgDg5BeDKsDH3g2atSoF",
                 "name": "廃棄物管理(CS)",
                 "code": "5.2.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 2220868000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "LNvfm9LWJoPUngWFNwYe8n",
+            "id": "ngGjbJ67aJfFQNNXUctDYj",
             "name": "汚染の軽減",
             "code": "5.3",
+            "iconId": "DrmkgknRAAXHVZULsZYzW5",
             "amount": 184884000.0,
             "children": [
               {
-                "id": "HWpuLJ2HxEhAspcruHtiYP",
+                "id": "2qmSvfVeDsdqAfgiVToiwg",
                 "name": "汚染の軽減(CS)",
                 "code": "5.3.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 184884000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "C9GfaLJwE5KcHmLB3hKgty",
+            "id": "HTaq7Kho2sjTwdeEVdwzFr",
             "name": "生物多様性と景観の保護",
             "code": "5.4",
+            "iconId": "nDssYxnE2qDAyHDPm9tyFp",
             "amount": 9679000.0,
             "children": [
               {
-                "id": "Jyf4BHX8hUdcfdJTNqEVAi",
+                "id": "nzYpL6qruHk8sS5rPnrDif",
                 "name": "生物多様性と景観の保護(CS)",
                 "code": "5.4.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 9679000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "WnoTPBCuBiVdN6mnwMDiNU",
+            "id": "6PgT52i5HwHbzCqDsfnaJo",
             "name": "研究開発 環境保護",
             "code": "5.5",
+            "iconId": "RDwxqteP2zVCjSfNaaKo77",
             "amount": 0,
             "children": [
               {
-                "id": "FbRgMaPrThDddEDy3thUis",
+                "id": "PNrREdENwAVawpHvHai6uo",
                 "name": "R&D 環境保護(CS)",
                 "code": "5.5.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "PnhkKx8SWuune2DnXopMDj",
+            "id": "2BEME7rcWqALFDNeokLvt4",
             "name": "環境保護(N.E.C.)",
             "code": "5.6",
+            "iconId": "KLr5QwxMjZmwifmA4GAAKJ",
             "amount": 100207000.0,
             "children": [
               {
-                "id": "TsyB6mYpznbX2WongV4XVE",
+                "id": "TUsGs4P9FBKJZY3bQ3c7UL",
                 "name": "他の環境保護(CS)",
                 "code": "5.6.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 100207000.0,
                 "children": null
               }
@@ -915,96 +866,109 @@
         ]
       },
       {
-        "id": "VpfBQat4dCLvGPKYNuPsig",
+        "id": "WkKUtKsJeXpbVTCad2hJsX",
         "name": "住宅とコミュニティ・アメニティ",
         "code": "6",
+        "iconId": "F7VUTaejbm8C3ZeKPYfurw",
         "amount": 2781651000.0,
         "children": [
           {
-            "id": "UHmKMk9iDJ5HxJiSWb56u2",
+            "id": "V4n2BxmVhjHNuoMGRVZLcB",
             "name": "住宅開発",
             "code": "6.1",
+            "iconId": "GsoPzbccLWmuZ29Wu2KRLE",
             "amount": 506624000.0,
             "children": [
               {
-                "id": "F9GfY9FsJ8R9GdsSRwFM7x",
+                "id": "89onTP5BewRXaQvmj9jW9N",
                 "name": "住宅開発(CS)",
                 "code": "6.1.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 506624000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "hLCRw5MkvLnhSWghYVzKrr",
+            "id": "XJat93JfkmYcVLscFetUjT",
             "name": "コミュニティ開発",
             "code": "6.2",
+            "iconId": "DZs4bZfW9gg56ooBHBnYdH",
             "amount": 1806072000.0,
             "children": [
               {
-                "id": "32J2NE9pJqKmQD2LKTvnDP",
+                "id": "bc29ZxrH4iFRtNFmkRqzoJ",
                 "name": "コミュニティ開発(CS)",
                 "code": "6.2.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 1806072000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "R4WgLtbVceEj4STTgioFWN",
+            "id": "Lz5PRhSe9JuSUBptorLNdS",
             "name": "水の供給",
             "code": "6.3",
+            "iconId": "fjkjDXGdKK94AGWvFnZMeK",
             "amount": 468955000.0,
             "children": [
               {
-                "id": "TiKQkcwLroWummXVMs4bNw",
+                "id": "9GxVndmnHEFE737usicbnL",
                 "name": "水の供給(CS)",
                 "code": "6.3.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 468955000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "bNdvnKJHqR6qkKuwQTGjjJ",
+            "id": "8diHaUTibwovoesAjbxYya",
             "name": "街路灯",
             "code": "6.4",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "UhyDEiWXKH2ky22R79HBYi",
+                "id": "h699zVo3y2mH4AigMNY8o3",
                 "name": "街路灯(CS)",
                 "code": "6.4.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "9QgpsGpRtXmt6eJzr27T2L",
+            "id": "bwxFHhm8U5AFctZPNedfer",
             "name": "R&D 住宅とコミュニティのアメニティ",
             "code": "6.5",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "WoJNSuNkJH5g2EZg9MyRr9",
+                "id": "WEigjBmxxZUiNSMAs9uAEQ",
                 "name": "R&D 住宅とコミュニティのアメニティ(CS)",
                 "code": "6.5.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "ULa94U8FjZSrN287XDriJu",
+            "id": "DGcCQfnU8YX8YzfvESK4hL",
             "name": "他にない住宅とコミュニティの快適さ",
             "code": "6.6",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "EN4uxF6366yEzmvQuakjsP",
+                "id": "REe7WzLmTBQxangrGLJoKd",
                 "name": "他にない住宅とコミュニティの快適さ(CS)",
                 "code": "6.6.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
@@ -1013,152 +977,173 @@
         ]
       },
       {
-        "id": "j4HZ27SDzzeKZcQ95HjrsY",
+        "id": "kSdoDru7wpZPvV425Qeews",
         "name": "健康",
         "code": "7",
+        "iconId": "4dbr7TVi5gSvnbQahzeZVi",
         "amount": 1910294000.0,
         "children": [
           {
-            "id": "FbShd4smNw8HdLpgRWdDPz",
+            "id": "bYM3gD5i7tD6FLG4ri2BxJ",
             "name": "医療製品・機器・設備",
             "code": "7.1",
+            "iconId": "4dbr7TVi5gSvnbQahzeZVi",
             "amount": 0,
             "children": [
               {
-                "id": "2aDk5vXWSDYWYoM3MjgzFk",
+                "id": "inW449kUCP4xrLJdRUUAgR",
                 "name": "医薬品(Individual Services)",
                 "code": "7.1.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "fx4J4QHqKqoXf7XuvDrU8D",
+                "id": "k6vJpQeYDu5ugBnPTJ9NjC",
                 "name": "その他の医療製品(IS)",
                 "code": "7.1.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "nLWxEL4GpmK3j6uRPoySbc",
+                "id": "S4xUNq8LZhwUn8Vifobf2L",
                 "name": "治療用機器・器具(IS)",
                 "code": "7.1.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "bjQ2kKSk9hAkiM4BdcRYiH",
+            "id": "6aeoGaVjEdpaeDRWxc9LBz",
             "name": "外来サービス",
             "code": "7.2",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 60459000.0,
             "children": [
               {
-                "id": "JNPG7HQLuvqANqQHuRVv7E",
+                "id": "kp278gEKXf9JrPFWduJMgE",
                 "name": "一般医療サービス(IS)",
                 "code": "7.2.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 38655000.0,
                 "children": null
               },
               {
-                "id": "AD5SceaZhhtED3d4bAr5AH",
+                "id": "ZBaw54nd7z7aLTaZvFT5Ph",
                 "name": "専門医療サービス(IS)",
                 "code": "7.2.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "SJURW564QDUJm7ddwWJ476",
+                "id": "c69CWJvwUNNksAQUMiYtKz",
                 "name": "歯科医療サービス(IS)",
                 "code": "7.2.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "dptmDf4B256XV3HgeeGghW",
+                "id": "b2JD6HGRzaELjVL7JZdXQw",
                 "name": "救急医療サービス(IS)",
                 "code": "7.2.4",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 21804000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "kWrSNjvWhQHKABXnqQ7W5e",
+            "id": "CkT4mPWiDeSw34KLjXwZWb",
             "name": "病院サービス",
             "code": "7.3",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 628634000.0,
             "children": [
               {
-                "id": "VvZq7xiQ82NmDjvT87EUwF",
+                "id": "6yd2wf9QAEMSWfQQpJ2766",
                 "name": "一般病院サービス(IS)",
                 "code": "7.3.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "gBDR9F7kFjW7yZu2LvHnPy",
+                "id": "boFrd5DoYfhwQbhgvFE3Yp",
                 "name": "専門病院サービス(IS)",
                 "code": "7.3.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "4DoziUWTj7rAzv7pLV5Ga5",
+                "id": "f2kPBdWpHUSYdjWeN37eeE",
                 "name": "医療およびマタニティセンターサービス(IS)",
                 "code": "7.3.3",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 304929000.0,
                 "children": null
               },
               {
-                "id": "mityx7VA6PcUaj2hi78UHh",
+                "id": "niS7vF8Hcy4xJZDPNGmbsz",
                 "name": "老人ホームサービス(IS)",
                 "code": "7.3.4",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 323705000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "aQndjMCfdoaTrGkyKoNH7h",
+            "id": "bCjqynq5FwTkTrMybTkkmt",
             "name": "公衆衛生サービス",
             "code": "7.4",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 1081285000.0,
             "children": [
               {
-                "id": "YaKjUNc6sjGWh7BLL4QhMh",
+                "id": "Rp4Q2yQBdM4sg2UdMGyEy2",
                 "name": "公衆衛生サービス(IS)",
                 "code": "7.4.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 1081285000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "V7AAEc8bM9zREw33WSbxiG",
+            "id": "Wbko48X6WAhhnWrGaThz2X",
             "name": "R&Dヘルス",
             "code": "7.5",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "KfivfRdHXebypqdjyJJaqQ",
+                "id": "iDHiyPUCLaur5NVcrCaeV4",
                 "name": "R&D ヘルス(CS)",
                 "code": "7.5.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "HsJJMyGdgLi2g9hbM4KoLe",
+            "id": "8SmWpMrURxd6VF8ZuoYJDg",
             "name": "既成概念の健康",
             "code": "7.6",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 139916000.0,
             "children": [
               {
-                "id": "NPNXwGLe5vk2hRxvEUHhV9",
+                "id": "Nkqpcwp5Z8oxraggkhBcJH",
                 "name": "一般的な健康(CS)",
                 "code": "7.6.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 139916000.0,
                 "children": null
               }
@@ -1167,96 +1152,109 @@
         ]
       },
       {
-        "id": "BBkyhm3XNCmdaTHZnMf5VP",
+        "id": "VyLaKRQie7cXtXVbDc4o6c",
         "name": "レクリエーション、文化、宗教",
         "code": "8",
+        "iconId": "eywQKATybuTFgZrJPSRtsy",
         "amount": 3318052000.0,
         "children": [
           {
-            "id": "PaqjwR2FHUTg8P7SnGQCwC",
+            "id": "HCC5SnpWGXv7YjM65RW9LA",
             "name": "レクリエーションおよびスポーツサービス",
             "code": "8.1",
+            "iconId": "53adURT6uso7wzWtWQcrPv",
             "amount": 1069183000.0,
             "children": [
               {
-                "id": "TuaXQMAUyo8fxigLQCy3Y8",
+                "id": "imDxn85YgimutVFuQ5ooaS",
                 "name": "レクリエーションおよびスポーツサービス(IS)",
                 "code": "8.1.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 1069183000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "YWBjTwEctdiABfLtUhfxYx",
+            "id": "WVw64c7g8cWwUneEkxf6dc",
             "name": "文化サービス",
             "code": "8.2",
+            "iconId": "MjhtWYY73vnMuDuWQRsSoU",
             "amount": 1492128000.0,
             "children": [
               {
-                "id": "VxCPH64KFYgsa3RCiCKZyV",
+                "id": "RRUPUwXruFpaHncqCQ9ChU",
                 "name": "文化サービス(IS)",
                 "code": "8.2.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 1492128000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "5Z5sgKUQQEsgqQEYgqCij7",
+            "id": "K7KGFWGeu3Wd3xs2X3Abyu",
             "name": "放送・出版サービス",
             "code": "8.3",
+            "iconId": "NPM2VxjVpaTrRiQrLJqo2L",
             "amount": 0,
             "children": [
               {
-                "id": "MFZkNxZ9ohTFwXtVGXquXZ",
+                "id": "Lhxo9KBvnv8fPvANWLDuwh",
                 "name": "放送・出版サービス(CS)",
                 "code": "8.3.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "kwsn7g9hKWXEddwbRbWcgw",
+            "id": "GYopaArKLfsHaFhQFaBZfP",
             "name": "宗教およびその他のコミュニティサービス",
             "code": "8.4",
+            "iconId": "Lb8XjbEyh6C4kiGTwZszLW",
             "amount": 0,
             "children": [
               {
-                "id": "9USGariFSxEt6JWAvn3AL7",
+                "id": "apU62wJrUF9jFgdoPFVdi6",
                 "name": "宗教およびその他のコミュニティサービス(CS)",
                 "code": "8.4.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "Mr5oGhLTxmoFtNo6ijEFFL",
+            "id": "88dpvkGufe9oVgiN9D4umc",
             "name": "研究開発 レクリエーション、文化、宗教",
             "code": "8.5",
+            "iconId": "PCzmyK7eyaD5bqhK63qheh",
             "amount": 0,
             "children": [
               {
-                "id": "j4MBEqD28K9xNaHLPVjeeL",
+                "id": "bWqSYFaJvGYLcnnuCLvSDv",
                 "name": "研究開発 レクリエーション、文化および宗教(CS)",
                 "code": "8.5.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "caQx89osET892wzo2tB4e4",
+            "id": "Ep8f3KLiZhTDKxTobWwcDe",
             "name": "レクリエーション、文化および宗教 n.e.c.",
             "code": "8.6",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 756741000.0,
             "children": [
               {
-                "id": "RUztUss7g4vMADEvsoFgHo",
+                "id": "mAUe3WSxSEzxJWKogRdbrY",
                 "name": "他にないレクリエーション、文化および宗教(CS)",
                 "code": "8.6.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 756741000.0,
                 "children": null
               }
@@ -1265,154 +1263,355 @@
         ]
       },
       {
-        "id": "TP9mZ682CGUmMV5mYaGi3w",
+        "id": "TUhhj5K4rCrC8JMxgQDTre",
         "name": "教育",
         "code": "9",
+        "iconId": "mRHUos7AAwPT4uxXXFtdW9",
         "amount": 9206608000.0,
         "children": [
           {
-            "id": "XffaVn9ojMnaBjsfH2bvnh",
+            "id": "P5ACkAVCJbBPvTsXzGqdu4",
             "name": "初等・予備教育",
             "code": "9.1",
+            "iconId": "TXoLWkNWP5quNXA76ufz3u",
             "amount": 4857480000.0,
             "children": [
               {
-                "id": "HHVWoWM5BUYozPNWWfMXuM",
+                "id": "MSshAqxLyU85Xcx7SBq2ag",
                 "name": "初等教育(IS)",
                 "code": "9.1.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 524833000.0,
                 "children": null
               },
               {
-                "id": "HtexRMFQB632Bmfr8bvFGr",
+                "id": "KWRFpVpFoRp8yYSeUDa3s3",
                 "name": "初等教育(IS)",
                 "code": "9.1.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 4332647000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "aaaN7Pwxq5FHiWKuBQhcNn",
+            "id": "aNHrP9BxpEvFe4yMcB6FTW",
             "name": "中等教育",
             "code": "9.2",
+            "iconId": "cgTsqnR9m8XmbzKtC4Yhg7",
             "amount": 1088024000.0,
             "children": [
               {
-                "id": "Bsmw3dyjwwgRnLwc2k7Q4n",
+                "id": "BHTbePucTtvTdVDrDh7JDZ",
                 "name": "中等教育(IS)",
                 "code": "9.2.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 1088024000.0,
                 "children": null
               },
               {
-                "id": "Ndj3SG6oFvkmEWyau5Qd4R",
+                "id": "7ucW5qtKrv6CeVEDbXobGS",
                 "name": "高等教育(IS)",
                 "code": "9.2.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "87PDpHUTSzNrQZxnFfkkWQ",
+            "id": "ffLLDnPc4KiWXEVRDFCBcK",
             "name": "中等後の非第三紀教育",
             "code": "9.3",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "bRUnrCaKKARdQqg4vAKjSy",
+                "id": "ZkNcEVgDthRMW3XoFVfuw4",
                 "name": "中等後の非中等教育(IS)",
                 "code": "9.3.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "oBzJSUa5gZzKJ8jjBS9KNJ",
+            "id": "azju35TVpJxu4NPbAWKx8g",
             "name": "第三次教育",
             "code": "9.4",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 0,
             "children": [
               {
-                "id": "BpMAGpne8Wok88pN6xfCLZ",
+                "id": "WZRKKsK9AaTS55a533xYqA",
                 "name": "第三次教育の第一段階(IS)",
                 "code": "9.4.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               },
               {
-                "id": "PWHLF8NfgFPQ6PR3gSoy7J",
+                "id": "ksWPTohnUKUZjzqtT7byWk",
                 "name": "第三次教育の第二段階(IS)",
                 "code": "9.4.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 0,
                 "children": null
               }
             ]
           },
           {
-            "id": "R5tKHHN6f2yLQ8jB99xJrx",
+            "id": "gTK3PNzWVDqt8WaVgZnqDC",
             "name": "レベル別に定義できない教育",
             "code": "9.5",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 41366000.0,
             "children": [
               {
-                "id": "CRaAfEauwtRiZekn75UR5t",
+                "id": "oKP6w57bBP55nn6t85xszp",
                 "name": "レベル別に定義できない教育(IS)",
                 "code": "9.5.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 41366000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "aZmvo6cjuASpmzKPyta5Mg",
+            "id": "c39zh47hhhUePXz7SwFVsA",
             "name": "教育への補助的サービス",
             "code": "9.6",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 2281090000.0,
             "children": [
               {
-                "id": "2ynehHMpLuXZHpVkkymkQi",
+                "id": "ZFAkDjotnznTdD7s7gCCCN",
                 "name": "教育への補助的サービス(IS)",
                 "code": "9.6.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 2281090000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "THVpPXRZcmvAaV5xH7UGVJ",
+            "id": "BPsrH4aiksDekqyAfy2FW8",
             "name": "研究開発教育",
             "code": "9.7",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 40153000.0,
             "children": [
               {
-                "id": "f9zQUc5AHPmYLmkofMxF4k",
+                "id": "RzChahNLxnN5R3togemUnC",
                 "name": "研究開発教育(CS)",
                 "code": "9.7.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 40153000.0,
                 "children": null
               }
             ]
           },
           {
-            "id": "3UKMwQS4PM9EidzE6pLuUx",
+            "id": "jXVag5zvy9NCXCJpwptZ8U",
             "name": "教育 n.e.c.",
             "code": "9.8",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
             "amount": 898495000.0,
             "children": [
               {
-                "id": "d7HzPbaQuSbimjCtjpHCQa",
+                "id": "3vKRuHhhHByzSMHmooBr7x",
                 "name": "一般教育(CS)",
                 "code": "9.8.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
                 "amount": 898495000.0,
                 "children": null
               }
             ]
           }
         ]
+      },
+      {
+        "id": "JG2skbVLEwv5QE5qeASBEK",
+        "name": "社会的保護",
+        "code": "10",
+        "iconId": "etzaaShdF2GmacSTYPeyPr",
+        "amount": 31569587000.0,
+        "children": [
+          {
+            "id": "ZYCvdA9XwKaYuL9CkbMLae",
+            "name": "疾病および障害",
+            "code": "10.1",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
+            "amount": 4679629000.0,
+            "children": [
+              {
+                "id": "LznexJT7qMSfBJA7CeYuGS",
+                "name": "病気(IS)",
+                "code": "10.1.1",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 0,
+                "children": null
+              },
+              {
+                "id": "Nph9VsbijJsvxEVkUqrkGm",
+                "name": "障がい(IS)",
+                "code": "10.1.2",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 4679629000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "Pksty6muA7ZJGEfFyCPyCR",
+            "name": "老齢",
+            "code": "10.2",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
+            "amount": 2265833000.0,
+            "children": [
+              {
+                "id": "mbywocpaccJKxVZRBn6RZx",
+                "name": "老齢(IS)",
+                "code": "10.2.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 2265833000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "Vf4ajaxtug7iprCiVf2JWM",
+            "name": "生存者",
+            "code": "10.3",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
+            "amount": 0,
+            "children": [
+              {
+                "id": "NHQyjLtnPTADiN3dBd2VAf",
+                "name": "生存者(IS)",
+                "code": "10.3.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "Vm3msFckGy2yuAhNXJzGjo",
+            "name": "家族と子供",
+            "code": "10.4",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
+            "amount": 17157793000.0,
+            "children": [
+              {
+                "id": "QAgtiZf8qkGADT6TZ38kVb",
+                "name": "家族と子供(IS)",
+                "code": "10.4.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 17157793000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "ixa7vjGeCsnXVKJNkYdEhg",
+            "name": "失業",
+            "code": "10.5",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
+            "amount": 0,
+            "children": [
+              {
+                "id": "GYA7H5XfEGtbhcKEZm8sUU",
+                "name": "失業(IS)",
+                "code": "10.5.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "EaT6hrA3cEtazodESjwFsA",
+            "name": "住居",
+            "code": "10.6",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
+            "amount": 0,
+            "children": [
+              {
+                "id": "DYFbS8X2L8jPeE4ons7G5Z",
+                "name": "住宅(IS)",
+                "code": "10.6.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "D5GqagdtQeLeqcAVw9coLi",
+            "name": "社会的排除(N.E.C.)",
+            "code": "10.7",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
+            "amount": 2199781000.0,
+            "children": [
+              {
+                "id": "c5AvCnYa6AvRWvk3QVjwew",
+                "name": "社会的排除 n.e.c.(IS)",
+                "code": "10.7.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 2199781000.0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "fiY8dLcrcfLr5zHgKzGn2o",
+            "name": "研究開発 社会的保護",
+            "code": "10.8",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
+            "amount": 0,
+            "children": [
+              {
+                "id": "3efBNcsSzP6LqN284xmDyD",
+                "name": "R&D 社会的保護(CS)",
+                "code": "10.8.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 0,
+                "children": null
+              }
+            ]
+          },
+          {
+            "id": "LUSz9CcRDKdRKPThQeVaVH",
+            "name": "社会的保護 n.e.c.",
+            "code": "10.9",
+            "iconId": "etzaaShdF2GmacSTYPeyPr",
+            "amount": 5266551000.0,
+            "children": [
+              {
+                "id": "35sU2pGufgerQtrjiB7pA7",
+                "name": "社会的保護 n.e.c.(CS)",
+                "code": "10.9.0",
+                "iconId": "etzaaShdF2GmacSTYPeyPr",
+                "amount": 5266551000.0,
+                "children": null
+              }
+            ]
+          }
+        ]
       }
-    ]
+    ],
+    "sourceBudget": {
+      "id": "SDanT82RwYPnfPmyw2tD9j",
+      "name": "つくば市2021年度予算",
+      "slug": "tsukuba-shi-2021-nendo-yosan",
+      "year": 2021,
+      "subtitle": "",
+      "classificationSystem": "KkbyhYBrhD998uii4WgWTq",
+      "government": "oRgxRSueiNbNCmW3LkDN8E",
+      "createdAt": "2022-02-13T05:02:17.856000Z",
+      "updatedAt": "2022-02-13T05:02:17.859000Z"
+    }
   }
 }

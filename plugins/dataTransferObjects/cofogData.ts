@@ -38,4 +38,8 @@ export type CofogData = Readonly<{
    * 自治体名称
    */
   governmentName: string
+  /**
+   * 予算名称
+   */
+  budgetName: string
 }>

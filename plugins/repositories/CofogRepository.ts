@@ -35,7 +35,10 @@ export class CofogRepository {
     if (
       json.year === undefined ||
       json.government === undefined ||
-      json.budgets === undefined
+      json.budgets === undefined ||
+      json.sourceBudget === undefined ||
+      json.government.name === undefined ||
+      json.sourceBudget.name === undefined
     ) {
       return false
     }
