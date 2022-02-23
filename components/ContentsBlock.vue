@@ -25,9 +25,20 @@ export default Vue.extend({
   margin-bottom: 50px;
 }
 .content-title {
+  position: relative;
+  color: $info;
   margin: 16px 0;
   padding-bottom: 10px;
-  border-bottom: 1px solid $primary;
+  border-bottom: solid 3px $light;
+
+  &::after {
+    position: absolute;
+    content: ' ';
+    display: block;
+    border-bottom: solid 3px $primary;
+    bottom: -3px;
+    width: 30%;
+  }
 }
 .content-container {
   margin-left: 5em;
