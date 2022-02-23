@@ -57,14 +57,13 @@
                       :size="80"
                       class="accordion-icon"
                     />
-                    <p class="accordion-title col-7 col-lg-10">
+                    <p class="accordion-title col-6 col-lg-10">
                       {{ cofogLevel1Item.name }}
                     </p>
 
                     <div class="fw-bold fs-3 col-3 col-lg-1">
-                      <span class="fs-5">￥</span>&nbsp;{{
-                        cofogLevel1Item.amount | displayMoney
-                      }}
+                      <span class="fs-6 me-1">￥</span
+                      >{{ cofogLevel1Item.amount | displayMoney }}
                     </div>
                   </button>
                 </h2>

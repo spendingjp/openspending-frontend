@@ -19,14 +19,14 @@
         <!-- 年収表示 -->
         <div class="col-12 col-lg-6 align-text-bottom">
           <div class="row">
-            <p class="col-6 col-lg-12 mb-0 align-self-center">年収</p>
+            <p class="col-5 col-lg-12 mb-0 align-self-center">年収</p>
             <p
               class="
                 money
                 mb-0
                 fs-3
                 ps-3
-                col-6 col-lg-12
+                col-7 col-lg-12
                 text-end text-lg-start
               "
             >
@@ -37,13 +37,13 @@
         <!-- 税額表示 -->
         <div class="col-12 col-lg-6">
           <div class="row">
-            <div class="col-6 col-lg-12">あなたの{{ region }}税（年間）</div>
+            <div class="col-5 col-lg-12">あなたの{{ region }}税（年間）</div>
             <p
               class="
                 money
                 mb-0
                 ps-3
-                col-6 col-lg-12
+                col-7 col-lg-12
                 text-end text-lg-start
                 fs-3
               "
