@@ -110,7 +110,7 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      region: 'つくば市',
+      region: this.$accessor.regionCofogData.regionCofogData.governmentName,
     }
   },
 })
@@ -121,7 +121,7 @@ export default Vue.extend({
 }
 
 a.navbar-brand {
-  color: #bf9d73;
+  color: $primary;
   font-weight: bold;
   font-size: 4.5vmin;
   @media (min-width: 640px) {
@@ -134,11 +134,11 @@ a.navbar-brand {
 }
 
 .sub-title {
-  background-color: #0f1640;
-  color: #0f1640;
+  background-color: $dark;
+  color: $dark;
   font-weight: bold;
   padding: 3px 0;
-  border-bottom: #0f1640 solid 3px;
+  border-bottom: $dark solid 3px;
 
   & div {
     color: #fefefe;
@@ -153,7 +153,7 @@ a.navbar-brand {
 #navbarSupportedContent a.active {
   color: #f2f2f2;
   font-weight: bold;
-  border-bottom: #bf9d73 solid 2px;
+  border-bottom: $primary solid 2px;
   padding-bottom: 2px;
 }
 
@@ -162,6 +162,6 @@ a.navbar-brand {
 }
 
 #navbarSupportedContent a:hover {
-  color: #bf9d73;
+  color: $primary;
 }
 </style>
