@@ -8,19 +8,3 @@ body {
     'Hiragino Sans', 'BIZ UDPGothic', Meiryo, sans-serif;
   line-height: 1.9;
 }
-
-h3 {
-  border-bottom: solid 3px $light;
-  position: relative;
-  color: $info;
-  font-weight: bold;
-}
-
-h3:after {
-  position: absolute;
-  content: ' ';
-  display: block;
-  border-bottom: solid 3px $primary;
-  bottom: -3px;
-  width: 30%;
-}
