@@ -29,6 +29,7 @@ describe('CofogVuex', () => {
       amount: Price.create(89713000000.0),
       year: 2021,
       governmentName: 'つくば市',
+      budgetName: 'つくば市YYYY年度予算',
       taxList: [
         {
           amount: Price.create(27738407000.0),
@@ -118,4 +119,15 @@ const response: COFOGAPIResponse = {
       ],
     },
   ],
+  sourceBudget: {
+    id: 'SDanT82RwYPnfPmyw2tD9j',
+    name: 'つくば市YYYY年度予算',
+    slug: 'tsukuba-shi-2021-nendo-yosan',
+    year: 2021,
+    subtitle: '',
+    classificationSystem: 'KkbyhYBrhD998uii4WgWTq',
+    government: 'oRgxRSueiNbNCmW3LkDN8E',
+    createdAt: '2022-02-13T05:02:17.856000Z',
+    updatedAt: '2022-02-13T05:02:17.859000Z',
+  },
 }
