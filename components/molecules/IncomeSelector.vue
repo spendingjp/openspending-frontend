@@ -59,14 +59,24 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import Slider from '@/components/atoms/slider.vue'
 
 type DataType = {
   region: string
-  sliderValue: number
-  timeout: NodeJS.Timeout
-  debouncedInput: string
+  sliderValue: Number
+  timeout: NodeJS.Timeout | null
 }
+
+type PropType = {
+  minYearlyIncome: Number
+  maxYearlyIncome: Number
+  value: number
+}
+
+type ComputedType = {}
+
+type MethodType = {}
 
 export default Vue.extend({
   components: {
@@ -90,14 +100,23 @@ export default Vue.extend({
     },
   },
   props: {
+    /**
+     * 年収最小値
+     */
     minYearlyIncome: {
       type: Number,
       default: 1000000,
     },
+    /**
+     * 年収最大値
+     */
     maxYearlyIncome: {
       type: Number,
       default: 20000000,
     },
+    /**
+     * 年収初期値
+     */
     value: {
       type: Number,
       default: 0,
@@ -108,7 +127,6 @@ export default Vue.extend({
       region: this.$accessor.regionCofogData.regionCofogData.governmentName,
       sliderValue: this.value,
       timeout: null,
-      debouncedInput: '',
     }
   },
   computed: {
@@ -128,7 +146,7 @@ export default Vue.extend({
   mounted() {
     this.$accessor.dailyBreadData.setIncome(this.value)
   },
-})
+} as ThisTypedComponentOptionsWithRecordProps<Vue, DataType, MethodType, ComputedType, PropType>)
 </script>
 
 <style lang="scss" scoped>
