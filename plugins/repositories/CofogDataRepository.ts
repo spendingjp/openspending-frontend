@@ -19,6 +19,7 @@ export class CofogDataRepository {
     const storeData = this.app.store?.getters['regionCofogData/regionCofogData']
     const data: CofogData = {
       amount: Price.create(storeData.amount._value),
+      budgetName: storeData.budgetName,
       year: storeData.year,
       governmentName: storeData.governmentName,
       taxList: storeData.taxList.map((item: any) => {
