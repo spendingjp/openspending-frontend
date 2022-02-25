@@ -6,9 +6,9 @@
   >
     <!-- アイコン -->
     <slot />
-    <p :class="[isChecked ? 'mb-0 checked-text' : 'mb-0 un-checked-text']">
+    <span class="text" :class="[isChecked ? 'mb-0 checked-text' : 'mb-0 un-checked-text']">
       {{ text }}
-    </p>
+    </span>
   </button>
 </template>
 
@@ -58,6 +58,10 @@ button:hover {
   margin-top: 3px;
   border: 2px solid $primary;
   border-bottom: 2px solid $primary;
+}
+
+.text {
+  display: block;
 }
 
 .checked-text {

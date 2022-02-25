@@ -31,30 +31,29 @@
               class="accordion-item accordion-box"
             >
               <div class="row">
-                <h2 :id="'heading-level1-' + i" class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    :data-bs-target="'#collapse-level1-' + i"
-                    aria-expanded="false"
-                    :aria-controls="'collapse-level1-' + i"
-                  >
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  :data-bs-target="'#collapse-level1-' + i"
+                  aria-expanded="false"
+                  :aria-controls="'collapse-level1-' + i"
+                >
+                  <span :id="'heading-level1-' + i" class="accordion-button-inner">
                     <dance-ballroom
                       fill-color="#ddd"
                       :size="80"
                       class="accordion-icon"
                     />
-                    <p class="accordion-title col-6 col-lg-10">
+                    <span class="accordion-title">
                       {{ cofogLevel1Item.name }}
-                    </p>
-
-                    <div class="fw-bold fs-3 col-3 col-lg-1">
+                    </span>
+                    <span class="accordion-amount fw-bold fs-3">
                       <span class="fs-6 me-1">￥</span
                       >{{ cofogLevel1Item.amount | displayMoney }}
-                    </div>
-                  </button>
-                </h2>
+                    </span>
+                  </span>
+                </button>
               </div>
               <div
                 :id="'collapse-level1-' + i"
@@ -69,28 +68,28 @@
                     :key="j"
                     class="accordion-item accordion-box row"
                   >
-                    <h2
-                      :id="'heading-level2-' + i + '-' + j"
-                      class="accordion-header"
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      :data-bs-target="'#collapse-level2-' + i + '-' + j"
+                      aria-expanded="false"
+                      :aria-controls="'collapse-level2-' + i + '-' + j"
                     >
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        :data-bs-target="'#collapse-level2-' + i + '-' + j"
-                        aria-expanded="false"
-                        :aria-controls="'collapse-level2-' + i + '-' + j"
+                      <span
+                        :id="'heading-level2-' + i + '-' + j"
+                        class="accordion-button-inner"
                       >
-                        <p class="accordion-title ps-3 col-7 col-lg-10">
+                        <span class="accordion-title ps-3">
                           {{ cofogLevel2Item.name }}
-                        </p>
-                        <div class="fw-bold col-3 col-lg-1">
+                        </span>
+                        <span class="accordion-amount">
                           <span class="small">￥</span>&nbsp;{{
                             cofogLevel2Item.amount | displayMoney
                           }}
-                        </div>
-                      </button>
-                    </h2>
+                        </span>
+                      </span>
+                    </button>
                     <div
                       :id="'collapse-level2-' + i + '-' + j"
                       class="accordion-collapse collapse"
@@ -252,6 +251,12 @@ export default Vue.extend({
   vertical-align: bottom;
 }
 
+.accordion-button-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .accordion-item {
   border-top: none;
   border-left: none;
@@ -260,13 +265,13 @@ export default Vue.extend({
 }
 
 .accordion-title {
-  position: relative;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  // width: 50vw;
-  margin-bottom: 0;
+  flex: 1 0 50%;
   margin-right: 15px;
+}
+
+.accordion-amount {
+  flex: 0 0 25%;
+  font-weight: bold;
 }
 
 .accordion-icon {
