@@ -3,7 +3,7 @@
     <!-- 世帯種別選択 -->
     <div class="row mb-3">
       <div class="col">
-        <h3>あなたの世帯タイプは？</h3>
+        <h2 class="title">あなたの世帯タイプは？</h2>
       </div>
     </div>
     <div id="select-house-type-box" class="row">
@@ -14,7 +14,7 @@
     <!-- 年収選択 -->
     <div class="row mt-4">
       <div class="col">
-        <h3>あなたの年収は？</h3>
+        <h2 class="title">あなたの年収は？</h2>
       </div>
     </div>
     <income-selector
@@ -24,11 +24,11 @@
     />
     <div class="row mt-5 mb-3">
       <div class="col">
-        <h3>
+        <h2 class="title">
           あなたの{{
             region
           }}税は、1日当たり、どこで、いくら使われているかの目安です。
-        </h3>
+        </h2>
       </div>
     </div>
     <div class="row mt-4">
@@ -232,20 +232,23 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-h3 {
-  border-bottom: solid 3px #359af2;
+.title {
+  border-bottom: solid 3px $light;
   position: relative;
-  color: #2e3c8c;
+  color: $info;
+  font-size: 1.5rem;
   font-weight: bold;
-}
+  margin: 16px 0;
+  padding-bottom: 10px;
 
-h3:after {
-  position: absolute;
-  content: ' ';
-  display: block;
-  border-bottom: solid 3px #bf9d73;
-  bottom: -3px;
-  width: 30%;
+  &::after {
+    position: absolute;
+    content: ' ';
+    display: block;
+    border-bottom: solid 3px $primary;
+    bottom: -3px;
+    width: 30%;
+  }
 }
 
 .money {
