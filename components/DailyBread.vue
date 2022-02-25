@@ -1,36 +1,24 @@
 <template>
   <div class="container mb-4 mt-3">
     <!-- 世帯種別選択 -->
-    <div class="row mb-3">
-      <div class="col">
-        <h2 class="title">あなたの世帯タイプは？</h2>
-      </div>
-    </div>
+    <h2 class="title">あなたの世帯タイプは？</h2>
     <div id="select-house-type-box" class="row">
       <div class="col text-center">
         <house-type-selection selected-type="SINGLE" />
       </div>
     </div>
     <!-- 年収選択 -->
-    <div class="row mt-4">
-      <div class="col">
-        <h2 class="title">あなたの年収は？</h2>
-      </div>
-    </div>
+    <h2 class="title">あなたの年収は？</h2>
     <income-selector
       :value="sliderValue"
       :min-yearly-income="1000000"
       :max-yearly-income="20000000"
     />
-    <div class="row mt-5 mb-3">
-      <div class="col">
-        <h2 class="title">
-          あなたの{{
-            region
-          }}税は、1日当たり、どこで、いくら使われているかの目安です。
-        </h2>
-      </div>
-    </div>
+    <h2 class="title">
+      あなたの{{
+        region
+      }}税は、1日当たり、どこで、いくら使われているかの目安です。
+    </h2>
     <div class="row mt-4">
       <!-- 個別税額表示 -->
       <div class="col">
@@ -238,7 +226,7 @@ export default Vue.extend({
   color: $info;
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 16px 0;
+  margin: 36px 0 16px;
   padding-bottom: 10px;
 
   &::after {
