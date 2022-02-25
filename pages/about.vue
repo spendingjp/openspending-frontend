@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-4 mt-3">
+  <div class="container my-4">
     <page-title title="このサイトについて" />
     <contents-block title="Where Does My Money Go? とは何ですか？">
       <p>

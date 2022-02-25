@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-4 mt-3">
+  <div class="container my-4">
     <page-title title="データの出所" />
     <contents-block title="データの出所">
       <p>

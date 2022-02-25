@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-4 mt-3">
+  <div class="container my-4">
     <page-title title="お問い合わせ" />
     <contents-block title="Forum">
       <p>
