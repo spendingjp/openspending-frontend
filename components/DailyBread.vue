@@ -220,7 +220,7 @@ export default Vue.extend({
       yearlyTax: 10000,
       sliderValue: 4000000,
       region: this.$accessor.regionCofogData.regionCofogData.governmentName,
-      iconUrl: `${this.$config.apiUrl}/icons`,
+      iconUrl: `${this.$config.apiUrl}icons`,
     }
   },
   computed: {

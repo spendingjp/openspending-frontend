@@ -53,7 +53,7 @@ const config: NuxtConfig = {
   ],
 
   publicRuntimeConfig: {
-    apiUrl: process.env.API_URL || 'http://127.0.0.1:8000',
+    apiUrl: process.env.API_URL || 'https://openspending.net/',
     axios: {
       baseURL: process.env.API_URL ? 
         process.env.API_URL + 'api/v1/' : 'https://openspending.net/api/v1/',
