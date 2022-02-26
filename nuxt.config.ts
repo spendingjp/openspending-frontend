@@ -54,7 +54,7 @@ const config: NuxtConfig = {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:3001/',
+    baseURL: process.env.API_URL || 'http://127.0.0.1:8000/api/v1/',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
