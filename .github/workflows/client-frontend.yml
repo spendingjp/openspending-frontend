@@ -26,5 +26,5 @@ jobs:
         run: yarn lint
 
       - name: generate
-        run: yarn generate
+        run: yarn generate --fail-on-error
         
