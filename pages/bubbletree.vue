@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <div class="container my-4">
+    <page-title title="使途別予算額" />
     <div class="row justify-content-center mt-1">
       <div class="col-3 col-md-1">
         <svg id="legend" viewBox="0 0 100 100">
@@ -144,6 +145,7 @@ import ArrowUp from 'vue-material-design-icons/ArrowUp.vue'
 import CheckboxBlankCircle from 'vue-material-design-icons/CheckboxBlankCircle.vue'
 import CheckboxBlankCircleOutline from 'vue-material-design-icons/CheckboxBlankCircleOutline.vue'
 import { CofogData } from '~/plugins/dataTransferObjects/cofogData'
+import PageTitle from '@/components/PageTitle.vue'
 
 type DataType = {
   /**
@@ -217,6 +219,7 @@ export default Vue.extend({
     ArrowUp,
     CheckboxBlankCircle,
     CheckboxBlankCircleOutline,
+    PageTitle,
   },
   filters: {
     displayMoney(val: string) {

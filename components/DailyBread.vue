@@ -1,49 +1,41 @@
 <template>
-  <div class="container mb-4 mt-3">
+  <div class="container my-4">
     <!-- 世帯種別選択 -->
-    <div class="row mb-3">
-      <div class="col">
-        <h3>あなたの世帯タイプは？</h3>
+    <section class="section">
+      <h2 class="title">あなたの世帯タイプは？</h2>
+      <div id="select-house-type-box" class="row">
+        <div class="col text-center">
+          <house-type-selection selected-type="SINGLE" />
+        </div>
       </div>
-    </div>
-    <div id="select-house-type-box" class="row">
-      <div class="col text-center">
-        <house-type-selection selected-type="SINGLE" />
-      </div>
-    </div>
+    </section>
     <!-- 年収選択 -->
-    <div class="row mt-4">
-      <div class="col">
-        <h3>あなたの年収は？</h3>
-      </div>
-    </div>
-    <income-selector
-      :value="sliderValue"
-      :min-yearly-income="1000000"
-      :max-yearly-income="20000000"
-    />
-    <div class="row mt-5 mb-3">
-      <div class="col">
-        <h3>
-          あなたの{{
-            region
-          }}税は、1日当たり、どこで、いくら使われているかの目安です。
-        </h3>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <!-- 個別税額表示 -->
-      <div class="col">
-        <div id="tax-list-box">
-          <!-- 第1レベル -->
-          <div id="accordion-level1" class="accordion">
-            <div
-              v-for="(cofogLevel1Item, i) in taxData"
-              :key="i"
-              class="accordion-item accordion-box"
-            >
-              <div class="row">
-                <h2 :id="'heading-level1-' + i" class="accordion-header">
+    <section class="section">
+      <h2 class="title">あなたの年収は？</h2>
+      <income-selector
+        :value="sliderValue"
+        :min-yearly-income="1000000"
+        :max-yearly-income="20000000"
+      />
+    </section>
+    <section class="section">
+      <h2 class="title">
+        あなたの{{
+          region
+        }}税は、1日当たり、どこで、いくら使われているかの目安です。
+      </h2>
+      <div class="row">
+        <!-- 個別税額表示 -->
+        <div class="col">
+          <div id="tax-list-box">
+            <!-- 第1レベル -->
+            <div id="accordion-level1" class="accordion">
+              <div
+                v-for="(cofogLevel1Item, i) in taxData"
+                :key="i"
+                class="accordion-item accordion-box"
+              >
+                <div class="row">
                   <button
                     class="accordion-button collapsed"
                     type="button"
@@ -52,38 +44,34 @@
                     aria-expanded="false"
                     :aria-controls="'collapse-level1-' + i"
                   >
-                    <dance-ballroom
-                      fill-color="#ddd"
-                      :size="80"
-                      class="accordion-icon"
-                    />
-                    <p class="accordion-title col-6 col-lg-10">
-                      {{ cofogLevel1Item.name }}
-                    </p>
-
-                    <div class="fw-bold fs-3 col-3 col-lg-1">
-                      <span class="fs-6 me-1">￥</span
-                      >{{ cofogLevel1Item.amount | displayMoney }}
-                    </div>
+                    <span :id="'heading-level1-' + i" class="accordion-button-inner">
+                      <dance-ballroom
+                        fill-color="#ddd"
+                        :size="80"
+                        class="accordion-icon"
+                      />
+                      <span class="accordion-title">
+                        {{ cofogLevel1Item.name }}
+                      </span>
+                      <span class="accordion-amount fw-bold fs-3">
+                        <span class="fs-6 me-1">￥</span
+                        >{{ cofogLevel1Item.amount | displayMoney }}
+                      </span>
+                    </span>
                   </button>
-                </h2>
-              </div>
-              <div
-                :id="'collapse-level1-' + i"
-                class="accordion-collapse collapse"
-                :aria-labelledby="'heading-level1-' + i"
-                data-bs-parent="#accordion-level1"
-              >
-                <!-- 第2レベル -->
-                <div id="accordion-level2" class="accordion">
-                  <div
-                    v-for="(cofogLevel2Item, j) in cofogLevel1Item.children"
-                    :key="j"
-                    class="accordion-item accordion-box row"
-                  >
-                    <h2
-                      :id="'heading-level2-' + i + '-' + j"
-                      class="accordion-header"
+                </div>
+                <div
+                  :id="'collapse-level1-' + i"
+                  class="accordion-collapse collapse"
+                  :aria-labelledby="'heading-level1-' + i"
+                  data-bs-parent="#accordion-level1"
+                >
+                  <!-- 第2レベル -->
+                  <div id="accordion-level2" class="accordion">
+                    <div
+                      v-for="(cofogLevel2Item, j) in cofogLevel1Item.children"
+                      :key="j"
+                      class="accordion-item accordion-box row"
                     >
                       <button
                         class="accordion-button collapsed"
@@ -93,40 +81,45 @@
                         aria-expanded="false"
                         :aria-controls="'collapse-level2-' + i + '-' + j"
                       >
-                        <p class="accordion-title ps-3 col-7 col-lg-10">
-                          {{ cofogLevel2Item.name }}
-                        </p>
-                        <div class="fw-bold col-3 col-lg-1">
-                          <span class="small">￥</span>&nbsp;{{
-                            cofogLevel2Item.amount | displayMoney
-                          }}
-                        </div>
+                        <span
+                          :id="'heading-level2-' + i + '-' + j"
+                          class="accordion-button-inner"
+                        >
+                          <span class="accordion-title ps-3">
+                            {{ cofogLevel2Item.name }}
+                          </span>
+                          <span class="accordion-amount">
+                            <span class="small">￥</span>&nbsp;{{
+                              cofogLevel2Item.amount | displayMoney
+                            }}
+                          </span>
+                        </span>
                       </button>
-                    </h2>
-                    <div
-                      :id="'collapse-level2-' + i + '-' + j"
-                      class="accordion-collapse collapse"
-                      :aria-labelledby="'heading-level2-' + i + '-' + j"
-                      data-bs-parent="#accordion-level2"
-                    >
-                      <!-- 第3レベル -->
-                      <table class="table table-striped table-hover">
-                        <tbody>
-                          <tr
-                            v-for="(
-                              cofogLevel3Item, k
-                            ) in cofogLevel2Item.children"
-                            :key="k"
-                          >
-                            <td class="ps-5">{{ cofogLevel3Item.name }}</td>
-                            <td class="text-end pe-3 pe-lg-5">
-                              ￥&nbsp;{{
-                                cofogLevel3Item.amount | displayMoney
-                              }}
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <div
+                        :id="'collapse-level2-' + i + '-' + j"
+                        class="accordion-collapse collapse"
+                        :aria-labelledby="'heading-level2-' + i + '-' + j"
+                        data-bs-parent="#accordion-level2"
+                      >
+                        <!-- 第3レベル -->
+                        <table class="table table-striped table-hover">
+                          <tbody>
+                            <tr
+                              v-for="(
+                                cofogLevel3Item, k
+                              ) in cofogLevel2Item.children"
+                              :key="k"
+                            >
+                              <td class="ps-5">{{ cofogLevel3Item.name }}</td>
+                              <td class="text-end pe-3 pe-lg-5">
+                                ￥&nbsp;{{
+                                  cofogLevel3Item.amount | displayMoney
+                                }}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -135,7 +128,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -232,20 +225,28 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-h3 {
-  border-bottom: solid 3px #359af2;
-  position: relative;
-  color: #2e3c8c;
-  font-weight: bold;
+.section {
+  margin-bottom: 60px;
+  padding-bottom: 30px;
 }
 
-h3:after {
-  position: absolute;
-  content: ' ';
-  display: block;
-  border-bottom: solid 3px #bf9d73;
-  bottom: -3px;
-  width: 30%;
+.title {
+  border-bottom: solid 3px $light;
+  position: relative;
+  color: $info;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 16px 0;
+  padding-bottom: 10px;
+
+  &::after {
+    position: absolute;
+    content: ' ';
+    display: block;
+    border-bottom: solid 3px $primary;
+    bottom: -3px;
+    width: 30%;
+  }
 }
 
 .money {
@@ -261,6 +262,12 @@ h3:after {
   vertical-align: bottom;
 }
 
+.accordion-button-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .accordion-item {
   border-top: none;
   border-left: none;
@@ -269,13 +276,13 @@ h3:after {
 }
 
 .accordion-title {
-  position: relative;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  // width: 50vw;
-  margin-bottom: 0;
+  flex: 1 0 50%;
   margin-right: 15px;
+}
+
+.accordion-amount {
+  flex: 0 0 25%;
+  font-weight: bold;
 }
 
 .accordion-icon {

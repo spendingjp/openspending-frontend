@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-4 mt-3">
+  <div class="container my-4">
     <page-title title="関連サイト" />
     <contents-block title="提供地域">
       <p>

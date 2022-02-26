@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-4 mt-3">
+  <div class="container my-4">
     <page-title title="開発者" />
     <contents-block title="Core Team">
       <ul>
