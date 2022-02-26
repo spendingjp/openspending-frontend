@@ -42,4 +42,9 @@ export type CofogData = Readonly<{
    * 予算名称
    */
   budgetName: string
+  /**
+   * カラーコード
+   */
+  primaryColorCode: string | null
+  secondaryColorCode: string | null
 }>

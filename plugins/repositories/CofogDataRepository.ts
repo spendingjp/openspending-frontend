@@ -22,6 +22,8 @@ export class CofogDataRepository {
       budgetName: storeData.budgetName,
       year: storeData.year,
       governmentName: storeData.governmentName,
+      primaryColorCode: storeData.primaryColorCode,
+      secondaryColorCode: storeData.secondaryColorCode,
       taxList: storeData.taxList.map((item: any) => {
         return {
           amount: Price.create(item.amount._value),

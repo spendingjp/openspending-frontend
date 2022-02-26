@@ -26,6 +26,8 @@ export interface COFOGAPIResponse {
     slug: string
     latitude: number
     longitude: number
+    primaryColorCode: string | null
+    secondaryColorCode: string | null
     createdAt: string
     updatedAt: string
   }

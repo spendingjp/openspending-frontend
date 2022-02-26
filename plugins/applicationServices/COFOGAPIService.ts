@@ -52,6 +52,8 @@ export class COFOGAPIService {
         year: apiResponse.year,
         governmentName: apiResponse.government.name,
         budgetName: apiResponse.sourceBudget.name,
+        primaryColorCode: apiResponse.government.primaryColorCode,
+        secondaryColorCode: apiResponse.government.secondaryColorCode,
       }
     } catch (e) {
       throw new Error('APIレスポンスをオブジェクトに変換失敗')

@@ -33,6 +33,8 @@ describe('APIService', () => {
       year: 2021,
       governmentName: 'つくば市',
       budgetName: 'つくば市YYYY年度予算',
+      primaryColorCode: null,
+      secondaryColorCode: null,
       taxList: [
         {
           cofog: new Cofog(
@@ -89,6 +91,8 @@ describe('APIService', () => {
       year: 2021,
       governmentName: 'つくば市',
       budgetName: 'つくば市YYYY年度予算',
+      primaryColorCode: null,
+      secondaryColorCode: null,
       taxList: [
         {
           cofog: new Cofog(
@@ -217,6 +221,8 @@ const response: COFOGAPIResponse = {
     slug: 'tsukuba-shi',
     latitude: 36.0825081,
     longitude: 140.1107132,
+    primaryColorCode: null,
+    secondaryColorCode: null,
     createdAt: '2022-02-04T15:47:03.420321Z',
     updatedAt: '2022-02-04T15:47:03.425683Z',
   },
@@ -307,6 +313,8 @@ const responseMultiRecords: COFOGAPIResponse = {
     slug: 'tsukuba-shi',
     latitude: 36.0825081,
     longitude: 140.1107132,
+    primaryColorCode: null,
+    secondaryColorCode: null,
     createdAt: '2022-02-04T15:47:03.420321Z',
     updatedAt: '2022-02-04T15:47:03.425683Z',
   },
