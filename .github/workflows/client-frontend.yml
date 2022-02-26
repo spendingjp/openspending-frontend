@@ -3,7 +3,7 @@ name: Client Frontend
 on: push
 
 env:
-  API_BASE_URL: https://openspending.net/
+  API_BASE_URL: https://openspending.net/api/v1/
 
 jobs:
   build:
