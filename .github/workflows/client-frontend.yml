@@ -2,6 +2,9 @@ name: Client Frontend
 
 on: push
 
+env:
+  API_BASE_URL: https://openspending.net/
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
