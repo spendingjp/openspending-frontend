@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-4">
+  <div>
     <!-- 世帯種別選択 -->
     <section class="section">
       <h2 class="title">あなたの世帯タイプは？</h2>
