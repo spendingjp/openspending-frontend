@@ -20,7 +20,7 @@ export default Vue.extend({
   mounted() {
     const primary = this.$store.state.regionCofogData.primaryColorCode ?? this.defaultPrimary
     const secondary = this.$store.state.regionCofogData.secondaryColorCode ?? this.defaultSecondary
-    document.documentElement.setAttribute('style', `--color-primary: ${primary}; --color-secondary: ${secondary};`);
+    document.documentElement.setAttribute('style', `--primary: ${primary}; --secondary: ${secondary};`);
   }
 })
 </script>
