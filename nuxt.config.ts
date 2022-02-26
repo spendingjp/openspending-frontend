@@ -3,6 +3,7 @@ import { NuxtConfig } from '@nuxt/types'
 const websiteTitle = '税金はどこへ行った？'
 
 const config: NuxtConfig = {
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: `%s - ${websiteTitle}`,
@@ -51,9 +52,10 @@ const config: NuxtConfig = {
     '@nuxtjs/style-resources',
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    baseURL: 'http://localhost:3001/',
+  publicRuntimeConfig: {
+    axios: {
+      baseURL: process.env.API_BASE_URL || 'http://127.0.0.1:8000/api/v1/',
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

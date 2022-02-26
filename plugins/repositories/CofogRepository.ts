@@ -16,7 +16,8 @@ export class CofogRepository {
    * @returns オブジェクト変換結果
    */
   public async Get(): Promise<COFOGAPIResponse> {
-    const uri = '/tsukuba-shi-cofog2021/' // nuxt.config.tsで設定したbaseUrlに続くURLを指定可能
+    const slug = 'tsukuba-shi-cofog2021'
+    const uri = `/wdmmg/${slug}/` // nuxt.config.tsで設定したbaseUrlに続くURLを指定可能
     const apiResponse = await this.app.$axios.$get<COFOGAPIResponse>(uri)
     if (this.isValidAPIResponse(apiResponse)) {
       return apiResponse
