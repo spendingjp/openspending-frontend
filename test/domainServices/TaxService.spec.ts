@@ -36,7 +36,8 @@ describe('TaxService', () => {
                     level2: null,
                     level3: null,
                   }),
-                  'カテゴリ1'
+                  'カテゴリ1',
+                  'XX2emyJp3FRYN6qmcUbpwW',
                 ),
                 children: [
                   {
@@ -47,7 +48,8 @@ describe('TaxService', () => {
                         level2: 2,
                         level3: null,
                       }),
-                      'サブカテゴリ1-1'
+                      'サブカテゴリ1-1',
+                      'XX2emyJp3FRYN6qmcUbpwW',
                     ),
                     children: [
                       {
@@ -58,7 +60,8 @@ describe('TaxService', () => {
                             level2: 2,
                             level3: 3,
                           }),
-                          'サブカテゴリ1-1-1'
+                          'サブカテゴリ1-1-1',
+                          'XX2emyJp3FRYN6qmcUbpwW',
                         ),
                       },
                     ],

@@ -15,6 +15,10 @@ export type Budget = {
    */
   code: string;
   /**
+   * アイコン
+   */
+  iconId: string;
+  /**
    * 税額
    */
   amount: number;

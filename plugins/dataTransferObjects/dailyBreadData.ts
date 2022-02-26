@@ -20,6 +20,10 @@ export type DailyBreadItem = Readonly<{
    */
   name: string
   /**
+   * アイコン
+   */
+  iconId: string
+  /**
    * COFOGコード
    */
   cofogCode: string

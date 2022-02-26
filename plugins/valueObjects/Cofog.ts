@@ -12,13 +12,18 @@ export class Cofog {
    * COFOG 名称
    */
   private name: string
+  /**
+   * COFOG アイコン
+   */
+  private iconId: string
 
-  constructor(code: CofogCode, name: string) {
+  constructor(code: CofogCode, name: string, iconId: string) {
     if (name.length === 0 || name === null) {
       throw new Error("名称は必須です");
     }
     this.code = code
     this.name = name
+    this.iconId = iconId
   }
 
   /**
@@ -33,6 +38,13 @@ export class Cofog {
    */
   get Name() {
     return this.name
+  }
+
+  /**
+   * COFOG アイコン
+   */
+  get IconId() {
+    return this.iconId
   }
 
   toJSON() {

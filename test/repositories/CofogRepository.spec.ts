@@ -131,18 +131,21 @@ const validBudgets: Budget[] = [
     id: 'bQ8xKBPRoVZLxauxQMJHtx',
     name: '公共サービス全般',
     code: '1',
+    iconId: 'XX2emyJp3FRYN6qmcUbpwW',
     amount: 27738407000.0,
     children: [
       {
         id: 'PCgTVjG456QN6YYah7yppH',
         name: '行政・立法機関、財務・財政、渉外',
         code: '1.1',
+        iconId: 'XX2emyJp3FRYN6qmcUbpwW',
         amount: 25879644000.0,
         children: [
           {
             id: 'knPerCJWEScxFachLNig4u',
             name: '行政・立法機関(CS)',
             code: '1.1.1',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 18834640000.0,
             children: null,
           },
@@ -150,6 +153,7 @@ const validBudgets: Budget[] = [
             id: 'QhyXQqQLUerENLXYFmStEu',
             name: '財務・会計(CS)',
             code: '1.1.2',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 7038735000.0,
             children: null,
           },
@@ -157,6 +161,7 @@ const validBudgets: Budget[] = [
             id: 'P8ReRpWwzspCKnvyAeurbF',
             name: '対外関係(CS)',
             code: '1.1.3',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 6269000.0,
             children: null,
           },
@@ -166,12 +171,14 @@ const validBudgets: Budget[] = [
         id: 'BNugKJHPkcweshFc9cqi2b',
         name: '対外経済援助',
         code: '1.2',
+        iconId: 'XX2emyJp3FRYN6qmcUbpwW',
         amount: 0,
         children: [
           {
             id: '2vfndZUxqqzdKXRFFgt7Na',
             name: '開発途上国および移行国に対する経済援助(CS)',
             code: '1.2.1',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 0,
             children: null,
           },
@@ -179,6 +186,7 @@ const validBudgets: Budget[] = [
             id: 'BFQaGFk3Vwm7GwBVry6xSh',
             name: '国際機関を通じた経済援助(CS)',
             code: '1.2.2',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 0,
             children: null,
           },
@@ -188,18 +196,21 @@ const validBudgets: Budget[] = [
         id: '2ht79XTzT3b4Nz4R9oKGJm',
         name: '国防',
         code: '2',
+        iconId: 'XX2emyJp3FRYN6qmcUbpwW',
         amount: 0,
         children: [
           {
             id: 'KDHogTtXqyae57AeVgcNM8',
             name: '軍事的防衛',
             code: '2.1',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 0,
             children: [
               {
                 id: 'nSi9WB7KQxpPqNwoYzXpaQ',
                 name: '軍事的防衛(CS)',
                 code: '2.1.0',
+                iconId: 'XX2emyJp3FRYN6qmcUbpwW',
                 amount: 0,
                 children: null,
               },
