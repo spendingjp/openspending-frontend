@@ -26,16 +26,16 @@ export default Vue.extend({
 }
 .content-title {
   position: relative;
-  color: $info;
+  color: $dark;
   margin: 16px 0;
   padding-bottom: 10px;
-  border-bottom: solid 3px $light;
+  border-bottom: solid 3px var(--secondary);
 
   &::after {
     position: absolute;
     content: ' ';
     display: block;
-    border-bottom: solid 3px $primary;
+    border-bottom: solid 3px var(--primary);
     bottom: -3px;
     width: 30%;
   }

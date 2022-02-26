@@ -231,9 +231,9 @@ export default Vue.extend({
 }
 
 .title {
-  border-bottom: solid 3px $light;
+  border-bottom: solid 3px var(--secondary);
   position: relative;
-  color: $info;
+  color: $dark;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 16px 0;
@@ -243,7 +243,7 @@ export default Vue.extend({
     position: absolute;
     content: ' ';
     display: block;
-    border-bottom: solid 3px $primary;
+    border-bottom: solid 3px var(--primary);
     bottom: -3px;
     width: 30%;
   }

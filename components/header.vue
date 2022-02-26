@@ -94,7 +94,7 @@
           <div class="col-sm-7 col-12 text-sm-end text-start">
             <small
               >あなたが
-              <span class="text-primary">{{ region }}</span>
+              <span class="region">{{ region }}</span>
               に納めた税金がどこで使われているかをお示しします</small
             >
           </div>
@@ -117,11 +117,11 @@ export default Vue.extend({
 </script>
 <style lang='scss' scoped>
 .header {
-  background-color: $info;
+  background-color: var(--primary);
 }
 
 a.navbar-brand {
-  color: $primary;
+  color: $gray;
   font-weight: bold;
   font-size: 4.5vmin;
   @media (min-width: 640px) {
@@ -129,39 +129,37 @@ a.navbar-brand {
   }
 
   &:hover {
-    color: #fefefe;
+    color: $gray;
   }
 }
 
 .sub-title {
   background-color: $dark;
-  color: $dark;
   font-weight: bold;
-  padding: 3px 0;
-  border-bottom: $dark solid 3px;
+  padding: 5px 0;
 
   & div {
-    color: #fefefe;
+    color: $gray;
+  }
+
+  .region {
+    color: $light;
   }
 }
 
 #navbarSupportedContent a {
-  color: #f2f2f2;
+  color: $gray;
   font-weight: bold;
 }
 
 #navbarSupportedContent a.active {
-  color: #f2f2f2;
+  color: $dark;
   font-weight: bold;
-  border-bottom: $primary solid 2px;
+  border-bottom: $dark solid 2px;
   padding-bottom: 2px;
 }
 
-#navbarSupportedContent a.active:hover {
-  border: none;
-}
-
 #navbarSupportedContent a:hover {
-  color: $primary;
+  color: $dark;
 }
 </style>

@@ -90,7 +90,7 @@ input[type='range'] {
 /* つまみ */
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: $primary;
+  background: var(--primary);
   width: 24px;
   height: 24px;
   background-size: cover;

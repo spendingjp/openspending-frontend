@@ -36,16 +36,16 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 button {
-  border: 2px solid $primary;
-  border-bottom: 5px solid $primary;
+  border: 2px solid var(--primary);
+  border-bottom: 5px solid var(--primary);
   background-color: #fefefe;
   margin: 0 10px;
 }
 
 button.checked {
   margin-top: 3px;
-  border-bottom: 2px solid $primary;
-  color: $primary;
+  border-bottom: 2px solid var(--primary);
+  color: var(--primary);
 }
 
 button.unchecked {
@@ -56,8 +56,7 @@ button.unchecked {
 
 button:hover {
   margin-top: 3px;
-  border: 2px solid $primary;
-  border-bottom: 2px solid $primary;
+  border: 2px solid var(--primary);
 }
 
 .text {
@@ -65,7 +64,7 @@ button:hover {
 }
 
 .checked-text {
-  color: $primary;
+  color: var(--primary);
   font-weight: bold;
 }
 

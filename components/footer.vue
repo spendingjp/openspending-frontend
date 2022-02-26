@@ -70,11 +70,11 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 footer {
   margin-top: 50px;
   background-color: #0f1640;
-  color: #fefefe;
+  color: $gray;
 }
 
 .footer {

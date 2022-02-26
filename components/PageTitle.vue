@@ -18,6 +18,7 @@ export default Vue.extend({
 <style scoped lang="scss">
 .page-title {
   position: relative;
+  color: $dark;
   margin: 20px 0 60px;
   padding-bottom: 10px;
 
@@ -25,7 +26,7 @@ export default Vue.extend({
     position: absolute;
     content: ' ';
     display: block;
-    border-bottom: 5px solid $primary;
+    border-bottom: 5px solid var(--primary);
     bottom: -3px;
     width: 50px;
   }
