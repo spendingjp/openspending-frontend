@@ -39,7 +39,8 @@ describe('CofogVuex', () => {
               level2: null,
               level3: null,
             }),
-            '公共サービス全般'
+            '公共サービス全般',
+            'XX2emyJp3FRYN6qmcUbpwW',
           ),
           children: [
             {
@@ -50,7 +51,8 @@ describe('CofogVuex', () => {
                   level2: 1,
                   level3: null,
                 }),
-                '行政・立法機関、財務・財政、渉外'
+                '行政・立法機関、財務・財政、渉外',
+                'XX2emyJp3FRYN6qmcUbpwW',
               ),
               children: [
                 {
@@ -61,7 +63,8 @@ describe('CofogVuex', () => {
                       level2: 1,
                       level3: 1,
                     }),
-                    '行政・立法機関(CS)'
+                    '行政・立法機関(CS)',
+                    'XX2emyJp3FRYN6qmcUbpwW',
                   ),
                 },
               ],
@@ -99,18 +102,21 @@ const response: COFOGAPIResponse = {
       id: 'bQ8xKBPRoVZLxauxQMJHtx',
       name: '公共サービス全般',
       code: '1',
+      iconId: 'XX2emyJp3FRYN6qmcUbpwW',
       amount: 27738407000.0,
       children: [
         {
           id: 'PCgTVjG456QN6YYah7yppH',
           name: '行政・立法機関、財務・財政、渉外',
           code: '1.1',
+          iconId: 'XX2emyJp3FRYN6qmcUbpwW',
           amount: 25879644000.0,
           children: [
             {
               id: 'knPerCJWEScxFachLNig4u',
               name: '行政・立法機関(CS)',
               code: '1.1.1',
+              iconId: 'XX2emyJp3FRYN6qmcUbpwW',
               amount: 18834640000.0,
               children: null,
             },

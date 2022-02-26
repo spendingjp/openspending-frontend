@@ -73,7 +73,8 @@ export class COFOGAPIService {
           level2: cofogLevelNums.length >= 2 ? Number(cofogLevelNums[1]) : null,
           level3: cofogLevelNums.length >= 3 ? Number(cofogLevelNums[2]) : null,
         }),
-        budget.name
+        budget.name,
+        budget.iconId,
       ),
     }
   }

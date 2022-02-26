@@ -71,6 +71,7 @@ export class TaxApplicationService {
     return {
       amount: amount !== null ? amount.value : 0,
       name: item.cofog.Name,
+      iconId: item.cofog.IconId,
       cofogCode: item.cofog.Code.StrCode,
       children:
         'children' in item

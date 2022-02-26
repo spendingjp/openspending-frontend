@@ -37,7 +37,8 @@ describe('APIService', () => {
         {
           cofog: new Cofog(
             CofogCode.create({ level1: 1, level2: null, level3: null }),
-            '公共サービス全般'
+            '公共サービス全般',
+            'XX2emyJp3FRYN6qmcUbpwW',
           ),
           amount: Price.create(27738407000.0),
           children: [
@@ -49,7 +50,8 @@ describe('APIService', () => {
                   level2: 1,
                   level3: null,
                 }),
-                '行政・立法機関、財務・財政、渉外'
+                '行政・立法機関、財務・財政、渉外',
+                'XX2emyJp3FRYN6qmcUbpwW',
               ),
               children: [
                 {
@@ -60,7 +62,8 @@ describe('APIService', () => {
                       level2: 1,
                       level3: 1,
                     }),
-                    '行政・立法機関(CS)'
+                    '行政・立法機関(CS)',
+                    'XX2emyJp3FRYN6qmcUbpwW',
                   ),
                 },
               ],
@@ -93,7 +96,8 @@ describe('APIService', () => {
         {
           cofog: new Cofog(
             CofogCode.create({ level1: 1, level2: null, level3: null }),
-            '公共サービス全般'
+            '公共サービス全般',
+            'XX2emyJp3FRYN6qmcUbpwW',
           ),
           amount: Price.create(27738407000.0),
           children: [
@@ -105,7 +109,8 @@ describe('APIService', () => {
                   level2: 1,
                   level3: null,
                 }),
-                '行政・立法機関、財務・財政、渉外'
+                '行政・立法機関、財務・財政、渉外',
+                'XX2emyJp3FRYN6qmcUbpwW',
               ),
               children: [
                 {
@@ -116,7 +121,8 @@ describe('APIService', () => {
                       level2: 1,
                       level3: 1,
                     }),
-                    '行政・立法機関(CS)'
+                    '行政・立法機関(CS)',
+                    'XX2emyJp3FRYN6qmcUbpwW',
                   ),
                 },
                 {
@@ -127,7 +133,8 @@ describe('APIService', () => {
                       level2: 1,
                       level3: 2,
                     }),
-                    '財務・会計(CS)'
+                    '財務・会計(CS)',
+                    'XX2emyJp3FRYN6qmcUbpwW',
                   ),
                 },
               ],
@@ -137,7 +144,8 @@ describe('APIService', () => {
         {
           cofog: new Cofog(
             CofogCode.create({ level1: 5, level2: null, level3: null }),
-            '環境保護'
+            '環境保護',
+            'XX2emyJp3FRYN6qmcUbpwW',
           ),
           amount: Price.create(4908950000.0),
           children: [
@@ -149,7 +157,8 @@ describe('APIService', () => {
                   level2: 1,
                   level3: null,
                 }),
-                '廃棄物処理'
+                '廃棄物処理',
+                'XX2emyJp3FRYN6qmcUbpwW',
               ),
               children: [
                 {
@@ -160,7 +169,8 @@ describe('APIService', () => {
                       level2: 1,
                       level3: 0,
                     }),
-                    '廃棄物管理(CS)'
+                    '廃棄物管理(CS)',
+                    'XX2emyJp3FRYN6qmcUbpwW',
                   ),
                 },
               ],
@@ -183,18 +193,21 @@ const budgets1Record: Budget[] = [
     id: 'bQ8xKBPRoVZLxauxQMJHtx',
     name: '公共サービス全般',
     code: '1',
+    iconId: 'XX2emyJp3FRYN6qmcUbpwW',
     amount: 27738407000.0,
     children: [
       {
         id: 'PCgTVjG456QN6YYah7yppH',
         name: '行政・立法機関、財務・財政、渉外',
         code: '1.1',
+        iconId: 'XX2emyJp3FRYN6qmcUbpwW',
         amount: 25879644000.0,
         children: [
           {
             id: 'knPerCJWEScxFachLNig4u',
             name: '行政・立法機関(CS)',
             code: '1.1.1',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 18834640000.0,
             children: null,
           },
@@ -243,18 +256,21 @@ const budgets: Budget[] = [
     id: 'bQ8xKBPRoVZLxauxQMJHtx',
     name: '公共サービス全般',
     code: '1',
+    iconId: 'XX2emyJp3FRYN6qmcUbpwW',
     amount: 27738407000.0,
     children: [
       {
         id: 'PCgTVjG456QN6YYah7yppH',
         name: '行政・立法機関、財務・財政、渉外',
         code: '1.1',
+        iconId: 'XX2emyJp3FRYN6qmcUbpwW',
         amount: 25879644000.0,
         children: [
           {
             id: 'knPerCJWEScxFachLNig4u',
             name: '行政・立法機関(CS)',
             code: '1.1.1',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 18834640000.0,
             children: null,
           },
@@ -262,6 +278,7 @@ const budgets: Budget[] = [
             id: 'QhyXQqQLUerENLXYFmStEu',
             name: '財務・会計(CS)',
             code: '1.1.2',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 7038735000.0,
             children: null,
           },
@@ -273,18 +290,21 @@ const budgets: Budget[] = [
     id: 'G4YZbRUfF3TYZ4UkvQVELr',
     name: '環境保護',
     code: '5',
+    iconId: 'XX2emyJp3FRYN6qmcUbpwW',
     amount: 4908950000.0,
     children: [
       {
         id: 'FPcqveUiNNYB64EBS2dhyz',
         name: '廃棄物処理',
         code: '5.1',
+        iconId: 'XX2emyJp3FRYN6qmcUbpwW',
         amount: 2393312000.0,
         children: [
           {
             id: 'Tn4iPasSXbKdY7qjSrApKN',
             name: '廃棄物管理(CS)',
             code: '5.1.0',
+            iconId: 'XX2emyJp3FRYN6qmcUbpwW',
             amount: 2393312000.0,
             children: null,
           },

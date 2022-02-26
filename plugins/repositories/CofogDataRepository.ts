@@ -31,7 +31,8 @@ export class CofogDataRepository {
               level2: item.cofog.code._value.level2,
               level3: item.cofog.code._value.level3,
             }),
-            item.cofog.name
+            item.cofog.name,
+            item.cofog.iconId,
           ),
           children: item.children.map((child: any) => {
             return {
@@ -42,7 +43,8 @@ export class CofogDataRepository {
                   level2: child.cofog.code._value.level2,
                   level3: child.cofog.code._value.level3,
                 }),
-                child.cofog.name
+                child.cofog.name,
+                child.cofog.iconId,
               ),
               children: child.children.map((level3Item: any) => ({
                 amount: Price.create(level3Item.amount._value),
@@ -52,7 +54,8 @@ export class CofogDataRepository {
                     level2: level3Item.cofog.code._value.level2,
                     level3: level3Item.cofog.code._value.level3,
                   }),
-                  level3Item.cofog.name
+                  level3Item.cofog.name,
+                  level3Item.cofog.iconId,
                 ),
               })),
             }

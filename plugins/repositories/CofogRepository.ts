@@ -51,6 +51,8 @@ export class CofogRepository {
           item.id === undefined ||
           item.name === undefined ||
           item.code === undefined ||
+          item.iconId === undefined ||
+          item.amount === undefined ||
           item.children === undefined
         ) {
           // budgetsの要素に想定通りでないものがある
@@ -86,6 +88,7 @@ export class CofogRepository {
       json.id === undefined ||
       json.name === undefined ||
       json.code === undefined ||
+      json.iconId === undefined ||
       json.amount === undefined ||
       json.children === undefined
     ) {

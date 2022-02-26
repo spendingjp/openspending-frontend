@@ -35,7 +35,7 @@
                 :key="i"
                 class="accordion-item accordion-box"
               >
-                <div class="row">
+                <div>
                   <button
                     class="accordion-button collapsed"
                     type="button"
@@ -45,11 +45,9 @@
                     :aria-controls="'collapse-level1-' + i"
                   >
                     <span :id="'heading-level1-' + i" class="accordion-button-inner">
-                      <dance-ballroom
-                        fill-color="#ddd"
-                        :size="80"
-                        class="accordion-icon"
-                      />
+                      <span class="accordion-icon">
+                        <img :src="`${iconUrl}/${cofogLevel1Item.iconId}`" alt="" width="60" />
+                      </span>
                       <span class="accordion-title">
                         {{ cofogLevel1Item.name }}
                       </span>
@@ -71,7 +69,7 @@
                     <div
                       v-for="(cofogLevel2Item, j) in cofogLevel1Item.children"
                       :key="j"
-                      class="accordion-item accordion-box row"
+                      class="accordion-item accordion-box"
                     >
                       <button
                         class="accordion-button collapsed"
@@ -85,6 +83,9 @@
                           :id="'heading-level2-' + i + '-' + j"
                           class="accordion-button-inner"
                         >
+                          <span class="accordion-icon icon-level2">
+                            <img :src="`${iconUrl}/${cofogLevel2Item.iconId}`" alt="" width="40" />
+                          </span>
                           <span class="accordion-title ps-3">
                             {{ cofogLevel2Item.name }}
                           </span>
@@ -110,6 +111,11 @@
                               ) in cofogLevel2Item.children"
                               :key="k"
                             >
+                              <td class="accordion-icon-wrap">
+                                <span class="accordion-icon icon-level3">
+                                  <img :src="`${iconUrl}/${cofogLevel3Item.iconId}`" alt="" width="30" />
+                                </span>
+                              </td>
                               <td class="ps-5">{{ cofogLevel3Item.name }}</td>
                               <td class="text-end pe-3 pe-lg-5">
                                 ￥&nbsp;{{
@@ -134,7 +140,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import DanceBallroom from 'vue-material-design-icons/DanceBallroom.vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import IncomeSelector from '~/components/molecules/IncomeSelector.vue'
 import HouseTypeSelection from '@/components/molecules/HouseTypeSelection.vue'
@@ -161,6 +166,10 @@ export type DataType = {
    * 自治体名
    */
   region: string
+  /**
+   * アイコン画像のパス
+   */
+  iconUrl: string
 }
 
 type PropType = {}
@@ -173,7 +182,6 @@ type MethodType = {}
 
 export default Vue.extend({
   components: {
-    DanceBallroom,
     HouseTypeSelection,
     IncomeSelector,
   },
@@ -212,6 +220,7 @@ export default Vue.extend({
       yearlyTax: 10000,
       sliderValue: 4000000,
       region: this.$accessor.regionCofogData.regionCofogData.governmentName,
+      iconUrl: `${this.$config.apiUrl}icons`,
     }
   },
   computed: {
@@ -262,6 +271,10 @@ export default Vue.extend({
   vertical-align: bottom;
 }
 
+.accordion-button {
+  padding: 10px;
+}
+
 .accordion-button-inner {
   display: flex;
   align-items: center;
@@ -276,7 +289,9 @@ export default Vue.extend({
 }
 
 .accordion-title {
+  position: relative;
   flex: 1 0 50%;
+  margin-left: 30px;
   margin-right: 15px;
 }
 
@@ -285,12 +300,26 @@ export default Vue.extend({
   font-weight: bold;
 }
 
+.accordion-icon-wrap {
+  position: relative;
+}
+
 .accordion-icon {
   position: absolute;
   display: inline-block;
-  opacity: 0.3;
-  top: -10%;
-  left: -10px;
+  opacity: 0.25;
+  top: -5px;
+  left: -5px;
+}
+
+.icon-level2 {
+  top: 3px;
+  left: 15px;
+}
+
+.icon-level3 {
+  top: 5px;
+  left: 35px;
 }
 
 .accordion-box {
