@@ -313,8 +313,8 @@ export default Vue.extend({
         })
       }
     }
-    const cofogData: CofogData = this.$repositories('cofogData').Get()
-    if (!cofogData) {
+    const cofogData: CofogData = this.$accessor.regionCofogData.parsedCofogData
+    if (!('amount' in cofogData)) {
       this.$router.push({ path: '/' })
     }
     this.circlePackData.childrenData = cofogData.taxList.map((item) => ({
@@ -329,8 +329,7 @@ export default Vue.extend({
         })),
       })),
     }))
-  },
-  mounted() {
+
     const svg = d3.select('#graph')
 
     const viewBox = svg.attr('viewBox')
@@ -358,6 +357,7 @@ export default Vue.extend({
     })
     this.setListText(this.circlePackData, '')
   },
+  mounted() {},
   methods: {
     /**
      * ズーム
