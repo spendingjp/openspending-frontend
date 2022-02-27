@@ -28,24 +28,7 @@ export const actions = {
     context: Context
   ) => {
     // nuxtServerInitの処理
-    try {
-      action.dispatch('regionCofogData/setHostname', context.req.headers.host)
-    } catch (err) {
-      if (err instanceof SyntaxError) {
-        console.error('Error on nuxtServerInit: ', err)
-        context.error({ statusCode: 404, message: "Unexpected hostname." })
-        return
-      }
-    }
-
-    try {
-      await action.dispatch('regionCofogData/fetchBudgetListAndWdmmgData')
-    } catch (err) {
-      if (err instanceof ReferenceError) {
-        console.error('Error on nuxtServerInit: ', err)
-        context.error({ statusCode: 404, message: "A budget to show was not found." })
-      }
-    }
+    // SSG するため、ユーザーからのリクエスト時にわかる情報はここで使用できない
   },
 }
 // ---------- ここまで ----------
