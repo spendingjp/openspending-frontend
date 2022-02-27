@@ -55,7 +55,6 @@ export const mutations = mutationTree(state, {
     state.defaultBudget = budgetList.defaultBudgets
   },
   setRegionCofogData(state, regionCofog: CofogData): void {
-    console.log(regionCofog)
     state.regionCofogData = regionCofog
     const data: CofogData = {
       // @ts-ignore
