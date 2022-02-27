@@ -17,7 +17,7 @@ export class CofogDataRepository {
    */
   public Get(): CofogData | null {
     const storeData = this.app.store?.getters['regionCofogData/regionCofogData']
-    if (!storeData) return null
+    if (!("amount" in storeData)) return null
 
     const data: CofogData = {
       amount: Price.create(storeData.amount._value),

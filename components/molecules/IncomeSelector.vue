@@ -133,6 +133,9 @@ export default Vue.extend({
     yearlyTax() {
       return this.$accessor.dailyBreadData.yearlyTax
     },
+    parsedCofogData() {
+      return this.$accessor.regionCofogData.parsedCofogData
+    },
   },
   watch: {
     sliderValue(newVal) {
@@ -142,10 +145,13 @@ export default Vue.extend({
         this.$accessor.dailyBreadData.setIncome(newVal)
       }, 100)
     },
+    parsedCofogData(val, old) {
+      if (!('amount' in old) && 'amount' in val) {
+        this.$accessor.dailyBreadData.setIncome(this.value)
+      }
+    },
   },
-  mounted() {
-    this.$accessor.dailyBreadData.setIncome(this.value)
-  },
+  mounted() {},
 } as ThisTypedComponentOptionsWithRecordProps<Vue, DataType, MethodType, ComputedType, PropType>)
 </script>
 

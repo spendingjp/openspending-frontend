@@ -31,8 +31,9 @@ export class TaxApplicationService {
    */
   public GetDailyBreadData(person: Person): DailyBread {
     // COFOGデータを取得
-    const cofogData: CofogData = this.app.$repositories('cofogData').Get()
-    if (cofogData === undefined) {
+    // const cofogData: CofogData = this.app.$repositories('cofogData').Get()
+    const cofogData: CofogData = this.app.$accessor.regionCofogData.parsedCofogData
+    if (!("amount" in cofogData)) {
       throw new Error('COFOGデータなし')
     }
 
@@ -75,8 +76,8 @@ export class TaxApplicationService {
       children:
         'children' in item
           ? item.children.map((child: TaxItemLevel2 | TaxItemLevel3) =>
-              this.ConvertTax2BreadItem(child, service, person, government)
-            )
+            this.ConvertTax2BreadItem(child, service, person, government)
+          )
           : null,
     }
   }
