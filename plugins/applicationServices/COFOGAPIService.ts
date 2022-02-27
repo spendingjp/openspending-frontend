@@ -24,25 +24,25 @@ export class COFOGAPIService {
    * APIからCOFOGデータを取得する
    * @returns COFOGデータ
    */
-  public async GetData(): Promise<CofogData> {
+  public async GetData(budgetSlug: string): Promise<CofogData> {
     try {
       const apiResponse: COFOGAPIResponse = await this.app
         .$repositories('cofog')
-        .Get()
+        .Get(budgetSlug)
 
       const taxList: TaxItemLevel1[] = apiResponse.budgets.map((item) => ({
         ...this.ConvertBudget2TaxItem(item),
         children:
           item.children !== null
             ? item.children.map((level2item) => ({
-                ...this.ConvertBudget2TaxItem(level2item),
-                children:
-                  level2item.children !== null
-                    ? level2item.children.map((level3item) =>
-                        this.ConvertBudget2TaxItem(level3item)
-                      )
-                    : [],
-              }))
+              ...this.ConvertBudget2TaxItem(level2item),
+              children:
+                level2item.children !== null
+                  ? level2item.children.map((level3item) =>
+                    this.ConvertBudget2TaxItem(level3item)
+                  )
+                  : [],
+            }))
             : [],
       }))
 

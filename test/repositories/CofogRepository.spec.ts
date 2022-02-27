@@ -59,7 +59,7 @@ describe('CofogRepository', () => {
 
     // 処理実行
     const repo = new CofogRepository(wrapper.vm)
-    expect(await repo.Get()).toEqual(result)
+    expect(await repo.Get('tsukuba-shi')).toEqual(result)
   })
 
   it('異常', async () => {
@@ -102,7 +102,7 @@ describe('CofogRepository', () => {
 
     // 処理実行
     const repo = new CofogRepository(wrapper.vm.$nuxt)
-    await expect(repo.Get()).rejects.toThrow(Error)
+    await expect(repo.Get('tsukuba-shi')).rejects.toThrow(Error)
   })
 })
 
