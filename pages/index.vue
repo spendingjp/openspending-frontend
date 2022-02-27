@@ -21,7 +21,7 @@ export default Vue.extend({
       this.$accessor.regionCofogData.setHostname(hostname)
     } catch (err) {
       if (err instanceof SyntaxError) {
-        console.error('Error on nuxtServerInit: ', err)
+        console.error('Error on beforeMount: ', err)
         this.$router.push({
           path: '404.html',
         })
@@ -33,7 +33,7 @@ export default Vue.extend({
       await this.$accessor.regionCofogData.fetchBudgetListAndWdmmgData()
     } catch (err) {
       if (err instanceof ReferenceError) {
-        console.error('Error on nuxtServerInit: ', err)
+        console.error('Error on beforeMount: ', err)
         this.$router.push({
           path: '404.html',
         })
