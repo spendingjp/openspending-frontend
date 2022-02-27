@@ -17,7 +17,7 @@ export class BudgetRepository {
    */
   public async Get(): Promise<BudgetListResponse> {
     const slug = this.app.$accessor.regionCofogData.governmentSlug
-    const uri = `/governments/${slug}/budgets` // nuxt.config.tsで設定したbaseUrlに続くURLを指定可能
+    const uri = `/governments/${slug}/budgets/` // nuxt.config.tsで設定したbaseUrlに続くURLを指定可能
     const apiResponse = await this.app.$axios.$get<BudgetListResponse>(uri)
     return apiResponse
   }

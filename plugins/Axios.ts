@@ -7,7 +7,6 @@ export function initializeAxios(axiosInstance: NuxtAxiosInstance) {
 
   $axios.defaults.xsrfCookieName = 'csrftoken'
   $axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
-  $axios.defaults.withCredentials = true
   $axios.defaults.headers = {
     'Content-Type': 'application/json',
     'X-Requested-With': 'XMLHttpRequest',
