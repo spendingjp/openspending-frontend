@@ -41,6 +41,19 @@ export default Vue.extend({
       selected: 'SINGLE',
     }
   },
+  computed: {
+    parsedCofogData() {
+      return this.$accessor.regionCofogData.parsedCofogData
+    },
+  },
+  watch: {
+    parsedCofogData(val, old) {
+      if (!('amount' in old) && 'amount' in val) {
+        // @ts-ignore
+        this.selectHouseType(this.$props.selectedType)
+      }
+    },
+  },
   mounted() {},
   methods: {
     /**
@@ -55,19 +68,6 @@ export default Vue.extend({
       this.$accessor.dailyBreadData.setHouseType(type)
       // @ts-ignore
       this.selected = type
-    },
-  },
-  computed: {
-    parsedCofogData() {
-      return this.$accessor.regionCofogData.parsedCofogData
-    },
-  },
-  watch: {
-    parsedCofogData(val, old) {
-      if (!('amount' in old) && 'amount' in val) {
-        // @ts-ignore
-        this.selectHouseType(this.$props.selectedType)
-      }
     },
   },
 })
