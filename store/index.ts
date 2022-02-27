@@ -24,11 +24,28 @@ export const mutations = {
 
 export const actions = {
   nuxtServerInit: async (
-    context: ActionContext<RootState, RootState>,
-    _: Context
+    action: ActionContext<RootState, RootState>,
+    context: Context
   ) => {
     // nuxtServerInitの処理
-    await context.dispatch('regionCofogData/setRegionCofogFromAPI')
+    try {
+      action.dispatch('regionCofogData/setHostname', context.req.headers.host)
+    } catch (err) {
+      if (err instanceof SyntaxError) {
+        console.error('Error on nuxtServerInit: ', err)
+        context.error({ statusCode: 404, message: "Unexpected hostname." })
+        return
+      }
+    }
+
+    try {
+      await action.dispatch('regionCofogData/fetchBudgetListAndWdmmgData')
+    } catch (err) {
+      if (err instanceof ReferenceError) {
+        console.error('Error on nuxtServerInit: ', err)
+        context.error({ statusCode: 404, message: "A budget to show was not found." })
+      }
+    }
   },
 }
 // ---------- ここまで ----------
