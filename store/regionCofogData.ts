@@ -50,7 +50,7 @@ export const mutations = mutationTree(state, {
   },
   setBudgetList(state, budgetList: BudgetList): void {
     state.budgets = budgetList.budgets
-    state.defaultBudget = budgetList.defaultBudgets
+    state.defaultBudget = budgetList.defaultBudget
   },
   setRegionCofogData(state, regionCofog: CofogData): void {
     state.regionCofogData = regionCofog
@@ -79,8 +79,8 @@ export const actions = actionTree(
       commit('setBudgetList', budgetList)
 
       const apiService = new COFOGAPIService(this.app)
-      if (budgetList.defaultBudgets) {
-        const budgetSlug = budgetList.defaultBudgets.slug
+      if (budgetList.defaultBudget) {
+        const budgetSlug = budgetList.defaultBudget.slug
         const wdmmgRes = await apiService.GetData(budgetSlug)
         commit('setRegionCofogData', wdmmgRes)
       } else if (budgetList.budgets.length > 0) {
