@@ -15,7 +15,7 @@ export type Budget = BudgetResponse
 
 export type BudgetListResponse = {
   "budgets": BudgetResponse[]
-  "defaultBudgets": BudgetResponse
+  "defaultBudget": BudgetResponse
 }
 
 export type BudgetList = BudgetListResponse
