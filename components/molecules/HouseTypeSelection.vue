@@ -41,9 +41,20 @@ export default Vue.extend({
       selected: 'SINGLE',
     }
   },
-  mounted() {
-    this.selectHouseType(this.$props.selectedType)
+  computed: {
+    parsedCofogData() {
+      return this.$accessor.regionCofogData.parsedCofogData
+    },
   },
+  watch: {
+    parsedCofogData(val, old) {
+      if (!('amount' in old) && 'amount' in val) {
+        // @ts-ignore
+        this.selectHouseType(this.$props.selectedType)
+      }
+    },
+  },
+  mounted() {},
   methods: {
     /**
      * 世帯種別を選択する
@@ -55,6 +66,7 @@ export default Vue.extend({
       }
       this.$emit('selectd-value', type)
       this.$accessor.dailyBreadData.setHouseType(type)
+      // @ts-ignore
       this.selected = type
     },
   },

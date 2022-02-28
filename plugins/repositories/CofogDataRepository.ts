@@ -15,8 +15,10 @@ export class CofogDataRepository {
    * 保存されたCOFOGデータを取得する
    * @returns COFOGデータ
    */
-  public Get(): CofogData {
+  public Get(): CofogData | null {
     const storeData = this.app.store?.getters['regionCofogData/regionCofogData']
+    if (!("amount" in storeData)) return null
+
     const data: CofogData = {
       amount: Price.create(storeData.amount._value),
       budgetName: storeData.budgetName,

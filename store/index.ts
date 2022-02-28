@@ -24,11 +24,11 @@ export const mutations = {
 
 export const actions = {
   nuxtServerInit: async (
-    context: ActionContext<RootState, RootState>,
-    _: Context
+    action: ActionContext<RootState, RootState>,
+    context: Context
   ) => {
     // nuxtServerInitの処理
-    await context.dispatch('regionCofogData/setRegionCofogFromAPI')
+    // SSG するため、ユーザーからのリクエスト時にわかる情報はここで使用できない
   },
 }
 // ---------- ここまで ----------

@@ -288,8 +288,35 @@ export default Vue.extend({
       title: '使途別予算額',
     }
   },
-  created() {
-    const cofogData: CofogData = this.$repositories('cofogData').Get()
+  async beforeMount() {
+    // TODO: move to middleware
+    const hostname = window.location.hostname
+    try {
+      this.$accessor.regionCofogData.setHostname(hostname)
+    } catch (err) {
+      if (err instanceof SyntaxError) {
+        console.error('Error on beforeMount: ', err)
+        this.$router.push({
+          path: '404.html',
+        })
+        return
+      }
+    }
+
+    try {
+      await this.$accessor.regionCofogData.fetchBudgetListAndWdmmgData()
+    } catch (err) {
+      if (err instanceof ReferenceError) {
+        console.error('Error on beforeMount: ', err)
+        this.$router.push({
+          path: '404.html',
+        })
+      }
+    }
+    const cofogData: CofogData = this.$accessor.regionCofogData.parsedCofogData
+    if (!('amount' in cofogData)) {
+      this.$router.push({ path: '/' })
+    }
     this.circlePackData.childrenData = cofogData.taxList.map((item) => ({
       name: item.cofog.Name,
       value: item.amount.value,
@@ -302,8 +329,7 @@ export default Vue.extend({
         })),
       })),
     }))
-  },
-  mounted() {
+
     const svg = d3.select('#graph')
 
     const viewBox = svg.attr('viewBox')
@@ -331,6 +357,7 @@ export default Vue.extend({
     })
     this.setListText(this.circlePackData, '')
   },
+  mounted() {},
   methods: {
     /**
      * ズーム

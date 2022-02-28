@@ -74,7 +74,7 @@ describe('APIService', () => {
     }
 
     const api = new COFOGAPIService(wrapper.vm)
-    expect(await api.GetData()).toEqual(result)
+    expect(await api.GetData('tsukuba-shi')).toEqual(result)
   })
 
   it('正常(複数レコード)', async () => {
@@ -181,7 +181,7 @@ describe('APIService', () => {
     }
 
     const api = new COFOGAPIService(wrapper.vm)
-    expect(await api.GetData()).toEqual(result)
+    expect(await api.GetData('tsukuba-shi')).toEqual(result)
   })
 })
 

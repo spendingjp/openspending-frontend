@@ -10,6 +10,9 @@ export default (app: NuxtApp, inject: Inject) => {
       case 'cofogData':
         return new (apiRepositoryFactory.get('cofogData'))(app)
 
+      case 'budget':
+        return new (apiRepositoryFactory.get('budget'))(app)
+
       // case 'sample':
       //   return new SampleRepository()
 
