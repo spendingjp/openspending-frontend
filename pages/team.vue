@@ -37,9 +37,26 @@
             href="https://www.facebook.com/profile.php?id=100013297352138"
             target="_blank"
             rel="noopener noreferrer"
-          >信夫咲希</a>
+          >信夫 咲希</a>
           / Organize data and guidelines
         </li>
+        <li>
+          高野 光弘(TAKANO Mitsuhiro a.k.a. <a
+          href="https://twitter.com/takano32"
+          target="_blank"
+          rel="noopener noreferrer"
+        >@takano32</a>)
+          / Developer
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/homata"
+            target="_blank"
+            rel="noopener noreferrer"
+          >小俣 博司</a>
+          / Research data
+        </li>
+        <li>今村 かずき / Developer</li>
       </ul>
     </contents-block>
   </div>
