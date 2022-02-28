@@ -4,8 +4,6 @@ import { CofogData } from '~/plugins/dataTransferObjects/cofogData'
 import { Budget, BudgetList } from '~/plugins/api/BudgetList'
 import { BudgetListApiService } from '~/plugins/applicationServices/BudgetListApiService'
 import { Price } from '~/plugins/valueObjects/Price'
-import { Cofog } from '~/plugins/valueObjects/Cofog'
-import { CofogCode } from '~/plugins/valueObjects/CofogCode'
 
 export const state = () => ({
   regionCofogData: {} as CofogData,
@@ -58,47 +56,11 @@ export const mutations = mutationTree(state, {
     state.regionCofogData = regionCofog
     const data: CofogData = {
       // @ts-ignore
-      amount: Price.create(regionCofog.amount._value as number),
+      amount: Price.create(regionCofog.amount.price as number),
       budgetName: regionCofog.budgetName,
       year: regionCofog.year,
       governmentName: regionCofog.governmentName,
-      taxList: regionCofog.taxList.map((item: any) => {
-        return {
-          amount: Price.create(item.amount._value),
-          cofog: new Cofog(
-            CofogCode.create({
-              level1: item.cofog.code._value.level1,
-              level2: item.cofog.code._value.level2,
-              level3: item.cofog.code._value.level3,
-            }),
-            item.cofog.name
-          ),
-          children: item.children.map((child: any) => {
-            return {
-              amount: Price.create(child.amount._value),
-              cofog: new Cofog(
-                CofogCode.create({
-                  level1: child.cofog.code._value.level1,
-                  level2: child.cofog.code._value.level2,
-                  level3: child.cofog.code._value.level3,
-                }),
-                child.cofog.name
-              ),
-              children: child.children.map((level3Item: any) => ({
-                amount: Price.create(level3Item.amount._value),
-                cofog: new Cofog(
-                  CofogCode.create({
-                    level1: level3Item.cofog.code._value.level1,
-                    level2: level3Item.cofog.code._value.level2,
-                    level3: level3Item.cofog.code._value.level3,
-                  }),
-                  level3Item.cofog.name
-                ),
-              })),
-            }
-          }),
-        }
-      }),
+      taxList: regionCofog.taxList
     }
 
     state.parsedCofogData = data
